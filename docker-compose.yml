@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql_findoc
+    environment:
+      MYSQL_ROOT_PASSWORD: nvu1245 
+      MYSQL_DATABASE: findoc_db       
+    ports:
+      - "3306:3306"                      
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
+
+networks:
+  findoc_network:
+    driver: bridge
