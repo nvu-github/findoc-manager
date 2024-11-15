@@ -7,11 +7,8 @@ import { ICompany } from '~/interfaces'
 class companyService {
   async createCompany(req: Request, res: Response): Promise<Response<ICompany>> {
     const { name, address, tax_id, default_currency } = req.body
-    if (!name) {
-      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Company name is required' })
-    }
 
-    const [createdCompany] = await db(TABLES.COMPANY).insert({ name, address, tax_id, default_currency }).returning('*')
+    const [createdCompany] = await db(TABLES.COMPANY).insert({ name, address, tax_id, default_currency })
     return res.status(StatusCodes.CREATED).json(createdCompany)
   }
 
@@ -57,7 +54,7 @@ class companyService {
     if (deletedCompany === 0) {
       return res.status(StatusCodes.NOT_FOUND).json({ message: 'Company not found' })
     }
-    return res.status(StatusCodes.NO_CONTENT).send()
+    return res.status(StatusCodes.NO_CONTENT)
   }
 }
 
