@@ -11,7 +11,7 @@ class accountService {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Account data is required' })
     }
 
-    const [createdAccount] = await db(TABLES.ACCOUNT).insert(account).returning('*')
+    const [createdAccount] = await db(TABLES.ACCOUNT).insert(account)
     return res.status(StatusCodes.CREATED).json(createdAccount)
   }
 
