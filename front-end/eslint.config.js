@@ -37,8 +37,9 @@ export default tseslint.config(
         singleQuote: true,
         printWidth: 120,
         jsxSingleQuote: true
-      }
-    ]
+      },
+    ],
+    '@typescript-eslint/no-explicit-any': 'off',
     },
   },
 )
