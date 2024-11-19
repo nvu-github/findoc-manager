@@ -1,5 +1,6 @@
 import { Request, Response } from 'express'
 import bookingService from '~/services/booking.service'
+import documentService from '~/services/document.service'
 import { StatusCodes } from 'http-status-codes'
 
 class BookingController {
@@ -9,6 +10,15 @@ class BookingController {
     } catch (error) {
       console.error('Error creating booking:', error)
       return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to create booking' })
+    }
+  }
+
+  async createDocuments(req: Request, res: Response): Promise<Response> {
+    try {
+      return await documentService.createDocuments(req, res)
+    } catch (error) {
+      console.error('Error creating documents:', error)
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to create documents' })
     }
   }
 

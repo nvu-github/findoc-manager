@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import companyService from '~/services/company.service'
 import { StatusCodes } from 'http-status-codes'
 
-class companyController {
+class CompanyController {
   async createCompany(req: Request, res: Response): Promise<Response> {
     try {
       return await companyService.createCompany(req, res)
@@ -49,4 +49,4 @@ class companyController {
   }
 }
 
-export default new companyController()
+export default new CompanyController()

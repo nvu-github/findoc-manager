@@ -1,2 +1,5 @@
 export * from './account.service'
 export * from './company.service'
+export * from './biller.service'
+export * from './booking.service'
+export * from './document.service'

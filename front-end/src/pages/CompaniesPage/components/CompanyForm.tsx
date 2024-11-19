@@ -1,45 +1,61 @@
-import React from 'react'
+import React, { useCallback, useEffect } from 'react'
 import { Form, Input, Button, message } from 'antd'
-import axios from '../../../services/api'
+
+import { useAppDispatch } from '../../../stores/hook'
+import { addCompanyAsync, updateCompanyAsync } from '../../../stores/slices'
 import { Company } from '../../../types'
 
 interface CompanyFormProps {
-  companyId?: number
+  isDrawerVisible: boolean
+  company?: Company | undefined
   onSuccess: () => void
 }
 
-const CompanyForm: React.FC<CompanyFormProps> = ({ companyId, onSuccess }) => {
+const rules = {
+  name: [{ required: true, message: 'Please input company name' }]
+}
+
+const CompanyForm: React.FC<CompanyFormProps> = ({ isDrawerVisible, company, onSuccess }) => {
   const [form] = Form.useForm()
+  const dispatch = useAppDispatch()
 
   const handleSubmit = async (values: Company) => {
     try {
-      if (companyId) {
-        await axios.put(`/api/companies/${companyId}`, values)
+      if (company?.companyId) {
+        const companyId: any = company.companyId
+        await dispatch(updateCompanyAsync({ companyId, updatedCompany: values }))
         message.success('Company updated successfully')
       } else {
-        await axios.post('/api/companies', values)
+        await dispatch(addCompanyAsync(values))
         message.success('Company created successfully')
       }
-      onSuccess()
-    } catch (error) {
+    } catch (error: any) {
       console.log('An error occurred', error)
-      message.error('Failed to save company')
+      message.error(error || 'Failed to save company')
+    } finally {
+      onSuccess()
     }
   }
 
+  const handleSetDataEditCompany = useCallback(() => {
+    form.setFieldsValue(company)
+  }, [company, form])
+
+  useEffect(() => {
+    handleSetDataEditCompany()
+    if (!isDrawerVisible && !company?.companyId) form.resetFields()
+  }, [isDrawerVisible, company, form, handleSetDataEditCompany])
+
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
-      <Form.Item name='name' label='Company Name' rules={[{ required: true }]}>
+      <Form.Item name='name' label='Company Name' rules={rules.name}>
         <Input />
       </Form.Item>
-      <Form.Item name='country' label='Country'>
+      <Form.Item name='address' label='Address'>
         <Input />
-      </Form.Item>
-      <Form.Item name='defaultCurrency' label='Default Currency'>
-        <Input placeholder='e.g., USD' />
       </Form.Item>
       <Button type='primary' htmlType='submit'>
-        {companyId ? 'Update Company' : 'Create Company'}
+        {company?.companyId ? 'Update Company' : 'Create Company'}
       </Button>
     </Form>
   )

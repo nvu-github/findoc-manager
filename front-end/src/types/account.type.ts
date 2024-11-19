@@ -1,5 +1,5 @@
 export type Account = {
-  acocuntId?: string
+  accountId?: string
   companyId?: string
   name: string
   discription: string

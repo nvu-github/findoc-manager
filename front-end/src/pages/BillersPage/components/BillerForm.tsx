@@ -1,51 +1,95 @@
-import React from 'react'
-import { Form, Input, Button, message } from 'antd'
-import axios from '../../../services/api'
+import React, { useCallback, useEffect } from 'react'
+import { Form, Input, Button, Select, message } from 'antd'
+
+import { useAppDispatch } from '../../../stores/hook'
+import { addBillerAsync, updateBillerAsync } from '../../../stores/slices'
 import { Biller } from '../../../types'
+import { BILLER_TYPES } from '../../../constants'
 
 interface BillerFormProps {
-  billerId?: number
+  isDrawerVisible: boolean
+  biller?: Biller | undefined
   onSuccess: () => void
 }
 
-const BillerForm: React.FC<BillerFormProps> = ({ billerId, onSuccess }) => {
-  const [form] = Form.useForm()
+const { Option } = Select
 
-  const handleSubmit = async (values: Biller) => {
+const rules = {
+  name: [{ required: true, message: 'Please input the biller name' }],
+  address: [{ required: false, message: 'Please input the address' }],
+  billerType: [{ required: true, message: 'Please select the biller type' }]
+}
+
+const BillerForm: React.FC<BillerFormProps> = ({ isDrawerVisible, biller, onSuccess }) => {
+  const [form] = Form.useForm()
+  const dispatch = useAppDispatch()
+
+  const handleSubmit = async (values: any) => {
     try {
-      if (billerId) {
-        await axios.put(`/api/billers/${billerId}`, values)
+      if (biller?.billerId) {
+        const billerId: any = biller.billerId
+        await dispatch(updateBillerAsync({ billerId, updatedBiller: values }))
         message.success('Biller updated successfully')
       } else {
-        await axios.post('/api/billers', values)
+        await dispatch(addBillerAsync(values))
         message.success('Biller created successfully')
       }
+    } catch (error: any) {
+      console.log('An error occurred', error)
+      message.error(error || 'Failed to save biller')
+    } finally {
       onSuccess()
-    } catch (error) {
-      console.error('Error saving biller:', error)
-      message.error('Failed to save biller')
     }
   }
 
+  const handleSetDataEditBiller = useCallback(() => {
+    if (biller) {
+      form.setFieldsValue({
+        ...biller,
+        billerType: biller.billerType || undefined
+      })
+    }
+  }, [biller, form])
+
+  useEffect(() => {
+    handleSetDataEditBiller()
+    if (!isDrawerVisible && !biller?.billerId) form.resetFields()
+  }, [isDrawerVisible, biller, form, handleSetDataEditBiller])
+
   return (
-    <Form form={form} layout='vertical' onFinish={handleSubmit}>
-      <Form.Item name='name' label='Biller Name' rules={[{ required: true }]}>
+    <Form form={form} layout='vertical' onFinish={handleSubmit} style={styles.form}>
+      <Form.Item name='name' label='Biller Name' rules={rules.name}>
         <Input />
       </Form.Item>
-      <Form.Item name='address' label='Address'>
+      <Form.Item name='address' label='Address' rules={rules.address}>
         <Input />
       </Form.Item>
-      <Form.Item name='taxId' label='Tax ID'>
-        <Input />
+      <Form.Item name='billerType' label='Biller Type' rules={rules.billerType}>
+        <Select placeholder='Select a biller type'>
+          {BILLER_TYPES.map((type) => {
+            return (
+              <Option key={type.value} value={type.value}>
+                {type.label}
+              </Option>
+            )
+          })}
+        </Select>
       </Form.Item>
-      <Form.Item name='defaultCurrency' label='Default Currency'>
-        <Input placeholder='e.g., USD' />
-      </Form.Item>
-      <Button type='primary' htmlType='submit'>
-        {billerId ? 'Update Biller' : 'Create Biller'}
+      <Button type='primary' htmlType='submit' style={styles.submitButton}>
+        {biller?.billerId ? 'Update Biller' : 'Create Biller'}
       </Button>
     </Form>
   )
+}
+
+const styles: { [key: string]: React.CSSProperties } = {
+  form: {
+    maxWidth: '600px',
+    margin: '0 auto'
+  },
+  submitButton: {
+    marginTop: '16px'
+  }
 }
 
 export default BillerForm

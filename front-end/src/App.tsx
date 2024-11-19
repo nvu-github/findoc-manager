@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfigProvider } from 'antd'
+import { ConfigProvider, App as AntdApp } from 'antd'
 
 import DashboardRoutes from './routes/DashboardRoutes'
 
@@ -7,7 +7,9 @@ const App: React.FC = () => {
   return (
     <>
       <ConfigProvider>
-        <DashboardRoutes />
+        <AntdApp>
+          <DashboardRoutes />
+        </AntdApp>
       </ConfigProvider>
     </>
   )

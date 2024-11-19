@@ -5,7 +5,8 @@ import {
   DownSquareOutlined,
   FileDoneOutlined,
   SolutionOutlined,
-  UsergroupAddOutlined
+  UsergroupAddOutlined,
+  DollarOutlined
 } from '@ant-design/icons'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -23,10 +24,11 @@ const getItem = (label: React.ReactNode, key: React.Key, icon?: React.ReactNode)
 
 const items: MenuProps['items'] = [
   getItem(<Link to='/'>Dashboard</Link>, 'dashboard', <PieChartOutlined />),
-  getItem(<Link to='/bookings'>Booking</Link>, 'booking', <DownSquareOutlined />),
-  getItem(<Link to='/billers'>Biller</Link>, 'biller', <FileDoneOutlined />),
-  getItem(<Link to='/companies'>Company</Link>, 'company', <SolutionOutlined />),
-  getItem(<Link to='/accounts'>Account</Link>, 'account', <UsergroupAddOutlined />)
+  getItem(<Link to='/companies'>Company</Link>, 'companies', <SolutionOutlined />),
+  getItem(<Link to='/accounts'>Account</Link>, 'accounts', <UsergroupAddOutlined />),
+  getItem(<Link to='/billers'>Biller</Link>, 'billers', <FileDoneOutlined />),
+  getItem(<Link to='/currencies'>Currency</Link>, 'currencies', <DollarOutlined />),
+  getItem(<Link to='/bookings'>Booking</Link>, 'bookings', <DownSquareOutlined />)
 ]
 
 type SideNavProps = SiderProps
@@ -40,6 +42,10 @@ const SideNav = ({ ...others }: SideNavProps) => {
     const paths = pathname.split('/')
     setCurrent(paths[1] || 'dashboard')
   }, [pathname])
+
+  const onMenuClick = ({ key }: { key: string }) => {
+    setCurrent(key)
+  }
 
   return (
     <Sider ref={nodeRef} breakpoint='lg' collapsedWidth='0' {...others}>
@@ -58,7 +64,7 @@ const SideNav = ({ ...others }: SideNavProps) => {
           }
         }}
       >
-        <Menu mode='inline' items={items} selectedKeys={[current]} style={{ border: 'none' }} />
+        <Menu mode='inline' items={items} selectedKeys={[current]} onClick={onMenuClick} style={{ border: 'none' }} />
       </ConfigProvider>
     </Sider>
   )

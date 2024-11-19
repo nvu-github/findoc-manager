@@ -1,18 +1,16 @@
-import * as moment from 'moment'
+import { Dayjs } from 'dayjs'
 
 export type Booking = {
-  bookingId?: string
-  companyId?: string
-  accountId?: string
-  billerId?: string
-  date: moment.Moment
+  bookingId?: string | number
+  companyId?: string | number
+  accountId?: string | number
+  billerId?: string | number | null
+  currencyId?: string | number | null
+  date: Dayjs
   amount: number
-  currency: string
-  exchangeRate?: number
-  description: string
-  taxAmount?: number
-  tag?: string
-  invoiceDate: moment.Moment
-  paymentDate: moment.Moment
-  taxDate: moment.Moment
+  exchangeRate?: number | null
+  description?: string
+  tax?: number | null
+  taxRate?: number | null
+  tags?: string | null
 }

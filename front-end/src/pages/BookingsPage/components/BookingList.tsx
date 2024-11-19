@@ -1,33 +1,31 @@
-import React, { useEffect, useState } from 'react'
-import { Table, Button, message, Popconfirm } from 'antd'
-import axios from '../../../services/api'
+import React from 'react'
+import { message } from 'antd'
 
-const BookingList: React.FC = () => {
-  const [bookings, setBookings] = useState([])
-  const [loading, setLoading] = useState(false)
+import { useAppDispatch, useAppSelector } from '../../../stores/hook'
+import { deleteBookingAsync, getAllBookingsAsync } from '../../../stores/slices'
+import TableData from '../../../components/TableData'
+import { Booking } from '../../../types'
 
-  const fetchBookings = async () => {
-    setLoading(true)
-    try {
-      const response = await axios.get('/api/bookings')
-      setBookings(response.data.data)
-    } catch (error) {
-      console.log('Error fetching bookings', error)
-      message.error('Failed to fetch bookings')
-    } finally {
-      setLoading(false)
-    }
+interface BookingListProps {
+  handleBookingEdit: (booking: Booking) => void
+  handleDrawerVisible: (visible: boolean) => void
+}
+
+const BookingList: React.FC<BookingListProps> = ({ handleBookingEdit, handleDrawerVisible }) => {
+  const dispatch = useAppDispatch()
+  const { bookings, loading } = useAppSelector((state) => state.booking)
+
+  const handleEditBooking = (booking: Booking) => {
+    handleBookingEdit(booking)
+    handleDrawerVisible(true)
   }
 
-  useEffect(() => {
-    fetchBookings()
-  }, [])
-
-  const deleteBooking = async (id: number) => {
+  const deleteBooking = async (booking: Booking) => {
     try {
-      await axios.delete(`/api/bookings/${id}`)
+      const bookingId: any = booking.bookingId
+      await dispatch(deleteBookingAsync(bookingId))
       message.success('Booking deleted successfully')
-      fetchBookings()
+      await dispatch(getAllBookingsAsync({}))
     } catch (error) {
       console.log('Error deleting booking', error)
       message.error('Failed to delete booking')
@@ -35,25 +33,26 @@ const BookingList: React.FC = () => {
   }
 
   const columns = [
-    { title: 'Date', dataIndex: 'date', key: 'date' },
+    { title: 'Company', dataIndex: 'companyName', key: 'companyName' },
+    { title: 'Account', dataIndex: 'accountName', key: 'accountName' },
+    { title: 'Biller', dataIndex: 'billerName', key: 'billerName' },
+    { title: 'Currency code', dataIndex: 'currencyCode', key: 'currencyCode' },
+    { title: 'Date', dataIndex: 'date', key: 'date', render: (date: string) => new Date(date).toLocaleDateString() },
     { title: 'Amount', dataIndex: 'amount', key: 'amount' },
     { title: 'Description', dataIndex: 'description', key: 'description' },
-    {
-      title: 'Actions',
-      render: (record: any) => (
-        <>
-          <Button type='link'>Edit</Button>
-          <Popconfirm title='Are you sure to delete this booking?' onConfirm={() => deleteBooking(record.bookingId)}>
-            <Button type='link' danger>
-              Delete
-            </Button>
-          </Popconfirm>
-        </>
-      )
-    }
+    { title: 'Tag', dataIndex: 'tags', key: 'tags' }
   ]
 
-  return <Table dataSource={bookings} columns={columns} loading={loading} rowKey={(record: any) => record.id} />
+  return (
+    <TableData
+      columns={columns}
+      dataSource={bookings}
+      dataAction={{ titleConfirmDelete: 'Are you sure to delete this booking?' }}
+      isLoading={loading}
+      handleEditRecord={handleEditBooking}
+      handleDeleteRecord={deleteBooking}
+    />
+  )
 }
 
 export default BookingList

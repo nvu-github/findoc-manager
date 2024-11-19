@@ -1,13 +1,15 @@
 import React, { CSSProperties } from 'react'
 import { Outlet } from 'react-router-dom'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { Button, Result } from 'antd'
+
 import DashboardLayout from '../layouts/Dashboard'
 import DashboardPage from '../pages/DashboardPage'
 import BookingsPage from '../pages/BookingsPage'
 import BillersPage from '../pages/BillersPage'
 import CompaniesPage from '../pages/CompaniesPage'
-import { Button } from 'antd'
-import { Result } from 'antd'
+import AccountsPage from '../pages/Accounts'
+import CurrenciesPage from '../pages/CurrencyPages'
 
 const NotFoundPage: React.FC = () => (
   <div style={styles.notFoundPage}>
@@ -33,7 +35,9 @@ const router = createBrowserRouter([
       { index: true, element: <DashboardPage /> },
       { path: 'bookings', element: <BookingsPage /> },
       { path: 'billers', element: <BillersPage /> },
-      { path: 'companies', element: <CompaniesPage /> }
+      { path: 'companies', element: <CompaniesPage /> },
+      { path: 'accounts', element: <AccountsPage /> },
+      { path: 'currencies', element: <CurrenciesPage /> }
     ]
   },
   { path: '*', element: <NotFoundPage /> }
