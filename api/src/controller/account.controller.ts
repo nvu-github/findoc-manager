@@ -2,7 +2,7 @@ import { Request, Response } from 'express'
 import accountService from '~/services/account.service'
 import { StatusCodes } from 'http-status-codes'
 
-class accountController {
+class AccountController {
   async createAccount(req: Request, res: Response): Promise<Response> {
     try {
       return await accountService.createAccount(req, res)
@@ -49,4 +49,4 @@ class accountController {
   }
 }
 
-export default new accountController()
+export default new AccountController()

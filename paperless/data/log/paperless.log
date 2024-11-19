@@ -1,0 +1,320 @@
+[2024-11-23 09:07:54,448] [INFO] [paperless.management.consumer] Using inotify to watch directory for changes: /usr/src/paperless/consume
+[2024-11-23 09:08:24,432] [INFO] [paperless.auth] Login failed for user `paperless` from private IP `172.19.0.1`.
+[2024-11-23 09:38:07,031] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 09:38:08,139] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 09:38:25,701] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 09:38:26,815] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 09:39:28,508] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 09:39:29,637] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 10:05:00,076] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 10:32:11,671] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-23 10:32:11,681] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-23 10:32:11,696] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-23 10:32:11,717] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-23 10:32:11,722] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-23 10:32:11,763] [INFO] [paperless.consumer] Consuming 1732357928567-images (1).png
+[2024-11-23 10:32:11,771] [DEBUG] [paperless.consumer] Detected mime type: image/png
+[2024-11-23 10:32:11,784] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-23 10:32:11,797] [DEBUG] [paperless.consumer] Parsing 1732357928567-images (1).png...
+[2024-11-23 10:32:12,179] [WARNING] [paperless.parsing.tesseract] Error while getting DPI from image /tmp/paperless/paperless-ngxrfrzrhxu/1732357928567-images (1).png: 'dpi'
+[2024-11-23 10:32:12,184] [DEBUG] [paperless.parsing.tesseract] Estimated DPI 22 based on image width 189
+[2024-11-23 10:32:12,188] [WARNING] [paperless.parsing.tesseract] Image DPI of 22 is low, OCR may fail
+[2024-11-23 10:32:12,193] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxrfrzrhxu/1732357928567-images (1).png'), 'output_file': PosixPath('/tmp/paperless/paperless-jps2bgmd/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-jps2bgmd/sidecar.txt'), 'image_dpi': 22}
+[2024-11-23 10:32:12,335] [INFO] [ocrmypdf._pipeline] Input file is not a PDF, checking if it is an image...
+[2024-11-23 10:32:12,344] [INFO] [ocrmypdf._pipeline] Input file is an image
+[2024-11-23 10:32:12,349] [INFO] [ocrmypdf._pipeline] Image seems valid. Try converting to PDF...
+[2024-11-23 10:32:12,357] [INFO] [ocrmypdf._pipeline] Successfully converted to PDF, processing...
+[2024-11-23 10:32:12,536] [WARNING] [ocrmypdf._exec.tesseract] [tesseract] Warning: Invalid resolution 22 dpi. Using 70 instead.
+[2024-11-23 10:32:12,544] [INFO] [ocrmypdf._exec.tesseract] [tesseract] Estimating resolution as 208
+[2024-11-23 10:32:12,549] [INFO] [ocrmypdf._exec.tesseract] [tesseract] Too few characters. Skipping this page
+[2024-11-23 10:32:12,555] [WARNING] [ocrmypdf._exec.tesseract] [tesseract] Warning. Invalid resolution 22 dpi. Using 70 instead.
+[2024-11-23 10:32:12,560] [INFO] [ocrmypdf._exec.tesseract] [tesseract] Too few characters. Skipping this page
+[2024-11-23 10:32:12,565] [ERROR] [ocrmypdf._exec.tesseract] [tesseract] Error during processing.
+[2024-11-23 10:32:12,570] [INFO] [ocrmypdf._pipeline] page is facing ⇧, confidence 0.00 - no change
+[2024-11-23 10:32:13,583] [WARNING] [ocrmypdf._exec.tesseract] [tesseract] Warning: Invalid resolution 22 dpi. Using 70 instead.
+[2024-11-23 10:32:13,591] [INFO] [ocrmypdf._exec.tesseract] [tesseract] Estimating resolution as 208
+[2024-11-23 10:32:13,610] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-23 10:32:13,799] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.05 savings: 4.8%
+[2024-11-23 10:32:13,806] [INFO] [ocrmypdf._pipeline] Total file size ratio: 0.59 savings: -70.2%
+[2024-11-23 10:32:13,812] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-23 10:32:13,837] [DEBUG] [paperless.parsing.tesseract] Using text from sidecar file
+[2024-11-23 10:32:13,854] [DEBUG] [paperless.consumer] Generating thumbnail for 1732357928567-images (1).png...
+[2024-11-23 10:32:13,870] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-jps2bgmd/archive.pdf[0] /tmp/paperless/paperless-jps2bgmd/convert.webp
+[2024-11-23 10:32:15,183] [INFO] [paperless.parsing] convert exited 0
+[2024-11-23 10:32:15,201] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 10:32:15,224] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-23 10:32:15,234] [DEBUG] [paperless.consumer] Creation date from st_mtime: 2024-11-23 10:32:11+00:00
+[2024-11-23 10:32:15,924] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxrfrzrhxu/1732357928567-images (1).png
+[2024-11-23 10:32:15,935] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-jps2bgmd
+[2024-11-23 10:32:15,942] [INFO] [paperless.consumer] Document 2024-11-23 1732357928567-images (1) consumption finished
+[2024-11-23 10:32:15,959] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 1 created
+[2024-11-23 11:05:00,096] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 14:11:24,938] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 15:05:00,147] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 16:05:00,136] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 16:19:42,656] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-23 16:19:42,667] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-23 16:19:42,677] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-23 16:19:42,707] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-23 16:19:42,728] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-23 16:19:42,767] [INFO] [paperless.consumer] Consuming 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp
+[2024-11-23 16:19:42,777] [DEBUG] [paperless.consumer] Detected mime type: image/webp
+[2024-11-23 16:19:42,811] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-23 16:19:42,823] [DEBUG] [paperless.consumer] Parsing 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp...
+[2024-11-23 16:19:43,515] [WARNING] [paperless.parsing.tesseract] Error while getting DPI from image /tmp/paperless/paperless-ngxy0zad9_e/1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: 'dpi'
+[2024-11-23 16:19:43,525] [DEBUG] [paperless.parsing.tesseract] Estimated DPI 74 based on image width 618
+[2024-11-23 16:19:43,536] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxy0zad9_e/1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp'), 'output_file': PosixPath('/tmp/paperless/paperless-kwes_03y/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-kwes_03y/sidecar.txt'), 'image_dpi': 74}
+[2024-11-23 16:19:43,719] [INFO] [ocrmypdf._pipeline] Input file is not a PDF, checking if it is an image...
+[2024-11-23 16:19:43,728] [INFO] [ocrmypdf._pipeline] Input file is an image
+[2024-11-23 16:19:43,733] [INFO] [ocrmypdf._pipeline] Input image has no ICC profile, assuming sRGB
+[2024-11-23 16:19:43,738] [INFO] [ocrmypdf._pipeline] Image seems valid. Try converting to PDF...
+[2024-11-23 16:19:43,783] [INFO] [ocrmypdf._pipeline] Successfully converted to PDF, processing...
+[2024-11-23 16:19:44,514] [INFO] [ocrmypdf._pipeline] page is facing ⇧, confidence 0.64 - no change
+[2024-11-23 16:19:46,980] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-23 16:19:47,171] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.18 savings: 15.5%
+[2024-11-23 16:19:47,179] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.21 savings: 68.9%
+[2024-11-23 16:19:47,186] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-23 16:19:47,225] [DEBUG] [paperless.parsing.tesseract] Using text from sidecar file
+[2024-11-23 16:19:47,232] [DEBUG] [paperless.consumer] Generating thumbnail for 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp...
+[2024-11-23 16:19:47,241] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-kwes_03y/archive.pdf[0] /tmp/paperless/paperless-kwes_03y/convert.webp
+[2024-11-23 16:19:48,134] [INFO] [paperless.parsing] convert exited 0
+[2024-11-23 16:19:53,668] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-23 16:19:53,679] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-23 16:19:53,684] [DEBUG] [paperless.consumer] Creation date from parse_date: 2023-11-09 00:00:00+00:00
+[2024-11-23 16:19:54,073] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxy0zad9_e/1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp
+[2024-11-23 16:19:54,080] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-kwes_03y
+[2024-11-23 16:19:54,099] [INFO] [paperless.consumer] Document 2023-11-09 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c consumption finished
+[2024-11-23 16:19:54,123] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 2 created
+[2024-11-23 16:20:45,592] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-23 16:20:45,604] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-23 16:20:45,613] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-23 16:20:45,632] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-23 16:20:45,637] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-23 16:20:45,672] [ERROR] [paperless.consumer] Not consuming 1732378843247-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-23 16:20:45,677] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732378843247-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732378843247-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732378843247-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732378843247-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-23 16:24:14,533] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-23 16:24:14,541] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-23 16:24:14,548] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-23 16:24:14,585] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-23 16:24:14,595] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-23 16:24:14,717] [ERROR] [paperless.consumer] Not consuming 1732379052643-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-23 16:24:14,727] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732379052643-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732379052643-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732379052643-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732379052643-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-23 17:05:00,088] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 18:05:00,095] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 19:05:00,085] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 22:11:23,834] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-23 23:05:00,099] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 02:51:25,801] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 02:51:26,538] [INFO] [paperless.sanity_checker] Sanity checker detected no issues.
+[2024-11-24 03:05:00,110] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 07:06:24,948] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 08:05:00,100] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 09:05:00,107] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 10:05:00,095] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 10:25:32,671] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:25:32,685] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:25:32,698] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:25:32,723] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:25:32,732] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:25:32,802] [ERROR] [paperless.consumer] Not consuming 1732443926124-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:25:32,821] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732443926124-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732443926124-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732443926124-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732443926124-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:28:45,304] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:28:45,317] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:28:45,335] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:28:45,368] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:28:45,379] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:28:45,452] [ERROR] [paperless.consumer] Not consuming 1732444118197-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:28:45,460] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732444118197-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444118197-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732444118197-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444118197-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:35:16,419] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:35:16,459] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:35:16,480] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:35:16,507] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:35:16,518] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:35:16,624] [ERROR] [paperless.consumer] Not consuming 1732444512297-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:35:16,666] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732444512297-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444512297-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732444512297-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444512297-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:35:53,873] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:35:53,886] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:35:53,896] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:35:53,925] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:35:54,038] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:35:54,112] [ERROR] [paperless.consumer] Not consuming 1732444549729-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:35:54,118] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732444549729-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444549729-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732444549729-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444549729-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:36:54,763] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:36:54,775] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:36:54,788] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:36:54,826] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:36:54,834] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:36:54,908] [ERROR] [paperless.consumer] Not consuming 1732444610374-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:36:54,920] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732444610374-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444610374-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732444610374-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732444610374-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:49:47,280] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:49:47,331] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:49:47,356] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:49:47,387] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:49:47,398] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:49:47,458] [ERROR] [paperless.consumer] Not consuming 1732445381319-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:49:47,466] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732445381319-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732445381319-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732445381319-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732445381319-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:50:43,435] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:50:43,453] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:50:43,477] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:50:43,533] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:50:43,545] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:50:43,635] [ERROR] [paperless.consumer] Not consuming 1732445437051-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:50:43,699] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732445437051-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732445437051-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732445437051-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732445437051-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:55:13,934] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 10:55:13,949] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 10:55:13,960] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 10:55:13,986] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 10:55:14,000] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 10:55:14,072] [ERROR] [paperless.consumer] Not consuming 1732445712026-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 10:55:14,080] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732445712026-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732445712026-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732445712026-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732445712026-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 11:02:26,135] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 11:02:26,147] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 11:02:26,157] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 11:02:26,187] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 11:02:26,196] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 11:02:26,256] [ERROR] [paperless.consumer] Not consuming 1732446142112-images (1).png: It is a duplicate of 1732357928567-images (1) (#1).
+[2024-11-24 11:02:26,263] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732446142112-images (1).png: Not consuming 1732446142112-images (1).png: It is a duplicate of 1732357928567-images (1) (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732446142112-images (1).png: Not consuming 1732446142112-images (1).png: It is a duplicate of 1732357928567-images (1) (#1).
+[2024-11-24 11:05:00,094] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 11:17:20,634] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-24 11:17:20,646] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-24 11:17:20,658] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-24 11:17:20,698] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-24 11:17:20,708] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-24 11:17:20,793] [ERROR] [paperless.consumer] Not consuming 1732447038419-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 11:17:20,801] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732447038419-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732447038419-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732447038419-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: Not consuming 1732447038419-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c.webp: It is a duplicate of 1732378780761-simple-business-invoice-modern-simple-1-1-2ffbd9415d0c (#2).
+[2024-11-24 12:05:00,096] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 15:08:29,733] [INFO] [paperless.management.consumer] Using inotify to watch directory for changes: /usr/src/paperless/consume
+[2024-11-24 15:08:33,992] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 16:05:00,169] [INFO] [paperless.tasks] No automatic matching items, not training

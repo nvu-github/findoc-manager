@@ -4,9 +4,10 @@ import db from '~/config/database'
 import { TABLES } from '~/constants'
 import { IAccount } from '~/interfaces'
 
-class accountService {
+class AccountService {
   async createAccount(req: Request, res: Response): Promise<Response<IAccount>> {
-    const { account } = req.body
+    const account = req.body
+    console.log(account)
     if (!account) {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Account data is required' })
     }
@@ -16,7 +17,9 @@ class accountService {
   }
 
   async getAllAccounts(req: Request, res: Response): Promise<Response<IAccount[]>> {
-    const accounts = await db(TABLES.ACCOUNT).select()
+    const accounts = await db(TABLES.ACCOUNT)
+      .join(TABLES.COMPANY, 'accounts.company_id', 'companies.company_id')
+      .select('accounts.*', 'accounts.account_id as id', 'companies.name as companyName')
     return res.json(accounts)
   }
 
@@ -29,9 +32,13 @@ class accountService {
     return res.json(account)
   }
 
+  async findAccountById(account_id: number) {
+    return await db(TABLES.ACCOUNT).where('accounts.account_id', account_id).first()
+  }
+
   async updateAccount(req: Request, res: Response): Promise<Response<IAccount>> {
     const { account_id } = req.params
-    const { account } = req.body
+    const account = req.body
     if (!account_id || !account) {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Account ID and account data are required' })
     }
@@ -55,4 +62,4 @@ class accountService {
   }
 }
 
-export default new accountService()
+export default new AccountService()

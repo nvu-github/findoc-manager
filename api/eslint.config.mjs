@@ -31,6 +31,7 @@ export default [
         }
       ]
     },
-    ignores: ['**/node_modules/', '**/dist/', '*.js']
+    ignores: ['**/node_modules/', '**/dist/', '*.js'],
+    '@typescript-eslint/no-explicit-any': 'off'
   }
 ]

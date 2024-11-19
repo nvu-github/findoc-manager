@@ -3,7 +3,8 @@ export const TABLES = {
   COMPANY: 'companies',
   BILLER: 'billers',
   BOOKING: 'bookings',
-  DOCUMENT: 'documents'
+  DOCUMENT: 'documents',
+  CURRENCY: 'currencies'
 }
 
 export const API_VERSION = {

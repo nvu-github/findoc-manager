@@ -1,5 +1,5 @@
 export type Company = {
-  companyId?: string
+  companyId?: string | number
   name: string
   address: string
   taxtId: string

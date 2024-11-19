@@ -5,8 +5,8 @@ export async function up(knex: Knex): Promise<void> {
     table.increments('company_id').unsigned().notNullable().primary()
     table.string('name').notNullable()
     table.text('address')
-    table.string('tax_id')
-    table.string('default_currency', 10)
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
 
   await knex.schema.createTable('accounts', (table) => {
@@ -14,31 +14,48 @@ export async function up(knex: Knex): Promise<void> {
     table.integer('company_id').unsigned().references('company_id').inTable('companies').onDelete('CASCADE')
     table.string('name').notNullable()
     table.text('description')
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
 
   await knex.schema.createTable('billers', (table) => {
     table.increments('biller_id').unsigned().primary()
     table.string('name').notNullable()
     table.text('address')
-    table.string('tax_id')
-    table.string('default_currency', 10)
+    table.enum('biller_type', ['biller', 'payer', 'recipient'])
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
+  })
+
+  await knex.schema.createTable('currencies', (table) => {
+    table.increments('currency_id').notNullable().primary()
+    table.string('currency_code', 10).notNullable()
+    table.date('date').notNullable()
+    table.decimal('exchange_rate', 10, 5).notNullable()
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
 
   await knex.schema.createTable('bookings', (table) => {
     table.increments('booking_id').notNullable().primary()
     table.integer('company_id').unsigned().references('company_id').inTable('companies').onDelete('CASCADE')
     table.integer('account_id').unsigned().references('account_id').inTable('accounts').onDelete('CASCADE')
-    table.integer('biller_id').unsigned().nullable().references('biller_id').inTable('billers').onDelete('SET NULL') // Unsigned, nullable to allow SET NULL
+    table.integer('biller_id').unsigned().nullable().references('biller_id').inTable('billers').onDelete('SET NULL')
+    table
+      .integer('currency_id')
+      .unsigned()
+      .nullable()
+      .references('currency_id')
+      .inTable('currencies')
+      .onDelete('SET NULL')
     table.date('date').notNullable()
     table.decimal('amount', 15, 2).notNullable()
-    table.string('currency', 10).notNullable()
-    table.decimal('exchange_rate', 10, 5)
+    table.decimal('tax', 10, 5)
+    table.decimal('tax_rate', 10, 5)
     table.text('description')
-    table.decimal('tax_amount', 15, 2)
-    table.string('tag', 50)
-    table.date('invoice_date')
-    table.date('payment_date')
-    table.date('tax_date')
+    table.text('tags')
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
 
   await knex.schema.createTable('documents', (table) => {
@@ -47,28 +64,8 @@ export async function up(knex: Knex): Promise<void> {
     table.text('file_url')
     table.timestamp('uploaded_at').defaultTo(knex.fn.now())
     table.jsonb('metadata')
-  })
-
-  await knex.schema.createTable('currencies', (table) => {
-    table.string('currency_code', 10).notNullable()
-    table.date('date').notNullable()
-    table.decimal('exchange_rate', 10, 5).notNullable()
-    table.primary(['currency_code', 'date'])
-  })
-
-  await knex.schema.createTable('recurring_bookings', (table) => {
-    table.increments('recurring_id').notNullable().primary()
-    table.integer('company_id').unsigned().references('company_id').inTable('companies').onDelete('CASCADE')
-    table.integer('account_id').unsigned().references('account_id').inTable('accounts').onDelete('CASCADE')
-    table.integer('biller_id').unsigned().nullable().references('biller_id').inTable('billers').onDelete('SET NULL')
-    table.decimal('amount', 15, 2).notNullable()
-    table.string('currency', 10).notNullable()
-    table.decimal('exchange_rate', 10, 5)
-    table.text('description')
-    table.decimal('tax_amount', 15, 2)
-    table.string('tag', 50)
-    table.date('next_occurrence')
-    table.string('frequency', 20)
+    table.timestamp('created_at').defaultTo(knex.fn.now())
+    table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
 }
 
