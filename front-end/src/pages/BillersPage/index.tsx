@@ -6,6 +6,7 @@ import { getAllBillersAsync } from '../../stores/slices/biller.slice'
 import BillerForm from './components/BillerForm'
 import BillerList from './components/BillerList'
 import { Biller } from '../../types'
+import { getAllCurrenciesAsync } from '../../stores/slices/currency.slice'
 
 const BillersPage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -20,6 +21,7 @@ const BillersPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(getAllBillersAsync({}))
+    dispatch(getAllCurrenciesAsync())
   }, [dispatch])
 
   return (

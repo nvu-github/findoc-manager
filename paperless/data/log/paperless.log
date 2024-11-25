@@ -318,3 +318,29 @@ documents.consumer.ConsumerError: 1732447038419-simple-business-invoice-modern-s
 [2024-11-24 15:08:29,733] [INFO] [paperless.management.consumer] Using inotify to watch directory for changes: /usr/src/paperless/consume
 [2024-11-24 15:08:33,992] [INFO] [paperless.tasks] No automatic matching items, not training
 [2024-11-24 16:05:00,169] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 17:05:00,089] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 20:26:24,785] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-24 21:05:00,109] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 00:51:24,812] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 01:05:00,093] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 04:41:25,220] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 04:46:35,310] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 05:05:00,087] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 08:16:25,207] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 11:16:01,671] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 12:05:00,143] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 13:05:00,103] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 15:54:16,391] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 16:05:00,097] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-25 17:05:00,121] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 04:35:09,199] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 05:05:00,061] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 06:05:00,051] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 07:05:00,083] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 08:05:00,067] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 08:21:25,334] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-26 08:21:26,401] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-26 08:21:59,656] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-26 08:22:00,725] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-26 08:22:13,582] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-26 08:22:14,651] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.

@@ -1,7 +1,9 @@
 export type Company = {
-  companyId?: string | number
-  name: string
+  companyId?: number
+  companyName: string
   address: string
-  taxtId: string
+  taxId: string
   defaultCurrency: string
+  createdAt?: Date
+  updatedAt?: Date
 }

@@ -1,6 +1,9 @@
 export interface IAccount {
   account_id: number
   company_id: number
-  name: string
-  description: string
+  account_name: string
+  account_number: string
+  currency: string
+  created_at: Date
+  updated_at: Date
 }

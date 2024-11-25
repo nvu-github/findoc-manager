@@ -1,6 +1,5 @@
 export interface Currency {
-  currencyId?: string | number
   currencyCode: string
-  date: string
+  lastUpdated: string
   exchangeRate: number
 }

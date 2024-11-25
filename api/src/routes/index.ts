@@ -5,6 +5,7 @@ import companyRoute from './company.routes'
 import billerRoute from './biller.routes'
 import bookingRoute from './booking.routes'
 import currencyRoute from './currency.routes'
+import projectRoute from './project.routes'
 
 const router = express.Router()
 // const timeLog = (req: Request, res: Response, next: NextFunction) => {
@@ -18,5 +19,6 @@ router.use('/company', companyRoute)
 router.use('/biller', billerRoute)
 router.use('/booking', bookingRoute)
 router.use('/currency', currencyRoute)
+router.use('/project', projectRoute)
 
 export default router

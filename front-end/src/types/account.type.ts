@@ -1,6 +1,9 @@
 export type Account = {
-  accountId?: string
-  companyId?: string
-  name: string
-  discription: string
+  accountId?: number
+  companyId: number
+  accountName: string
+  accountNumber: string
+  currency: string
+  createdAt?: Date
+  updatedAt?: Date
 }
