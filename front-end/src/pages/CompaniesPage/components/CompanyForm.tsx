@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect } from 'react'
-import { Form, Input, Button, message } from 'antd'
+import { Form, Input, Button, message, Select } from 'antd'
 
 import { useAppDispatch } from '../../../stores/hook'
 import { addCompanyAsync, updateCompanyAsync } from '../../../stores/slices'
@@ -12,7 +12,9 @@ interface CompanyFormProps {
 }
 
 const rules = {
-  name: [{ required: true, message: 'Please input company name' }]
+  company_name: [{ required: true, message: 'Please input company name' }],
+  tax_id: [{ required: true, message: 'Please input tax ID' }],
+  default_currency: [{ required: true, message: 'Please select a default currency' }]
 }
 
 const CompanyForm: React.FC<CompanyFormProps> = ({ isDrawerVisible, company, onSuccess }) => {
@@ -22,7 +24,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ isDrawerVisible, company, onS
   const handleSubmit = async (values: Company) => {
     try {
       if (company?.companyId) {
-        const companyId: any = company.companyId
+        const companyId = company.companyId as number
         await dispatch(updateCompanyAsync({ companyId, updatedCompany: values }))
         message.success('Company updated successfully')
       } else {
@@ -30,7 +32,7 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ isDrawerVisible, company, onS
         message.success('Company created successfully')
       }
     } catch (error: any) {
-      console.log('An error occurred', error)
+      console.error('An error occurred:', error)
       message.error(error || 'Failed to save company')
     } finally {
       onSuccess()
@@ -48,11 +50,21 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ isDrawerVisible, company, onS
 
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
-      <Form.Item name='name' label='Company Name' rules={rules.name}>
+      <Form.Item name='company_name' label='Company Name' rules={rules.company_name}>
         <Input />
       </Form.Item>
       <Form.Item name='address' label='Address'>
         <Input />
+      </Form.Item>
+      <Form.Item name='tax_id' label='Tax ID' rules={rules.tax_id}>
+        <Input />
+      </Form.Item>
+      <Form.Item name='default_currency' label='Default Currency' rules={rules.default_currency}>
+        <Select placeholder='Select a currency'>
+          <Select.Option value='USD'>USD</Select.Option>
+          <Select.Option value='EUR'>EUR</Select.Option>
+          <Select.Option value='JPY'>JPY</Select.Option>
+        </Select>
       </Form.Item>
       <Button type='primary' htmlType='submit'>
         {company?.companyId ? 'Update Company' : 'Create Company'}

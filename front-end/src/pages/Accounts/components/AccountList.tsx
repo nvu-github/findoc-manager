@@ -7,12 +7,11 @@ import TableData from '../../../components/TableData'
 import { Account } from '../../../types'
 
 interface AccountListProps {
-  handleAccountEdit: any
-  handleDrawerVisible: any
+  handleAccountEdit: (account: Account) => void
+  handleDrawerVisible: (visible: boolean) => void
 }
 
-const AccountList: React.FC<AccountListProps> = (props) => {
-  const { handleAccountEdit, handleDrawerVisible } = props
+const AccountList: React.FC<AccountListProps> = ({ handleAccountEdit, handleDrawerVisible }) => {
   const dispatch = useAppDispatch()
   const { accounts, loading } = useAppSelector((state) => state.account)
 
@@ -23,27 +22,28 @@ const AccountList: React.FC<AccountListProps> = (props) => {
 
   const deleteAccount = async (account: Account) => {
     try {
-      const accountId: any = account.accountId
+      const accountId = account.accountId as number
       await dispatch(deleteAccountAsync(accountId))
       message.success('Account deleted successfully')
       await dispatch(getAllAccountsAsync({}))
     } catch (error) {
-      console.log('Error deleting account', error)
+      console.error('Error deleting account:', error)
       message.error('Failed to delete account')
     }
   }
 
   const columns = [
-    { title: 'Account Name', dataIndex: 'name', key: 'name' },
-    { title: 'Company name', dataIndex: 'companyName', key: 'companyName' },
-    { title: 'Description', dataIndex: 'description', key: 'description' }
+    { title: 'Account Name', dataIndex: 'accountName', key: 'accountName' },
+    { title: 'Company Name', dataIndex: 'companyName', key: 'companyName' },
+    { title: 'Account Number', dataIndex: 'accountNumber', key: 'accountNumber' },
+    { title: 'Currency', dataIndex: 'currency', key: 'currency' }
   ]
 
   return (
     <TableData
       columns={columns}
       dataSource={accounts}
-      dataAction={{ titleConfirmDelete: 'Are you sure to delete this account?' }}
+      dataAction={{ titleConfirmDelete: 'Are you sure you want to delete this account?' }}
       isLoading={loading}
       handleEditRecord={handleEditAccount}
       handleDeleteRecord={deleteAccount}
