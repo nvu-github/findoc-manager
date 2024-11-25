@@ -14,7 +14,9 @@ interface AccountFormProps {
 
 const rules = {
   companyId: [{ required: true, message: 'Please select a company' }],
-  name: [{ required: true, message: 'Please input account name' }]
+  accountName: [{ required: true, message: 'Please input account name' }],
+  accountNumber: [{ required: true, message: 'Please input account number' }],
+  currency: [{ required: true, message: 'Please select a currency' }]
 }
 
 const AccountForm: React.FC<AccountFormProps> = ({ isDrawerVisible, account, onSuccess }) => {
@@ -59,16 +61,23 @@ const AccountForm: React.FC<AccountFormProps> = ({ isDrawerVisible, account, onS
         <Select placeholder='Select a company'>
           {companies.map((company: Company) => (
             <Select.Option key={company.companyId} value={company.companyId}>
-              {company.name}
+              {company.companyName}
             </Select.Option>
           ))}
         </Select>
       </Form.Item>
-      <Form.Item name='name' label='Account Name' rules={rules.name}>
+      <Form.Item name='accountName' label='Account Name' rules={rules.accountName}>
         <Input />
       </Form.Item>
-      <Form.Item name='description' label='Description'>
-        <Input.TextArea />
+      <Form.Item name='accountNumber' label='Account Number' rules={rules.accountNumber}>
+        <Input />
+      </Form.Item>
+      <Form.Item name='currency' label='Currency' rules={rules.currency}>
+        <Select placeholder='Select a currency'>
+          <Select.Option value='USD'>USD</Select.Option>
+          <Select.Option value='EUR'>EUR</Select.Option>
+          <Select.Option value='JPY'>JPY</Select.Option>
+        </Select>
       </Form.Item>
       <Button type='primary' htmlType='submit'>
         {account?.accountId ? 'Update Account' : 'Create Account'}

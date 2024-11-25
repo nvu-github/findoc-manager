@@ -7,12 +7,11 @@ import TableData from '../../../components/TableData'
 import { Company } from '../../../types'
 
 interface CompanyListProps {
-  handleCompanyEdit: any
-  handleDrawerVisible: any
+  handleCompanyEdit: (company: Company) => void
+  handleDrawerVisible: (visible: boolean) => void
 }
 
-const CompanyList: React.FC<CompanyListProps> = (props) => {
-  const { handleCompanyEdit, handleDrawerVisible } = props
+const CompanyList: React.FC<CompanyListProps> = ({ handleCompanyEdit, handleDrawerVisible }) => {
   const dispatch = useAppDispatch()
   const { companies, loading } = useAppSelector((state) => state.company)
 
@@ -23,26 +22,28 @@ const CompanyList: React.FC<CompanyListProps> = (props) => {
 
   const deleteCompany = async (company: Company) => {
     try {
-      const companyId: any = company.companyId
+      const companyId = company.companyId as number
       await dispatch(deleteCompanyAsync(companyId))
-      message.success('Booking deleted successfully')
+      message.success('Company deleted successfully')
       await dispatch(getAllCompanyAsync({}))
     } catch (error) {
-      console.log('Error deleting booking', error)
-      message.error('Failed to delete booking')
+      console.error('Error deleting company', error)
+      message.error('Failed to delete company')
     }
   }
 
   const columns = [
-    { title: 'Company Name', dataIndex: 'name', key: 'name' },
-    { title: 'Address', dataIndex: 'address', key: 'address' }
+    { title: 'Company Name', dataIndex: 'companyName', key: 'companyName' },
+    { title: 'Address', dataIndex: 'address', key: 'address' },
+    { title: 'Tax ID', dataIndex: 'taxId', key: 'taxId' },
+    { title: 'Default Currency', dataIndex: 'defaultCurrency', key: 'defaultCurrency' }
   ]
 
   return (
     <TableData
       columns={columns}
       dataSource={companies}
-      dataAction={{ titleConfirmDelete: 'Are you sure to delete this company?' }}
+      dataAction={{ titleConfirmDelete: 'Are you sure you want to delete this company?' }}
       isLoading={loading}
       handleEditRecord={handleEditCompany}
       handleDeleteRecord={deleteCompany}

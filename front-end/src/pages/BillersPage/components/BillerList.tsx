@@ -7,12 +7,11 @@ import TableData from '../../../components/TableData'
 import { Biller } from '../../../types'
 
 interface BillerListProps {
-  handleBillerEdit: any
-  handleDrawerVisible: any
+  handleBillerEdit: (biller: Biller) => void
+  handleDrawerVisible: (visible: boolean) => void
 }
 
-const BillerList: React.FC<BillerListProps> = (props) => {
-  const { handleBillerEdit, handleDrawerVisible } = props
+const BillerList: React.FC<BillerListProps> = ({ handleBillerEdit, handleDrawerVisible }) => {
   const dispatch = useAppDispatch()
   const { billers, loading } = useAppSelector((state) => state.biller)
 
@@ -23,12 +22,12 @@ const BillerList: React.FC<BillerListProps> = (props) => {
 
   const deleteBiller = async (biller: Biller) => {
     try {
-      const billerId: any = biller.billerId
+      const billerId = biller.billerId as number
       await dispatch(deleteBillerAsync(billerId))
       message.success('Biller deleted successfully')
       await dispatch(getAllBillersAsync({}))
     } catch (error) {
-      console.log('Error deleting biller', error)
+      console.error('Error deleting biller:', error)
       message.error('Failed to delete biller')
     }
   }
@@ -36,14 +35,17 @@ const BillerList: React.FC<BillerListProps> = (props) => {
   const columns = [
     { title: 'Biller Name', dataIndex: 'name', key: 'name' },
     { title: 'Address', dataIndex: 'address', key: 'address' },
-    { title: 'Biller type', dataIndex: 'billerType', key: 'taxId' }
+    { title: 'Biller Type', dataIndex: 'billerType', key: 'billerType' },
+    { title: 'Tax ID', dataIndex: 'taxId', key: 'taxId' },
+    { title: 'Default Currency', dataIndex: 'defaultCurrency', key: 'defaultCurrency' },
+    { title: 'Contact Info', dataIndex: 'contactInfo', key: 'contactInfo' }
   ]
 
   return (
     <TableData
       columns={columns}
       dataSource={billers}
-      dataAction={{ titleConfirmDelete: 'Are you sure to delete this biller?' }}
+      dataAction={{ titleConfirmDelete: 'Are you sure you want to delete this biller?' }}
       isLoading={loading}
       handleEditRecord={handleEditBiller}
       handleDeleteRecord={deleteBiller}

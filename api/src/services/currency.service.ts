@@ -8,19 +8,17 @@ import { ICurrency } from '~/interfaces'
 
 class CurrencyService {
   async createCurrency(req: Request, res: Response): Promise<Response<ICurrency>> {
-    const { currency_code, date, exchange_rate } = req.body
+    const { currency_code, last_updated, exchange_rate } = req.body
 
-    if (!currency_code || !date || !exchange_rate) {
+    if (!currency_code || !last_updated || !exchange_rate) {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Required fields are missing' })
     }
 
     const [currency] = await db(TABLES.CURRENCY)
       .insert({
         currency_code,
-        date: moment(date).format('YYYY-MM-DD'),
-        exchange_rate,
-        created_at: new Date(),
-        updated_at: new Date()
+        last_updated: moment(last_updated).format('YYYY-MM-DD'),
+        exchange_rate
       })
       .returning('*')
 
@@ -28,22 +26,20 @@ class CurrencyService {
   }
 
   async createCurrencyFromJob(currency: ICurrency): Promise<void> {
-    const { currency_code, date, exchange_rate } = currency
+    const { currency_code, last_updated, exchange_rate } = currency
 
     await db(TABLES.CURRENCY)
       .insert({
         currency_code,
-        date: moment(date).format('YYYY-MM-DD'),
-        exchange_rate,
-        created_at: new Date(),
-        updated_at: new Date()
+        last_updated: moment(last_updated).format('YYYY-MM-DD'),
+        exchange_rate
       })
-      .onConflict(['date', 'currency_code'])
+      .onConflict(['last_updated', 'currency_code'])
       .merge()
   }
 
   async getAllCurrencies(req: Request, res: Response): Promise<Response<ICurrency>> {
-    const currencies = await db(TABLES.CURRENCY).select('*', 'currencies.currency_id as id')
+    const currencies = await db(TABLES.CURRENCY).select('*', 'currencies.currency_code as id')
     return res.json(currencies)
   }
 
@@ -65,17 +61,17 @@ class CurrencyService {
 
   async updateCurrency(req: Request, res: Response): Promise<Response<ICurrency>> {
     const { currency_id } = req.params
-    const { currency_code, date, exchange_rate } = req.body
+    const { currency_code, last_updated, exchange_rate } = req.body
 
-    if (!currency_id || (!currency_code && !date && !exchange_rate)) {
+    if (!currency_id || (!currency_code && !last_updated && !exchange_rate)) {
       return res
         .status(StatusCodes.BAD_REQUEST)
         .json({ message: 'Currency ID and at least one field to update are required' })
     }
 
-    const updateData: any = { updated_at: new Date() }
+    const updateData: any = {}
     if (currency_code) updateData.currency_code = currency_code
-    if (date) updateData.date = moment(date).format('YYYY-MM-DD')
+    if (last_updated) updateData.last_updated = moment(last_updated).format('YYYY-MM-DD')
     if (exchange_rate) updateData.exchange_rate = exchange_rate
 
     const updated = await db(TABLES.CURRENCY).where({ currency_id }).update(updateData).returning('*')

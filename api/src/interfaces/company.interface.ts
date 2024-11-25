@@ -1,7 +1,9 @@
 export interface ICompany {
   company_id?: number
-  name: string
+  company_name: string
   address: string
   tax_id: string
   default_currency: string
+  created_at?: Date
+  updated_at?: Date
 }

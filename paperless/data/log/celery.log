@@ -1817,3 +1817,1356 @@ def bulk_update_documents(document_ids):
 [2024-11-24 16:40:00,037] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
 [2024-11-24 16:40:00,041] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '27268054-0d20-442d-a77d-9fec591e9c4d', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '27268054-0d20-442d-a77d-9fec591e9c4d', 'shadow': None, 'eta': None, 'expires': '2024-11-24T16:49:00.029551+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '27268054-0d20-442d-a77d-9fec591e9c4d', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '27268054-0d20-442d-a77d-9fec591e9c4d', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '6dd878f2-004f-43e2-98cc-136ecaf3d746'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
 [2024-11-24 16:40:00,083] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[27268054-0d20-442d-a77d-9fec591e9c4d] succeeded in 0.03460150000046269s: 'No new documents were added.'
+[2024-11-24 17:04:59,998] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 17:05:00,022] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-24 17:05:00,035] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->e572560f-a259-4a60-8d01-7462f7fe9848
+[2024-11-24 17:05:00,036] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[e572560f-a259-4a60-8d01-7462f7fe9848] received
+[2024-11-24 17:05:00,041] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 17:05:00,045] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', 'e572560f-a259-4a60-8d01-7462f7fe9848', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': 'e572560f-a259-4a60-8d01-7462f7fe9848', 'shadow': None, 'eta': None, 'expires': '2024-11-24T18:04:00.033329+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'e572560f-a259-4a60-8d01-7462f7fe9848', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'e572560f-a259-4a60-8d01-7462f7fe9848', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '266611ff-16fd-4adb-9ad2-d6356060da95'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': 'e572560f-a259-4a60-8d01-7462f7fe9848', 'hostname':... kwargs:{})
+[2024-11-24 17:05:00,102] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[e572560f-a259-4a60-8d01-7462f7fe9848] succeeded in 0.05000819999986561s: None
+[2024-11-24 17:09:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 17:10:00,028] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 17:10:00,043] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->356f0b0e-8488-462a-94ac-88b8db1f9d74
+[2024-11-24 17:10:00,044] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[356f0b0e-8488-462a-94ac-88b8db1f9d74] received
+[2024-11-24 17:10:00,050] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 17:10:00,053] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '356f0b0e-8488-462a-94ac-88b8db1f9d74', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '356f0b0e-8488-462a-94ac-88b8db1f9d74', 'shadow': None, 'eta': None, 'expires': '2024-11-24T17:19:00.040878+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '356f0b0e-8488-462a-94ac-88b8db1f9d74', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '356f0b0e-8488-462a-94ac-88b8db1f9d74', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '348f41ad-98a5-4f97-abe4-e830534fd4fb'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 17:10:00,090] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[356f0b0e-8488-462a-94ac-88b8db1f9d74] succeeded in 0.0289067999992767s: 'No new documents were added.'
+[2024-11-24 17:15:00,056] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 17:15:00,070] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 17:19:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 17:20:00,009] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 17:20:00,017] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->58ddd997-4c34-4f59-bb27-2ff05a1208ef
+[2024-11-24 17:20:00,020] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[58ddd997-4c34-4f59-bb27-2ff05a1208ef] received
+[2024-11-24 17:20:00,028] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 17:20:00,031] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '58ddd997-4c34-4f59-bb27-2ff05a1208ef', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '58ddd997-4c34-4f59-bb27-2ff05a1208ef', 'shadow': None, 'eta': None, 'expires': '2024-11-24T17:29:00.015375+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '58ddd997-4c34-4f59-bb27-2ff05a1208ef', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '58ddd997-4c34-4f59-bb27-2ff05a1208ef', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'd923db11-2251-4fa6-b870-310fcba4124d'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 17:20:00,066] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[58ddd997-4c34-4f59-bb27-2ff05a1208ef] succeeded in 0.02737909999996191s: 'No new documents were added.'
+[2024-11-24 20:26:24,341] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:26:24,353] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 20:26:24,365] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->98116f10-c52c-428e-a9f0-b8d518ccf7db
+[2024-11-24 20:26:24,366] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[98116f10-c52c-428e-a9f0-b8d518ccf7db] received
+[2024-11-24 20:26:24,374] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-24 20:26:24,381] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '98116f10-c52c-428e-a9f0-b8d518ccf7db', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '98116f10-c52c-428e-a9f0-b8d518ccf7db', 'shadow': None, 'eta': None, 'expires': '2024-11-24T20:35:24.362560+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '98116f10-c52c-428e-a9f0-b8d518ccf7db', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '98116f10-c52c-428e-a9f0-b8d518ccf7db', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'd7195b13-b03a-480d-8377-ad4159e30ebc'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 20:26:24,388] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->49e884b5-c8c6-42ea-a75e-8c2dd12e53e2
+[2024-11-24 20:26:24,392] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[49e884b5-c8c6-42ea-a75e-8c2dd12e53e2] received
+[2024-11-24 20:26:24,396] [DEBUG] [celery.beat] beat: Waking up in 3.59 minutes.
+[2024-11-24 20:26:24,445] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[98116f10-c52c-428e-a9f0-b8d518ccf7db] succeeded in 0.04244569999900705s: 'No new documents were added.'
+[2024-11-24 20:26:24,466] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '49e884b5-c8c6-42ea-a75e-8c2dd12e53e2', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '49e884b5-c8c6-42ea-a75e-8c2dd12e53e2', 'shadow': None, 'eta': None, 'expires': '2024-11-24T21:25:24.386027+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '49e884b5-c8c6-42ea-a75e-8c2dd12e53e2', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '49e884b5-c8c6-42ea-a75e-8c2dd12e53e2', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '83da61d1-b894-48c0-8980-14f797650482'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': '49e884b5-c8c6-42ea-a75e-8c2dd12e53e2', 'hostname':... kwargs:{})
+[2024-11-24 20:26:24,800] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[49e884b5-c8c6-42ea-a75e-8c2dd12e53e2] succeeded in 0.059798800000862684s: None
+[2024-11-24 20:30:00,002] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:30:00,034] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 20:30:00,049] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->4c10d2b1-9b7f-4b15-8f11-d7c9737b7161
+[2024-11-24 20:30:00,050] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[4c10d2b1-9b7f-4b15-8f11-d7c9737b7161] received
+[2024-11-24 20:30:00,056] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 20:30:00,060] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '4c10d2b1-9b7f-4b15-8f11-d7c9737b7161', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '4c10d2b1-9b7f-4b15-8f11-d7c9737b7161', 'shadow': None, 'eta': None, 'expires': '2024-11-24T20:39:00.047723+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '4c10d2b1-9b7f-4b15-8f11-d7c9737b7161', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '4c10d2b1-9b7f-4b15-8f11-d7c9737b7161', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'b13c9823-cf05-445a-b9bc-a2a724a8eacf'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 20:30:00,101] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[4c10d2b1-9b7f-4b15-8f11-d7c9737b7161] succeeded in 0.03273140000055719s: 'No new documents were added.'
+[2024-11-24 20:35:00,062] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:35:00,088] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 20:39:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:40:00,011] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 20:40:00,025] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4
+[2024-11-24 20:40:00,026] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4] received
+[2024-11-24 20:40:00,036] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 20:40:00,041] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4', 'shadow': None, 'eta': None, 'expires': '2024-11-24T20:49:00.021905+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '7fa6224f-23c6-4b9c-a65a-09fa1f2e493e'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 20:40:00,088] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[fbd4eb66-88a6-4e7b-81ab-f29be1ea3ed4] succeeded in 0.03662430000076711s: 'No new documents were added.'
+[2024-11-24 20:45:00,046] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:45:00,059] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 20:49:59,999] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:50:00,037] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 20:50:00,056] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->f243b47f-60a6-428e-b6ae-fa943d23d26e
+[2024-11-24 20:50:00,057] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[f243b47f-60a6-428e-b6ae-fa943d23d26e] received
+[2024-11-24 20:50:00,063] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 20:50:00,067] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'f243b47f-60a6-428e-b6ae-fa943d23d26e', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'f243b47f-60a6-428e-b6ae-fa943d23d26e', 'shadow': None, 'eta': None, 'expires': '2024-11-24T20:59:00.053850+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f243b47f-60a6-428e-b6ae-fa943d23d26e', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'f243b47f-60a6-428e-b6ae-fa943d23d26e', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '3e413935-e78d-4865-9edd-2e50e7ea312c'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 20:50:00,110] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[f243b47f-60a6-428e-b6ae-fa943d23d26e] succeeded in 0.035192400000596535s: 'No new documents were added.'
+[2024-11-24 20:55:00,072] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 20:55:00,107] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:00:00,014] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:00:00,057] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 21:00:00,077] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->7b1a3cec-747c-4e8e-868c-867bd9776046
+[2024-11-24 21:00:00,078] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[7b1a3cec-747c-4e8e-868c-867bd9776046] received
+[2024-11-24 21:00:00,086] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:00:00,090] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '7b1a3cec-747c-4e8e-868c-867bd9776046', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '7b1a3cec-747c-4e8e-868c-867bd9776046', 'shadow': None, 'eta': None, 'expires': '2024-11-24T21:09:00.074103+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '7b1a3cec-747c-4e8e-868c-867bd9776046', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '7b1a3cec-747c-4e8e-868c-867bd9776046', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '581c0c5b-a302-49f9-9dc0-ab85e603f970'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 21:00:00,134] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[7b1a3cec-747c-4e8e-868c-867bd9776046] succeeded in 0.035602400001153s: 'No new documents were added.'
+[2024-11-24 21:04:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:05:00,034] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-24 21:05:00,052] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->3a1103c8-0895-455f-9ba3-88b28bebf9e9
+[2024-11-24 21:05:00,054] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[3a1103c8-0895-455f-9ba3-88b28bebf9e9] received
+[2024-11-24 21:05:00,061] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:05:00,064] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '3a1103c8-0895-455f-9ba3-88b28bebf9e9', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '3a1103c8-0895-455f-9ba3-88b28bebf9e9', 'shadow': None, 'eta': None, 'expires': '2024-11-24T22:04:00.049194+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '3a1103c8-0895-455f-9ba3-88b28bebf9e9', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '3a1103c8-0895-455f-9ba3-88b28bebf9e9', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'ba16f7ed-6847-484d-8ba4-6b2f2f84a008'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': '3a1103c8-0895-455f-9ba3-88b28bebf9e9', 'hostname':... kwargs:{})
+[2024-11-24 21:05:00,122] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[3a1103c8-0895-455f-9ba3-88b28bebf9e9] succeeded in 0.049421800000345684s: None
+[2024-11-24 21:09:59,999] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:10:00,038] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 21:10:00,064] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->fe73f7a0-045d-409b-bb8b-ca612f1003d3
+[2024-11-24 21:10:00,065] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[fe73f7a0-045d-409b-bb8b-ca612f1003d3] received
+[2024-11-24 21:10:00,075] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:10:00,080] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'fe73f7a0-045d-409b-bb8b-ca612f1003d3', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'fe73f7a0-045d-409b-bb8b-ca612f1003d3', 'shadow': None, 'eta': None, 'expires': '2024-11-24T21:19:00.060727+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'fe73f7a0-045d-409b-bb8b-ca612f1003d3', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'fe73f7a0-045d-409b-bb8b-ca612f1003d3', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '1a51eaeb-062b-4fdf-8aae-f7eb3e7e8b27'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 21:10:00,123] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[fe73f7a0-045d-409b-bb8b-ca612f1003d3] succeeded in 0.03446989999974903s: 'No new documents were added.'
+[2024-11-24 21:15:00,084] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:15:00,109] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:20:00,002] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:20:00,040] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 21:20:00,061] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->d019839c-2a86-412a-95e0-7e5e0dceaa3a
+[2024-11-24 21:20:00,063] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d019839c-2a86-412a-95e0-7e5e0dceaa3a] received
+[2024-11-24 21:20:00,076] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:20:00,080] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'd019839c-2a86-412a-95e0-7e5e0dceaa3a', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'd019839c-2a86-412a-95e0-7e5e0dceaa3a', 'shadow': None, 'eta': None, 'expires': '2024-11-24T21:29:00.058800+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd019839c-2a86-412a-95e0-7e5e0dceaa3a', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd019839c-2a86-412a-95e0-7e5e0dceaa3a', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '20b69339-b53b-49aa-b17f-314e11b22865'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 21:20:00,121] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d019839c-2a86-412a-95e0-7e5e0dceaa3a] succeeded in 0.03360149999934947s: 'No new documents were added.'
+[2024-11-24 21:25:00,084] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:25:00,101] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:29:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:30:00,032] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 21:30:00,055] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->4a87216a-ec1f-4b0a-9418-e6da32ab41bc
+[2024-11-24 21:30:00,056] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[4a87216a-ec1f-4b0a-9418-e6da32ab41bc] received
+[2024-11-24 21:30:00,115] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:30:00,121] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '4a87216a-ec1f-4b0a-9418-e6da32ab41bc', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '4a87216a-ec1f-4b0a-9418-e6da32ab41bc', 'shadow': None, 'eta': None, 'expires': '2024-11-24T21:39:00.052049+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '4a87216a-ec1f-4b0a-9418-e6da32ab41bc', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '4a87216a-ec1f-4b0a-9418-e6da32ab41bc', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'a426664f-aaef-4fc2-9013-6c9b9fbb843b'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 21:30:00,178] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[4a87216a-ec1f-4b0a-9418-e6da32ab41bc] succeeded in 0.03864380000050005s: 'No new documents were added.'
+[2024-11-24 21:35:00,130] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:35:00,168] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:40:00,018] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:40:00,030] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-24 21:40:00,037] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->1af7e44f-b590-43a0-bded-2130d1aaac7a
+[2024-11-24 21:40:00,038] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[1af7e44f-b590-43a0-bded-2130d1aaac7a] received
+[2024-11-24 21:40:00,044] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-24 21:40:00,048] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '1af7e44f-b590-43a0-bded-2130d1aaac7a', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '1af7e44f-b590-43a0-bded-2130d1aaac7a', 'shadow': None, 'eta': None, 'expires': '2024-11-24T21:49:00.035526+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '1af7e44f-b590-43a0-bded-2130d1aaac7a', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '1af7e44f-b590-43a0-bded-2130d1aaac7a', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '8fb6c30a-61b8-4d26-b22b-b2c4a24fdcff'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-24 21:40:00,091] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[1af7e44f-b590-43a0-bded-2130d1aaac7a] succeeded in 0.033007899999574875s: 'No new documents were added.'
+[2024-11-24 21:45:00,052] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-24 21:45:00,084] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 00:51:24,382] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 00:51:24,417] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 00:51:24,435] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[e46eaf49-6b0c-4eff-8550-5b9f9576e87e] received
+[2024-11-25 00:51:24,434] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->e46eaf49-6b0c-4eff-8550-5b9f9576e87e
+[2024-11-25 00:51:24,443] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'e46eaf49-6b0c-4eff-8550-5b9f9576e87e', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'e46eaf49-6b0c-4eff-8550-5b9f9576e87e', 'shadow': None, 'eta': None, 'expires': '2024-11-25T01:00:24.431543+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'e46eaf49-6b0c-4eff-8550-5b9f9576e87e', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'e46eaf49-6b0c-4eff-8550-5b9f9576e87e', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '88ff3809-f93a-4b89-bdc8-b0c6c5534a9e'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-25 00:51:24,447] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 00:51:24,457] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[f6ef5ad1-6963-49a8-8e54-b4c43dddab7b] received
+[2024-11-25 00:51:24,457] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->f6ef5ad1-6963-49a8-8e54-b4c43dddab7b
+[2024-11-25 00:51:24,469] [INFO] [celery.beat] Scheduler: Sending due task Optimize the index (documents.tasks.index_optimize)
+[2024-11-25 00:51:24,480] [DEBUG] [celery.beat] documents.tasks.index_optimize sent. id->d232d424-f0e2-4367-a4d4-8203a4c0465e
+[2024-11-25 00:51:24,480] [INFO] [celery.worker.strategy] Task documents.tasks.index_optimize[d232d424-f0e2-4367-a4d4-8203a4c0465e] received
+[2024-11-25 00:51:24,489] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 00:51:24,495] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[e46eaf49-6b0c-4eff-8550-5b9f9576e87e] succeeded in 0.04237040000043635s: 'No new documents were added.'
+[2024-11-25 00:51:24,511] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', 'f6ef5ad1-6963-49a8-8e54-b4c43dddab7b', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': 'f6ef5ad1-6963-49a8-8e54-b4c43dddab7b', 'shadow': None, 'eta': None, 'expires': '2024-11-25T01:50:24.455247+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f6ef5ad1-6963-49a8-8e54-b4c43dddab7b', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'f6ef5ad1-6963-49a8-8e54-b4c43dddab7b', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '0032e689-ec02-4f94-bc35-3d7fe45d90de'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': 'f6ef5ad1-6963-49a8-8e54-b4c43dddab7b', 'hostname':... kwargs:{})
+[2024-11-25 00:51:24,732] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.index_optimize', 'd232d424-f0e2-4367-a4d4-8203a4c0465e', {'lang': 'py', 'task': 'documents.tasks.index_optimize', 'id': 'd232d424-f0e2-4367-a4d4-8203a4c0465e', 'shadow': None, 'eta': None, 'expires': '2024-11-25T23:51:24.478016+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd232d424-f0e2-4367-a4d4-8203a4c0465e', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd232d424-f0e2-4367-a4d4-8203a4c0465e', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '82800000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '98b91cec-9e8d-46d7-b3e7-07c1575874a9'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': 'd232d424-f0e2-4367-a4d4-8203a4c0465e', 'hostname':... kwargs:{})
+[2024-11-25 00:51:24,825] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[f6ef5ad1-6963-49a8-8e54-b4c43dddab7b] succeeded in 0.04670879999866884s: None
+[2024-11-25 00:51:25,478] [INFO] [celery.app.trace] Task documents.tasks.index_optimize[d232d424-f0e2-4367-a4d4-8203a4c0465e] succeeded in 0.3505081000002974s: None
+[2024-11-25 00:56:24,499] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 00:56:24,535] [DEBUG] [celery.beat] beat: Waking up in 3.59 minutes.
+[2024-11-25 01:00:00,011] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:00:00,049] [INFO] [celery.beat] Scheduler: Sending due task Empty trash (documents.tasks.empty_trash)
+[2024-11-25 01:00:00,072] [DEBUG] [celery.beat] documents.tasks.empty_trash sent. id->1ee99a3e-2c66-4c55-97f8-407254e87c24
+[2024-11-25 01:00:00,073] [INFO] [celery.worker.strategy] Task documents.tasks.empty_trash[1ee99a3e-2c66-4c55-97f8-407254e87c24] received
+[2024-11-25 01:00:00,081] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 01:00:00,084] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.empty_trash', '1ee99a3e-2c66-4c55-97f8-407254e87c24', {'lang': 'py', 'task': 'documents.tasks.empty_trash', 'id': '1ee99a3e-2c66-4c55-97f8-407254e87c24', 'shadow': None, 'eta': None, 'expires': '2024-11-26T00:00:00.069472+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '1ee99a3e-2c66-4c55-97f8-407254e87c24', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '1ee99a3e-2c66-4c55-97f8-407254e87c24', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '82800000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'b098f6df-b5db-4fed-8acb-cdfe5d9b537e'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': '1ee99a3e-2c66-4c55-97f8-407254e87c24', 'hostname':... kwargs:{})
+[2024-11-25 01:00:00,089] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->6f6d115e-6040-4c0a-a8e6-9aa015818c71
+[2024-11-25 01:00:00,093] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[6f6d115e-6040-4c0a-a8e6-9aa015818c71] received
+[2024-11-25 01:00:00,096] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:00:00,137] [INFO] [celery.app.trace] Task documents.tasks.empty_trash[1ee99a3e-2c66-4c55-97f8-407254e87c24] succeeded in 0.038202799998543924s: None
+[2024-11-25 01:00:00,154] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '6f6d115e-6040-4c0a-a8e6-9aa015818c71', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '6f6d115e-6040-4c0a-a8e6-9aa015818c71', 'shadow': None, 'eta': None, 'expires': '2024-11-25T01:09:00.088274+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '6f6d115e-6040-4c0a-a8e6-9aa015818c71', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '6f6d115e-6040-4c0a-a8e6-9aa015818c71', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'eb4e6fcb-dac1-42a1-8bfd-83bf7b403542'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-25 01:00:00,459] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[6f6d115e-6040-4c0a-a8e6-9aa015818c71] succeeded in 0.03176540000094974s: 'No new documents were added.'
+[2024-11-25 01:04:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:05:00,016] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 01:05:00,028] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->0044df5c-0790-4f0d-a6c0-104dd78286fa
+[2024-11-25 01:05:00,028] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[0044df5c-0790-4f0d-a6c0-104dd78286fa] received
+[2024-11-25 01:05:00,036] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:05:00,042] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '0044df5c-0790-4f0d-a6c0-104dd78286fa', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '0044df5c-0790-4f0d-a6c0-104dd78286fa', 'shadow': None, 'eta': None, 'expires': '2024-11-25T02:04:00.025958+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '0044df5c-0790-4f0d-a6c0-104dd78286fa', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '0044df5c-0790-4f0d-a6c0-104dd78286fa', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '5b89b42f-8add-4bcc-8822-4b96a185897c'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': '0044df5c-0790-4f0d-a6c0-104dd78286fa', 'hostname':... kwargs:{})
+[2024-11-25 01:05:00,107] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[0044df5c-0790-4f0d-a6c0-104dd78286fa] succeeded in 0.05409210000107123s: None
+[2024-11-25 01:10:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:10:00,039] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 01:10:00,056] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->46984df6-d7ef-474b-948f-478a972ac78b
+[2024-11-25 01:10:00,056] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[46984df6-d7ef-474b-948f-478a972ac78b] received
+[2024-11-25 01:10:00,062] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:10:00,066] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '46984df6-d7ef-474b-948f-478a972ac78b', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '46984df6-d7ef-474b-948f-478a972ac78b', 'shadow': None, 'eta': None, 'expires': '2024-11-25T01:19:00.054107+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '46984df6-d7ef-474b-948f-478a972ac78b', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '46984df6-d7ef-474b-948f-478a972ac78b', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '4af423a8-5fad-471c-828a-8f2f5fdee1de'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-25 01:10:00,108] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[46984df6-d7ef-474b-948f-478a972ac78b] succeeded in 0.03284130000065488s: 'No new documents were added.'
+[2024-11-25 01:15:00,070] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:15:00,094] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:19:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:20:00,021] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 01:20:00,030] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef
+[2024-11-25 01:20:00,031] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef] received
+[2024-11-25 01:20:00,036] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:20:00,039] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef', 'shadow': None, 'eta': None, 'expires': '2024-11-25T01:29:00.028821+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '0f327f28-0fd6-4e32-93ed-162f5c985e54'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-25 01:20:00,083] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[8cede8c4-0b17-4e84-bdbf-9ddb49ab99ef] succeeded in 0.0340727999991941s: 'No new documents were added.'
+[2024-11-25 01:25:00,043] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:25:00,073] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:30:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:30:00,021] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 01:30:00,031] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->ab56a96a-4d32-43f9-8b07-becff34b28fa
+[2024-11-25 01:30:00,032] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[ab56a96a-4d32-43f9-8b07-becff34b28fa] received
+[2024-11-25 01:30:00,037] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 01:30:00,040] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'ab56a96a-4d32-43f9-8b07-becff34b28fa', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'ab56a96a-4d32-43f9-8b07-becff34b28fa', 'shadow': None, 'eta': None, 'expires': '2024-11-25T01:39:00.029394+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'ab56a96a-4d32-43f9-8b07-becff34b28fa', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'ab56a96a-4d32-43f9-8b07-becff34b28fa', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '0a665cea-6826-41e0-8bba-fbd3df6d329f'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-25 01:30:00,083] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[ab56a96a-4d32-43f9-8b07-becff34b28fa] succeeded in 0.03403539999999339s: 'No new documents were added.'
+[2024-11-25 01:35:00,045] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 01:35:00,080] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 04:41:24,826] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 04:41:24,841] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 04:41:24,854] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->8bc0509f-bae6-4887-92bf-d1e0f48fb6bc
+[2024-11-25 04:41:24,854] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[8bc0509f-bae6-4887-92bf-d1e0f48fb6bc] received
+[2024-11-25 04:41:24,861] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 04:41:24,866] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '8bc0509f-bae6-4887-92bf-d1e0f48fb6bc', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '8bc0509f-bae6-4887-92bf-d1e0f48fb6bc', 'shadow': None, 'eta': None, 'expires': '2024-11-25T04:50:24.851412+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '8bc0509f-bae6-4887-92bf-d1e0f48fb6bc', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '8bc0509f-bae6-4887-92bf-d1e0f48fb6bc', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '5972f970-61d2-4fe1-b925-97b39e36807a'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id':... kwargs:{})
+[2024-11-25 04:41:24,871] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->1b5ab7a3-56e8-41b5-9595-9e02a749e1e8
+[2024-11-25 04:41:24,877] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[1b5ab7a3-56e8-41b5-9595-9e02a749e1e8] received
+[2024-11-25 04:41:24,878] [INFO] [celery.beat] Scheduler: Sending due task celery.backend_cleanup (celery.backend_cleanup)
+[2024-11-25 04:41:24,890] [INFO] [celery.worker.strategy] Task celery.backend_cleanup[95fd6372-70c6-45c0-8b12-4696520df79c] received
+[2024-11-25 04:41:24,890] [DEBUG] [celery.beat] celery.backend_cleanup sent. id->95fd6372-70c6-45c0-8b12-4696520df79c
+[2024-11-25 04:41:24,906] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 04:41:24,936] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[8bc0509f-bae6-4887-92bf-d1e0f48fb6bc] succeeded in 0.052908099998603575s: 'No new documents were added.'
+[2024-11-25 04:41:24,958] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '1b5ab7a3-56e8-41b5-9595-9e02a749e1e8', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '1b5ab7a3-56e8-41b5-9595-9e02a749e1e8', 'shadow': None, 'eta': None, 'expires': '2024-11-25T05:40:24.869833+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '1b5ab7a3-56e8-41b5-9595-9e02a749e1e8', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '1b5ab7a3-56e8-41b5-9595-9e02a749e1e8', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '9624500e-4859-414d-9992-b5e0182a60de'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': '1b5ab7a3-56e8-41b5-9595-9e02a749e1e8', 'hostname':... kwargs:{})
+[2024-11-25 04:41:25,142] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('celery.backend_cleanup', '95fd6372-70c6-45c0-8b12-4696520df79c', {'lang': 'py', 'task': 'celery.backend_cleanup', 'id': '95fd6372-70c6-45c0-8b12-4696520df79c', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:41:24.888383+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '95fd6372-70c6-45c0-8b12-4696520df79c', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen101@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '95fd6372-70c6-45c0-8b12-4696520df79c', 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'delivery_mode': 2, 'expiration': '43200000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '0547fbb3-bfcc-4920-a69b-1425600ae4a8'}, 'reply_to': '16fc1a7a-8a36-3e3e-9f8b-62f60c5269aa', 'correlation_id': '95fd6372-70c6-45c0-8b12-4696520df79c', 'hostname': 'celery@5420a14c8465',... kwargs:{})
+[2024-11-25 04:41:25,234] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[1b5ab7a3-56e8-41b5-9595-9e02a749e1e8] succeeded in 0.046414000000368105s: None
+[2024-11-25 04:41:25,516] [INFO] [celery.app.trace] Task celery.backend_cleanup[95fd6372-70c6-45c0-8b12-4696520df79c] succeeded in 0.04213119999985793s: None
+[2024-11-25 04:46:24,916] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 04:46:24,955] [CRITICAL] [celery.beat] beat raised exception <class 'KeyError'>: KeyError(b'entries')
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/shelve.py", line 111, in __getitem__
+    value = self.cache[key]
+            ~~~~~~~~~~^^^^^
+KeyError: 'entries'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 113, in start_scheduler
+    service.start()
+  File "/usr/local/lib/python3.12/site-packages/celery/beat.py", line 643, in start
+    interval = self.scheduler.tick()
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/beat.py", line 337, in tick
+    not self.schedules_equal(self.old_schedulers, self.schedule)):
+                                                  ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/celery/beat.py", line 591, in get_schedule
+    return self._store['entries']
+           ~~~~~~~~~~~^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/shelve.py", line 113, in __getitem__
+    f = BytesIO(self.dict[key.encode(self.keyencoding)])
+                ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyError: b'entries'
+[2024-11-25 04:46:24,985] [WARNING] [celery.redirected] Traceback (most recent call last):
+[2024-11-25 04:46:25,000] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/shelve.py", line 111, in __getitem__
+[2024-11-25 04:46:25,015] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:25,028] [WARNING] [celery.redirected] value = self.cache[key]
+[2024-11-25 04:46:25,035] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,039] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,043] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,048] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,052] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,056] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,061] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,065] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,070] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,074] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,079] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,084] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,089] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,093] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,097] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,102] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,107] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,111] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,116] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,120] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,124] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,128] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:25,132] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,137] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,141] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,146] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,150] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,154] [WARNING] [celery.redirected] KeyError
+[2024-11-25 04:46:25,158] [WARNING] [celery.redirected] : 
+[2024-11-25 04:46:25,163] [WARNING] [celery.redirected] 'entries'
+[2024-11-25 04:46:25,167] [WARNING] [celery.redirected] During handling of the above exception, another exception occurred:
+[2024-11-25 04:46:25,172] [WARNING] [celery.redirected] Traceback (most recent call last):
+[2024-11-25 04:46:25,176] [WARNING] [celery.redirected]   File "/usr/local/bin/celery", line 8, in <module>
+[2024-11-25 04:46:25,180] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:25,185] [WARNING] [celery.redirected] sys.exit(main())
+[2024-11-25 04:46:25,189] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,194] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,198] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,202] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,206] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,210] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,214] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,218] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,224] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,228] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,232] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,237] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,242] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,246] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,251] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,255] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,260] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,264] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,269] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,274] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/__main__.py", line 15, in main
+[2024-11-25 04:46:25,279] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:25,284] [WARNING] [celery.redirected] sys.exit(_main())
+[2024-11-25 04:46:25,290] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,295] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,301] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,307] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,313] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,318] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,324] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,329] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,336] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,341] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,347] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,353] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,359] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,365] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,370] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,375] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,381] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,389] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,396] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,404] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,411] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/bin/celery.py", line 236, in main
+[2024-11-25 04:46:25,421] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:25,428] [WARNING] [celery.redirected] return celery(auto_envvar_prefix="CELERY")
+[2024-11-25 04:46:25,436] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,444] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,452] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,459] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,467] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,475] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,482] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,490] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,497] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,505] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,512] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,518] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,526] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,533] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,542] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,550] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,557] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,565] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,573] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,578] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,582] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,587] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,592] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,597] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,601] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,606] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,610] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,615] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,620] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,625] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,630] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,635] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,640] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,646] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,652] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,657] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,662] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,668] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,674] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,679] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,685] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,690] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,696] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,701] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,707] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,712] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,718] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1157, in __call__
+[2024-11-25 04:46:25,728] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:25,733] [WARNING] [celery.redirected] return self.main(*args, **kwargs)
+[2024-11-25 04:46:25,738] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,745] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,752] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,757] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,763] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,769] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,774] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,780] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,786] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,792] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,798] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,804] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,810] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,815] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,821] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,828] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,835] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,840] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,846] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,851] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,858] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,864] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,869] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,875] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,880] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,886] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,891] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,896] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,901] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,908] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,913] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,918] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,924] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,930] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,935] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,941] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,946] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:25,952] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1078, in main
+[2024-11-25 04:46:25,959] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:25,965] [WARNING] [celery.redirected] rv = self.invoke(ctx)
+[2024-11-25 04:46:25,971] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,976] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,983] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,988] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,994] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:25,999] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,006] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,011] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,018] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,023] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,029] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,036] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,043] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,049] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,055] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,060] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,067] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,073] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,079] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,085] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,091] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,100] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,106] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,112] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,118] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,124] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1688, in invoke
+[2024-11-25 04:46:26,133] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:26,140] [WARNING] [celery.redirected] return _process_result(sub_ctx.command.invoke(sub_ctx))
+[2024-11-25 04:46:26,145] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,151] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,158] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,164] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,169] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,175] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,181] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,187] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,193] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,199] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,205] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,211] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,217] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,222] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,228] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,233] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,239] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,245] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,250] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,256] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,262] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,268] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,274] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,280] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,286] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,293] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,299] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,305] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,311] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,318] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,323] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,328] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,334] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,339] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,345] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,350] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,355] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,360] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,366] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,373] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,378] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,384] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,389] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,395] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,401] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,406] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,412] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,417] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,422] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,427] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,432] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,438] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,443] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,448] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,453] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,458] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,463] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,469] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,474] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/click/core.py", line 1434, in invoke
+[2024-11-25 04:46:26,480] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:26,485] [WARNING] [celery.redirected] return ctx.invoke(self.callback, **ctx.params)
+[2024-11-25 04:46:26,490] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,496] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,501] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,508] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,514] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,520] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,525] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,531] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,536] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,542] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,547] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,552] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,557] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,562] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,567] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,572] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,577] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,582] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,587] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,592] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,598] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,603] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,609] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,614] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,620] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,627] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,633] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,641] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,648] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,655] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,664] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,670] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,675] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,681] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,686] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,691] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,695] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,700] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,705] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,711] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,716] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,722] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,727] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,733] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,739] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,745] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,750] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,756] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,763] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,769] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,776] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/click/core.py", line 783, in invoke
+[2024-11-25 04:46:26,782] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:26,787] [WARNING] [celery.redirected] return __callback(*args, **kwargs)
+[2024-11-25 04:46:26,794] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,801] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,807] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,813] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,820] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,826] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,832] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,838] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,844] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,850] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,856] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:26,861] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,867] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,873] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,879] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,884] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,890] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,896] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,902] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,908] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,915] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,922] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,929] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,935] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,941] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,947] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,954] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,961] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,967] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,973] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,980] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,986] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,992] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:26,998] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,004] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,011] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,017] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,023] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,028] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/click/decorators.py", line 33, in new_func
+[2024-11-25 04:46:27,037] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:27,043] [WARNING] [celery.redirected] return f(get_current_context(), *args, **kwargs)
+[2024-11-25 04:46:27,049] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,055] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,061] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,068] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,073] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,079] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,085] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,091] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,097] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,103] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,108] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,114] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,120] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,126] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,131] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,137] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,143] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,149] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,154] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,161] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,167] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,174] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,180] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,186] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,192] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,198] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,204] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,210] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,216] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,222] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,228] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,234] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,242] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,249] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,255] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,260] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,266] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,273] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,279] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,285] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,291] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,296] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,303] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,309] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,314] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,320] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,326] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,333] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,339] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,345] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,352] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,359] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,366] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/bin/base.py", line 135, in caller
+[2024-11-25 04:46:27,376] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:27,382] [WARNING] [celery.redirected] return f(ctx, *args, **kwargs)
+[2024-11-25 04:46:27,388] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,394] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,401] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,407] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,414] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,422] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,428] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,434] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,441] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,447] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,452] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,458] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,464] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,470] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,476] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,482] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,487] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,493] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,498] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,504] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,510] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,517] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,523] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,529] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,534] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,542] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,548] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,555] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,561] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,567] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,573] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,579] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,585] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,591] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,597] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/bin/beat.py", line 72, in beat
+[2024-11-25 04:46:27,605] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:27,611] [WARNING] [celery.redirected] return beat().run()
+[2024-11-25 04:46:27,616] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,623] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,629] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,635] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,641] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,648] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,654] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,660] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,666] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,672] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,678] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,684] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,689] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,694] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,701] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,707] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,713] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,720] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,726] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,732] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,738] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,744] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,750] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,756] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 84, in run
+[2024-11-25 04:46:27,762] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:27,768] [WARNING] [celery.redirected] self.start_scheduler()
+[2024-11-25 04:46:27,774] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/apps/beat.py", line 113, in start_scheduler
+[2024-11-25 04:46:27,780] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:27,786] [WARNING] [celery.redirected] service.start()
+[2024-11-25 04:46:27,792] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/beat.py", line 643, in start
+[2024-11-25 04:46:27,797] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:27,803] [WARNING] [celery.redirected] interval = self.scheduler.tick()
+[2024-11-25 04:46:27,809] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,814] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,819] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,825] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,830] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,836] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,842] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,848] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,853] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,859] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,865] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,870] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,876] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,882] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,887] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:27,892] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,898] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,903] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,909] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,915] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,920] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,925] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,930] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,936] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,942] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,947] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,953] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,959] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,965] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,972] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,978] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,984] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,990] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:27,995] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,000] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,006] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,012] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/beat.py", line 337, in tick
+[2024-11-25 04:46:28,018] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:28,023] [WARNING] [celery.redirected] not self.schedules_equal(self.old_schedulers, self.schedule)):
+[2024-11-25 04:46:28,029] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,035] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,041] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,047] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,052] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,058] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,063] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,069] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,075] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,081] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,088] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,095] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,102] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,108] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,115] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,122] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,128] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,134] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,139] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,146] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,153] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,159] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,165] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,171] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,177] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,183] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,189] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,196] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,201] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,207] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,213] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,219] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,226] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,232] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,238] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,245] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,251] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,256] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,262] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,267] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,273] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,279] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,285] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,290] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,296] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,302] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,307] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,313] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,319] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,325] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,331] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,337] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,342] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,348] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,354] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,359] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,365] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,371] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,377] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,382] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,388] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,393] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,399] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,404] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/site-packages/celery/beat.py", line 591, in get_schedule
+[2024-11-25 04:46:28,410] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:28,416] [WARNING] [celery.redirected] return self._store['entries']
+[2024-11-25 04:46:28,422] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,428] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,434] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,439] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,445] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,450] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,456] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,462] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,467] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,473] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,480] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,486] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,492] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,497] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,504] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,511] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,517] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,522] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,528] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,534] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,539] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,545] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,550] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,555] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,562] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,567] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,572] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,578] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,583] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,589] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,594] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,599] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,605] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,611] [WARNING] [celery.redirected]   File "/usr/local/lib/python3.12/shelve.py", line 113, in __getitem__
+[2024-11-25 04:46:28,617] [WARNING] [celery.redirected]     
+[2024-11-25 04:46:28,623] [WARNING] [celery.redirected] f = BytesIO(self.dict[key.encode(self.keyencoding)])
+[2024-11-25 04:46:28,632] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,637] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,643] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,649] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,655] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,661] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,667] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,672] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,678] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,685] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,691] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,697] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,702] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,708] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,714] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,720] [WARNING] [celery.redirected]  
+[2024-11-25 04:46:28,725] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,730] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,737] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,743] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,749] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,755] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,761] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,767] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,773] [WARNING] [celery.redirected] ~
+[2024-11-25 04:46:28,778] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,783] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,789] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,794] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,799] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,804] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,809] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,814] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,820] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,825] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,830] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,836] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,842] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,848] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,853] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,858] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,865] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,870] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,875] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,881] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,887] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,893] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,899] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,906] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,912] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,919] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,925] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,932] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,937] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,943] [WARNING] [celery.redirected] ^
+[2024-11-25 04:46:28,949] [WARNING] [celery.redirected] KeyError
+[2024-11-25 04:46:28,955] [WARNING] [celery.redirected] : 
+[2024-11-25 04:46:28,962] [WARNING] [celery.redirected] b'entries'
+[2024-11-25 04:46:33,739] [DEBUG] [celery.utils.functional] 
+def chord(self, header, body, partial_args=0, interval=1, countdown=2, max_retries=3, eager=4, **kwargs):
+    return 1
+
+[2024-11-25 04:46:33,749] [DEBUG] [celery.utils.functional] 
+def apply_mail_action(result, rule_id, message_uid, message_subject, message_date):
+    return 1
+
+[2024-11-25 04:46:33,756] [DEBUG] [celery.utils.functional] 
+def index_optimize():
+    return 1
+
+[2024-11-25 04:46:33,762] [DEBUG] [celery.utils.functional] 
+def unlock_chord(self, group_id, callback, interval=0, max_retries=1, result=2, Result=3, GroupResult=4, result_from_tuple=5, **kwargs):
+    return 1
+
+[2024-11-25 04:46:33,768] [DEBUG] [celery.utils.functional] 
+def xmap(task, it):
+    return 1
+
+[2024-11-25 04:46:33,775] [DEBUG] [celery.utils.functional] 
+def consume_file(self, input_doc, overrides=0):
+    return 1
+
+[2024-11-25 04:46:33,781] [DEBUG] [celery.utils.functional] 
+def empty_trash(doc_ids=0):
+    return 1
+
+[2024-11-25 04:46:33,788] [DEBUG] [celery.utils.functional] 
+def accumulate(self, *args, **kwargs):
+    return 1
+
+[2024-11-25 04:46:33,794] [DEBUG] [celery.utils.functional] 
+def bulk_update_documents(document_ids):
+    return 1
+
+[2024-11-25 04:46:33,801] [DEBUG] [celery.utils.functional] 
+def xstarmap(task, it):
+    return 1
+
+[2024-11-25 04:46:33,809] [DEBUG] [celery.utils.functional] 
+def error_callback(request, exc, tb, rule_id, message_uid, message_subject, message_date):
+    return 1
+
+[2024-11-25 04:46:33,815] [DEBUG] [celery.utils.functional] 
+def chunks(task, it, n):
+    return 1
+
+[2024-11-25 04:46:33,822] [DEBUG] [celery.utils.functional] 
+def delete(doc_ids):
+    return 1
+
+[2024-11-25 04:46:33,828] [DEBUG] [celery.utils.functional] 
+def update_document_archive_file(document_id):
+    return 1
+
+[2024-11-25 04:46:33,835] [DEBUG] [celery.utils.functional] 
+def process_mail_accounts():
+    return 1
+
+[2024-11-25 04:46:33,841] [DEBUG] [celery.utils.functional] 
+def group(self, tasks, result, group_id, partial_args, add_to_parent=0):
+    return 1
+
+[2024-11-25 04:46:33,848] [DEBUG] [celery.utils.functional] 
+def backend_cleanup():
+    return 1
+
+[2024-11-25 04:46:33,854] [DEBUG] [celery.utils.functional] 
+def train_classifier():
+    return 1
+
+[2024-11-25 04:46:33,860] [DEBUG] [celery.utils.functional] 
+def chain(*args, **kwargs):
+    return 1
+
+[2024-11-25 04:46:33,866] [DEBUG] [celery.utils.functional] 
+def sanity_check():
+    return 1
+
+[2024-11-25 04:46:33,894] [DEBUG] [celery.beat] Setting default socket timeout to 30
+[2024-11-25 04:46:33,900] [INFO] [celery.beat] beat: Starting...
+[2024-11-25 04:46:33,961] [DEBUG] [celery.beat] Current schedule:
+<ScheduleEntry: Optimize the index documents.tasks.index_optimize() <crontab: 0 0 * * * (m/h/dM/MY/d)>
+<ScheduleEntry: Empty trash documents.tasks.empty_trash() <crontab: 0 1 * * * (m/h/dM/MY/d)>
+<ScheduleEntry: Check all e-mail accounts paperless_mail.tasks.process_mail_accounts() <crontab: */10 * * * * (m/h/dM/MY/d)>
+<ScheduleEntry: Perform sanity check documents.tasks.sanity_check() <crontab: 30 0 * * sun (m/h/dM/MY/d)>
+<ScheduleEntry: Train the classifier documents.tasks.train_classifier() <crontab: 5 */1 * * * (m/h/dM/MY/d)>
+<ScheduleEntry: celery.backend_cleanup celery.backend_cleanup() <crontab: 0 4 * * * (m/h/dM/MY/d)>
+[2024-11-25 04:46:33,966] [DEBUG] [celery.beat] beat: Ticking with max interval->5.00 minutes
+[2024-11-25 04:46:33,977] [INFO] [celery.beat] Scheduler: Sending due task Optimize the index (documents.tasks.index_optimize)
+[2024-11-25 04:46:33,991] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 04:46:33,991] [INFO] [celery.worker.strategy] Task documents.tasks.index_optimize[4668f497-fb0c-43bd-ae9b-cec56dd8138d] received
+[2024-11-25 04:46:33,999] [DEBUG] [celery.beat] documents.tasks.index_optimize sent. id->4668f497-fb0c-43bd-ae9b-cec56dd8138d
+[2024-11-25 04:46:34,002] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.index_optimize', '4668f497-fb0c-43bd-ae9b-cec56dd8138d', {'lang': 'py', 'task': 'documents.tasks.index_optimize', 'id': '4668f497-fb0c-43bd-ae9b-cec56dd8138d', 'shadow': None, 'eta': None, 'expires': '2024-11-26T03:46:33.984889+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '4668f497-fb0c-43bd-ae9b-cec56dd8138d', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '4668f497-fb0c-43bd-ae9b-cec56dd8138d', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '82800000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '045f0bca-dd47-470a-ad62-3e4c5a2f3eca'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '4668f497-fb0c-43bd-ae9b-cec56dd8138d', 'hostname':... kwargs:{})
+[2024-11-25 04:46:34,007] [INFO] [celery.beat] Scheduler: Sending due task Empty trash (documents.tasks.empty_trash)
+[2024-11-25 04:46:34,017] [DEBUG] [celery.beat] documents.tasks.empty_trash sent. id->4e2050d5-ab18-43b1-8fcb-096a30050970
+[2024-11-25 04:46:34,017] [INFO] [celery.worker.strategy] Task documents.tasks.empty_trash[4e2050d5-ab18-43b1-8fcb-096a30050970] received
+[2024-11-25 04:46:34,025] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 04:46:34,037] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->3ed38a43-6c17-436b-9987-4f9d9804aff6
+[2024-11-25 04:46:34,037] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[3ed38a43-6c17-436b-9987-4f9d9804aff6] received
+[2024-11-25 04:46:34,046] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 04:46:34,057] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->9c654add-3964-442e-bac1-be78b5d17b21
+[2024-11-25 04:46:34,057] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[9c654add-3964-442e-bac1-be78b5d17b21] received
+[2024-11-25 04:46:34,065] [DEBUG] [celery.beat] beat: Waking up in 3.43 minutes.
+[2024-11-25 04:46:34,344] [INFO] [celery.app.trace] Task documents.tasks.index_optimize[4668f497-fb0c-43bd-ae9b-cec56dd8138d] succeeded in 0.3325619999995979s: None
+[2024-11-25 04:46:34,358] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.empty_trash', '4e2050d5-ab18-43b1-8fcb-096a30050970', {'lang': 'py', 'task': 'documents.tasks.empty_trash', 'id': '4e2050d5-ab18-43b1-8fcb-096a30050970', 'shadow': None, 'eta': None, 'expires': '2024-11-26T03:46:34.014848+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '4e2050d5-ab18-43b1-8fcb-096a30050970', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '4e2050d5-ab18-43b1-8fcb-096a30050970', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '82800000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '0bee97b8-193e-489f-ac73-922a7d45e914'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '4e2050d5-ab18-43b1-8fcb-096a30050970', 'hostname':... kwargs:{})
+[2024-11-25 04:46:34,580] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '3ed38a43-6c17-436b-9987-4f9d9804aff6', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '3ed38a43-6c17-436b-9987-4f9d9804aff6', 'shadow': None, 'eta': None, 'expires': '2024-11-25T04:55:34.035316+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '3ed38a43-6c17-436b-9987-4f9d9804aff6', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '3ed38a43-6c17-436b-9987-4f9d9804aff6', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '61eac624-eb5b-432e-8a9a-0b42c2f864df'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 04:46:34,660] [INFO] [celery.app.trace] Task documents.tasks.empty_trash[4e2050d5-ab18-43b1-8fcb-096a30050970] succeeded in 0.03493499999967753s: None
+[2024-11-25 04:46:34,677] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '9c654add-3964-442e-bac1-be78b5d17b21', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '9c654add-3964-442e-bac1-be78b5d17b21', 'shadow': None, 'eta': None, 'expires': '2024-11-25T05:45:34.055255+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '9c654add-3964-442e-bac1-be78b5d17b21', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '9c654add-3964-442e-bac1-be78b5d17b21', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '6e868003-4076-4f90-a05b-553c20716d9b'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '9c654add-3964-442e-bac1-be78b5d17b21', 'hostname':... kwargs:{})
+[2024-11-25 04:46:34,980] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[3ed38a43-6c17-436b-9987-4f9d9804aff6] succeeded in 0.03303040000173496s: 'No new documents were added.'
+[2024-11-25 04:46:35,323] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[9c654add-3964-442e-bac1-be78b5d17b21] succeeded in 0.04755220000151894s: None
+[2024-11-25 04:49:59,998] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 04:50:00,009] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 04:50:00,047] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d0690821-f22f-44c2-afe9-ddacced3a366] received
+[2024-11-25 04:50:00,046] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->d0690821-f22f-44c2-afe9-ddacced3a366
+[2024-11-25 04:50:00,058] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'd0690821-f22f-44c2-afe9-ddacced3a366', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'd0690821-f22f-44c2-afe9-ddacced3a366', 'shadow': None, 'eta': None, 'expires': '2024-11-25T04:59:00.042645+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd0690821-f22f-44c2-afe9-ddacced3a366', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd0690821-f22f-44c2-afe9-ddacced3a366', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '437566a3-9aaf-4f82-9305-9f1c57b8629e'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 04:50:00,065] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 04:50:00,131] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d0690821-f22f-44c2-afe9-ddacced3a366] succeeded in 0.05621400000018184s: 'No new documents were added.'
+[2024-11-25 04:55:00,083] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 04:55:00,095] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 05:00:00,000] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 05:00:00,034] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 05:00:00,046] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->2c22f6b6-76ea-465c-8a6b-2d9cf8b72291
+[2024-11-25 05:00:00,047] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[2c22f6b6-76ea-465c-8a6b-2d9cf8b72291] received
+[2024-11-25 05:00:00,053] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 05:00:00,057] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '2c22f6b6-76ea-465c-8a6b-2d9cf8b72291', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '2c22f6b6-76ea-465c-8a6b-2d9cf8b72291', 'shadow': None, 'eta': None, 'expires': '2024-11-25T05:09:00.045030+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '2c22f6b6-76ea-465c-8a6b-2d9cf8b72291', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '2c22f6b6-76ea-465c-8a6b-2d9cf8b72291', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '08533456-b7fc-4c22-a03e-f7678c00bad5'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 05:00:00,102] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[2c22f6b6-76ea-465c-8a6b-2d9cf8b72291] succeeded in 0.03646870000011404s: 'No new documents were added.'
+[2024-11-25 05:04:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 05:05:00,009] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 05:05:00,022] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->274bc335-6884-40ed-8fd9-6e8a0e589ec2
+[2024-11-25 05:05:00,023] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[274bc335-6884-40ed-8fd9-6e8a0e589ec2] received
+[2024-11-25 05:05:00,032] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 05:05:00,037] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '274bc335-6884-40ed-8fd9-6e8a0e589ec2', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '274bc335-6884-40ed-8fd9-6e8a0e589ec2', 'shadow': None, 'eta': None, 'expires': '2024-11-25T06:04:00.019801+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '274bc335-6884-40ed-8fd9-6e8a0e589ec2', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '274bc335-6884-40ed-8fd9-6e8a0e589ec2', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '123fc4ae-083f-4d29-9006-1e961003d98d'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '274bc335-6884-40ed-8fd9-6e8a0e589ec2', 'hostname':... kwargs:{})
+[2024-11-25 05:05:00,100] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[274bc335-6884-40ed-8fd9-6e8a0e589ec2] succeeded in 0.05159989999810932s: None
+[2024-11-25 05:10:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 05:10:00,014] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 05:10:00,026] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->1aaf5688-7dfa-45da-a4d9-717d9224ca4f
+[2024-11-25 05:10:00,026] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[1aaf5688-7dfa-45da-a4d9-717d9224ca4f] received
+[2024-11-25 05:10:00,037] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 05:10:00,042] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '1aaf5688-7dfa-45da-a4d9-717d9224ca4f', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '1aaf5688-7dfa-45da-a4d9-717d9224ca4f', 'shadow': None, 'eta': None, 'expires': '2024-11-25T05:19:00.023874+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '1aaf5688-7dfa-45da-a4d9-717d9224ca4f', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '1aaf5688-7dfa-45da-a4d9-717d9224ca4f', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'f96ece20-6cf8-405c-9565-3cfe7acfc305'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 05:10:00,102] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[1aaf5688-7dfa-45da-a4d9-717d9224ca4f] succeeded in 0.049925100000109524s: 'No new documents were added.'
+[2024-11-25 08:16:24,784] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:16:24,816] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 08:16:24,831] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->d6906c7b-dcb9-476d-9e72-881f793c6598
+[2024-11-25 08:16:24,832] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d6906c7b-dcb9-476d-9e72-881f793c6598] received
+[2024-11-25 08:16:24,838] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 08:16:24,843] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'd6906c7b-dcb9-476d-9e72-881f793c6598', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'd6906c7b-dcb9-476d-9e72-881f793c6598', 'shadow': None, 'eta': None, 'expires': '2024-11-25T08:25:24.829012+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd6906c7b-dcb9-476d-9e72-881f793c6598', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd6906c7b-dcb9-476d-9e72-881f793c6598', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'aa93542c-f821-4d93-8245-87668261617b'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 08:16:24,849] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->6b7b3660-04ad-4a80-9563-144043f65c47
+[2024-11-25 08:16:24,854] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[6b7b3660-04ad-4a80-9563-144043f65c47] received
+[2024-11-25 08:16:24,857] [DEBUG] [celery.beat] beat: Waking up in 3.59 minutes.
+[2024-11-25 08:16:24,890] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d6906c7b-dcb9-476d-9e72-881f793c6598] succeeded in 0.03689910000321106s: 'No new documents were added.'
+[2024-11-25 08:16:24,912] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '6b7b3660-04ad-4a80-9563-144043f65c47', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '6b7b3660-04ad-4a80-9563-144043f65c47', 'shadow': None, 'eta': None, 'expires': '2024-11-25T09:15:24.847521+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '6b7b3660-04ad-4a80-9563-144043f65c47', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '6b7b3660-04ad-4a80-9563-144043f65c47', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '9f2db290-9f21-492a-a7c4-2c49e7fd5654'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '6b7b3660-04ad-4a80-9563-144043f65c47', 'hostname':... kwargs:{})
+[2024-11-25 08:16:25,220] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[6b7b3660-04ad-4a80-9563-144043f65c47] succeeded in 0.049368200001481455s: None
+[2024-11-25 08:20:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:20:00,022] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 08:20:00,035] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->22b7309e-9327-4686-8358-cc14247c1bed
+[2024-11-25 08:20:00,035] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[22b7309e-9327-4686-8358-cc14247c1bed] received
+[2024-11-25 08:20:00,044] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:20:00,048] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '22b7309e-9327-4686-8358-cc14247c1bed', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '22b7309e-9327-4686-8358-cc14247c1bed', 'shadow': None, 'eta': None, 'expires': '2024-11-25T08:29:00.032391+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '22b7309e-9327-4686-8358-cc14247c1bed', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '22b7309e-9327-4686-8358-cc14247c1bed', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '50171f99-359e-4dab-9eca-7fbe7ee7ba85'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 08:20:00,101] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[22b7309e-9327-4686-8358-cc14247c1bed] succeeded in 0.04264300000068033s: 'No new documents were added.'
+[2024-11-25 08:25:00,052] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:25:00,079] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:30:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:30:00,027] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 08:30:00,036] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->178b13db-1c33-46a0-96d2-f6800c163986
+[2024-11-25 08:30:00,037] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[178b13db-1c33-46a0-96d2-f6800c163986] received
+[2024-11-25 08:30:00,042] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:30:00,046] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '178b13db-1c33-46a0-96d2-f6800c163986', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '178b13db-1c33-46a0-96d2-f6800c163986', 'shadow': None, 'eta': None, 'expires': '2024-11-25T08:39:00.035092+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '178b13db-1c33-46a0-96d2-f6800c163986', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '178b13db-1c33-46a0-96d2-f6800c163986', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '72f57359-c5d1-41c0-8931-fabc884ce91c'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 08:30:00,089] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[178b13db-1c33-46a0-96d2-f6800c163986] succeeded in 0.034505100000387756s: 'No new documents were added.'
+[2024-11-25 08:35:00,049] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:35:00,071] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:39:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:40:00,033] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 08:40:00,054] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->f349d39e-62cf-49a8-a73b-796a5d43fb5f
+[2024-11-25 08:40:00,055] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[f349d39e-62cf-49a8-a73b-796a5d43fb5f] received
+[2024-11-25 08:40:00,063] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:40:00,067] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'f349d39e-62cf-49a8-a73b-796a5d43fb5f', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'f349d39e-62cf-49a8-a73b-796a5d43fb5f', 'shadow': None, 'eta': None, 'expires': '2024-11-25T08:49:00.051499+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f349d39e-62cf-49a8-a73b-796a5d43fb5f', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'f349d39e-62cf-49a8-a73b-796a5d43fb5f', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'c7ecf31c-2fe8-4d3c-abc9-5cc4355d8d86'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 08:40:00,113] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[f349d39e-62cf-49a8-a73b-796a5d43fb5f] succeeded in 0.03725219999978435s: 'No new documents were added.'
+[2024-11-25 08:45:00,071] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:45:00,089] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:49:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 08:50:00,039] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 08:50:00,064] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c2b55b98-1079-436e-9b79-24e1bdb10ced] received
+[2024-11-25 08:50:00,063] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->c2b55b98-1079-436e-9b79-24e1bdb10ced
+[2024-11-25 08:50:00,072] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'c2b55b98-1079-436e-9b79-24e1bdb10ced', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'c2b55b98-1079-436e-9b79-24e1bdb10ced', 'shadow': None, 'eta': None, 'expires': '2024-11-25T08:59:00.060614+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'c2b55b98-1079-436e-9b79-24e1bdb10ced', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'c2b55b98-1079-436e-9b79-24e1bdb10ced', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '2540ea84-fbcc-4e23-bfe6-3938a959ff05'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 08:50:00,076] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 08:50:00,114] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c2b55b98-1079-436e-9b79-24e1bdb10ced] succeeded in 0.03435869999884744s: 'No new documents were added.'
+[2024-11-25 11:16:01,304] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:16:01,316] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 11:16:01,323] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->7f31d733-382f-4bad-b1e4-b3cc3a30d74e
+[2024-11-25 11:16:01,324] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[7f31d733-382f-4bad-b1e4-b3cc3a30d74e] received
+[2024-11-25 11:16:01,328] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 11:16:01,331] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '7f31d733-382f-4bad-b1e4-b3cc3a30d74e', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '7f31d733-382f-4bad-b1e4-b3cc3a30d74e', 'shadow': None, 'eta': None, 'expires': '2024-11-25T11:25:01.321610+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '7f31d733-382f-4bad-b1e4-b3cc3a30d74e', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '7f31d733-382f-4bad-b1e4-b3cc3a30d74e', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '8dacbf52-95cc-410d-9afa-f5eed2a10039'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 11:16:01,337] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->2f0b1fb1-876a-41f0-90ba-ea6568e24571
+[2024-11-25 11:16:01,340] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[2f0b1fb1-876a-41f0-90ba-ea6568e24571] received
+[2024-11-25 11:16:01,343] [DEBUG] [celery.beat] beat: Waking up in 3.98 minutes.
+[2024-11-25 11:16:01,392] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[7f31d733-382f-4bad-b1e4-b3cc3a30d74e] succeeded in 0.046049099997617304s: 'No new documents were added.'
+[2024-11-25 11:16:01,407] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '2f0b1fb1-876a-41f0-90ba-ea6568e24571', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '2f0b1fb1-876a-41f0-90ba-ea6568e24571', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:15:01.334595+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '2f0b1fb1-876a-41f0-90ba-ea6568e24571', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '2f0b1fb1-876a-41f0-90ba-ea6568e24571', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '1bd414b5-2e1e-42be-bc16-d5dfd415e096'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '2f0b1fb1-876a-41f0-90ba-ea6568e24571', 'hostname':... kwargs:{})
+[2024-11-25 11:16:01,683] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[2f0b1fb1-876a-41f0-90ba-ea6568e24571] succeeded in 0.04568660000222735s: None
+[2024-11-25 11:20:00,008] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:20:00,044] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 11:20:00,055] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->51133004-2df7-40a1-a16d-340bcb70401a
+[2024-11-25 11:20:00,056] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[51133004-2df7-40a1-a16d-340bcb70401a] received
+[2024-11-25 11:20:00,060] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:20:00,063] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '51133004-2df7-40a1-a16d-340bcb70401a', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '51133004-2df7-40a1-a16d-340bcb70401a', 'shadow': None, 'eta': None, 'expires': '2024-11-25T11:29:00.053992+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '51133004-2df7-40a1-a16d-340bcb70401a', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '51133004-2df7-40a1-a16d-340bcb70401a', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'd3f03c88-dbe4-4aec-8c18-39960a3f7678'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 11:20:00,097] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[51133004-2df7-40a1-a16d-340bcb70401a] succeeded in 0.028013799998007016s: 'No new documents were added.'
+[2024-11-25 11:25:00,065] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:25:00,097] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:30:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:30:00,019] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 11:30:00,027] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->09d59e46-5471-4fc6-878e-538956caef9d
+[2024-11-25 11:30:00,028] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[09d59e46-5471-4fc6-878e-538956caef9d] received
+[2024-11-25 11:30:00,033] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:30:00,036] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '09d59e46-5471-4fc6-878e-538956caef9d', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '09d59e46-5471-4fc6-878e-538956caef9d', 'shadow': None, 'eta': None, 'expires': '2024-11-25T11:39:00.026194+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '09d59e46-5471-4fc6-878e-538956caef9d', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '09d59e46-5471-4fc6-878e-538956caef9d', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '3e85373c-6dc4-45da-9d37-1f8161cffb10'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 11:30:00,115] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[09d59e46-5471-4fc6-878e-538956caef9d] succeeded in 0.07086630000048899s: 'No new documents were added.'
+[2024-11-25 11:35:00,045] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:35:00,076] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:40:00,009] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:40:00,044] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 11:40:00,056] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->0b06c8d8-e08a-4a9d-8a61-33f5892df122
+[2024-11-25 11:40:00,057] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[0b06c8d8-e08a-4a9d-8a61-33f5892df122] received
+[2024-11-25 11:40:00,066] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:40:00,084] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '0b06c8d8-e08a-4a9d-8a61-33f5892df122', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '0b06c8d8-e08a-4a9d-8a61-33f5892df122', 'shadow': None, 'eta': None, 'expires': '2024-11-25T11:49:00.054268+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '0b06c8d8-e08a-4a9d-8a61-33f5892df122', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '0b06c8d8-e08a-4a9d-8a61-33f5892df122', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'b1993861-f64a-4d3d-8966-29c6a8c47b7f'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 11:40:00,227] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[0b06c8d8-e08a-4a9d-8a61-33f5892df122] succeeded in 0.11781469999914407s: 'No new documents were added.'
+[2024-11-25 11:45:00,104] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:45:00,117] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:49:59,999] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:50:00,018] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 11:50:00,030] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->c92f6c47-7557-443f-aa41-c0b46eceed77
+[2024-11-25 11:50:00,031] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c92f6c47-7557-443f-aa41-c0b46eceed77] received
+[2024-11-25 11:50:00,036] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:50:00,040] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'c92f6c47-7557-443f-aa41-c0b46eceed77', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'c92f6c47-7557-443f-aa41-c0b46eceed77', 'shadow': None, 'eta': None, 'expires': '2024-11-25T11:59:00.029074+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'c92f6c47-7557-443f-aa41-c0b46eceed77', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'c92f6c47-7557-443f-aa41-c0b46eceed77', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '02c1d858-2ef5-4056-897b-fba0874c2c76'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 11:50:00,077] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c92f6c47-7557-443f-aa41-c0b46eceed77] succeeded in 0.029755699997622287s: 'No new documents were added.'
+[2024-11-25 11:55:00,046] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 11:55:00,055] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 11:59:59,998] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:00:00,014] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 12:00:00,036] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->52de426d-8275-4f0a-ae0c-74bce20fbf8d
+[2024-11-25 12:00:00,037] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[52de426d-8275-4f0a-ae0c-74bce20fbf8d] received
+[2024-11-25 12:00:00,046] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:00:00,089] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '52de426d-8275-4f0a-ae0c-74bce20fbf8d', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '52de426d-8275-4f0a-ae0c-74bce20fbf8d', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:09:00.033026+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '52de426d-8275-4f0a-ae0c-74bce20fbf8d', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '52de426d-8275-4f0a-ae0c-74bce20fbf8d', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'fa217781-8f29-425e-8752-135c85d1c0fb'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 12:00:00,156] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[52de426d-8275-4f0a-ae0c-74bce20fbf8d] succeeded in 0.04197530000237748s: 'No new documents were added.'
+[2024-11-25 12:05:00,043] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:05:00,055] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 12:05:00,071] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->f8d9b3b9-ae69-426f-b04c-9401a1a03074
+[2024-11-25 12:05:00,072] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[f8d9b3b9-ae69-426f-b04c-9401a1a03074] received
+[2024-11-25 12:05:00,080] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:05:00,085] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', 'f8d9b3b9-ae69-426f-b04c-9401a1a03074', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': 'f8d9b3b9-ae69-426f-b04c-9401a1a03074', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:04:00.066988+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f8d9b3b9-ae69-426f-b04c-9401a1a03074', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'f8d9b3b9-ae69-426f-b04c-9401a1a03074', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '47748aaa-4a8d-4f51-8371-f4d4dbf637cc'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': 'f8d9b3b9-ae69-426f-b04c-9401a1a03074', 'hostname':... kwargs:{})
+[2024-11-25 12:05:00,156] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[f8d9b3b9-ae69-426f-b04c-9401a1a03074] succeeded in 0.06036189999940689s: None
+[2024-11-25 12:10:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:10:00,018] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 12:10:00,040] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->e169e625-5ebe-44ca-aea7-9b32e1373224
+[2024-11-25 12:10:00,041] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[e169e625-5ebe-44ca-aea7-9b32e1373224] received
+[2024-11-25 12:10:00,049] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:10:00,054] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'e169e625-5ebe-44ca-aea7-9b32e1373224', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'e169e625-5ebe-44ca-aea7-9b32e1373224', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:19:00.036771+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'e169e625-5ebe-44ca-aea7-9b32e1373224', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'e169e625-5ebe-44ca-aea7-9b32e1373224', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '72b60bf2-f493-4bce-ade2-05ee281431fa'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 12:10:00,110] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[e169e625-5ebe-44ca-aea7-9b32e1373224] succeeded in 0.031003700001747347s: 'No new documents were added.'
+[2024-11-25 12:15:00,077] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:15:00,100] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:20:00,004] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:20:00,027] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 12:20:00,041] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[efa83ae1-ce95-4615-ac83-600c8602d4bb] received
+[2024-11-25 12:20:00,041] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->efa83ae1-ce95-4615-ac83-600c8602d4bb
+[2024-11-25 12:20:00,048] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'efa83ae1-ce95-4615-ac83-600c8602d4bb', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'efa83ae1-ce95-4615-ac83-600c8602d4bb', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:29:00.039197+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'efa83ae1-ce95-4615-ac83-600c8602d4bb', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'efa83ae1-ce95-4615-ac83-600c8602d4bb', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'd6e95e92-fb87-4e31-86fa-fe359e2f6109'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 12:20:00,052] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:20:00,087] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[efa83ae1-ce95-4615-ac83-600c8602d4bb] succeeded in 0.030876000000716886s: 'No new documents were added.'
+[2024-11-25 12:25:00,061] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:25:00,069] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:29:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:30:00,010] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 12:30:00,023] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->e684a57e-535e-4f55-af46-1bde8fdeae57
+[2024-11-25 12:30:00,027] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[e684a57e-535e-4f55-af46-1bde8fdeae57] received
+[2024-11-25 12:30:00,041] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:30:00,046] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'e684a57e-535e-4f55-af46-1bde8fdeae57', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'e684a57e-535e-4f55-af46-1bde8fdeae57', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:39:00.017014+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'e684a57e-535e-4f55-af46-1bde8fdeae57', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'e684a57e-535e-4f55-af46-1bde8fdeae57', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'd2f05882-1d14-4aff-b92e-b5cb8a261daf'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 12:30:00,106] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[e684a57e-535e-4f55-af46-1bde8fdeae57] succeeded in 0.049274199998762924s: 'No new documents were added.'
+[2024-11-25 12:35:00,051] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:35:00,063] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:39:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:40:00,016] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 12:40:00,026] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->5e527083-d804-445e-aa85-d978e1fce719
+[2024-11-25 12:40:00,027] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[5e527083-d804-445e-aa85-d978e1fce719] received
+[2024-11-25 12:40:00,031] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:40:00,034] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '5e527083-d804-445e-aa85-d978e1fce719', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '5e527083-d804-445e-aa85-d978e1fce719', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:49:00.024685+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '5e527083-d804-445e-aa85-d978e1fce719', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '5e527083-d804-445e-aa85-d978e1fce719', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '6e2d61c3-931d-4fd2-a9ea-e3637df1463f'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 12:40:00,075] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[5e527083-d804-445e-aa85-d978e1fce719] succeeded in 0.031376999999338295s: 'No new documents were added.'
+[2024-11-25 12:45:00,039] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:45:00,051] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:49:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:50:00,009] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 12:50:00,036] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->52005255-020a-420a-9f70-4374af2b59b9
+[2024-11-25 12:50:00,037] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[52005255-020a-420a-9f70-4374af2b59b9] received
+[2024-11-25 12:50:00,052] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:50:00,057] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '52005255-020a-420a-9f70-4374af2b59b9', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '52005255-020a-420a-9f70-4374af2b59b9', 'shadow': None, 'eta': None, 'expires': '2024-11-25T12:59:00.032058+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '52005255-020a-420a-9f70-4374af2b59b9', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '52005255-020a-420a-9f70-4374af2b59b9', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '1b57f03f-58ed-4883-857e-fad1c7a62bfd'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 12:50:00,118] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[52005255-020a-420a-9f70-4374af2b59b9] succeeded in 0.048129899998457404s: 'No new documents were added.'
+[2024-11-25 12:55:00,065] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 12:55:00,076] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 12:59:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:00:00,010] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 13:00:00,048] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->9c2cea9d-66a4-4b9e-b184-1631ff0c58ec
+[2024-11-25 13:00:00,051] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[9c2cea9d-66a4-4b9e-b184-1631ff0c58ec] received
+[2024-11-25 13:00:00,066] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:00:00,083] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '9c2cea9d-66a4-4b9e-b184-1631ff0c58ec', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '9c2cea9d-66a4-4b9e-b184-1631ff0c58ec', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:09:00.033697+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '9c2cea9d-66a4-4b9e-b184-1631ff0c58ec', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '9c2cea9d-66a4-4b9e-b184-1631ff0c58ec', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'bb29e53a-dfdf-446d-a7af-3224d050a5f0'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 13:00:00,164] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[9c2cea9d-66a4-4b9e-b184-1631ff0c58ec] succeeded in 0.06858930000089458s: 'No new documents were added.'
+[2024-11-25 13:05:00,013] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:05:00,033] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 13:05:00,048] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->3de53976-2823-4330-aa12-2b7dd10f6a91
+[2024-11-25 13:05:00,049] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[3de53976-2823-4330-aa12-2b7dd10f6a91] received
+[2024-11-25 13:05:00,057] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:05:00,061] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', '3de53976-2823-4330-aa12-2b7dd10f6a91', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': '3de53976-2823-4330-aa12-2b7dd10f6a91', 'shadow': None, 'eta': None, 'expires': '2024-11-25T14:04:00.045564+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '3de53976-2823-4330-aa12-2b7dd10f6a91', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '3de53976-2823-4330-aa12-2b7dd10f6a91', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'a8f03697-6f11-4341-a7c3-8f412edcc975'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': '3de53976-2823-4330-aa12-2b7dd10f6a91', 'hostname':... kwargs:{})
+[2024-11-25 13:05:00,116] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[3de53976-2823-4330-aa12-2b7dd10f6a91] succeeded in 0.046941299999161856s: None
+[2024-11-25 13:09:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:10:00,029] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 13:10:00,043] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->8d1b7ec7-b8af-4c4a-a341-11028039f459
+[2024-11-25 13:10:00,044] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[8d1b7ec7-b8af-4c4a-a341-11028039f459] received
+[2024-11-25 13:10:00,052] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:10:00,057] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '8d1b7ec7-b8af-4c4a-a341-11028039f459', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '8d1b7ec7-b8af-4c4a-a341-11028039f459', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:19:00.040690+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '8d1b7ec7-b8af-4c4a-a341-11028039f459', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '8d1b7ec7-b8af-4c4a-a341-11028039f459', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '4e7a5717-0749-4817-9cf6-e1462a8d7871'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 13:10:00,105] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[8d1b7ec7-b8af-4c4a-a341-11028039f459] succeeded in 0.041016099999978906s: 'No new documents were added.'
+[2024-11-25 13:15:00,060] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:15:00,075] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:19:59,997] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:20:00,013] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 13:20:00,023] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->de99fae8-85c9-4a8e-ae89-b31f5a460416
+[2024-11-25 13:20:00,024] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[de99fae8-85c9-4a8e-ae89-b31f5a460416] received
+[2024-11-25 13:20:00,030] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:20:00,033] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'de99fae8-85c9-4a8e-ae89-b31f5a460416', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'de99fae8-85c9-4a8e-ae89-b31f5a460416', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:29:00.022339+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'de99fae8-85c9-4a8e-ae89-b31f5a460416', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'de99fae8-85c9-4a8e-ae89-b31f5a460416', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '0329b006-480c-472a-9368-c7ddc213eb0d'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 13:20:00,114] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[de99fae8-85c9-4a8e-ae89-b31f5a460416] succeeded in 0.060737200001312885s: 'No new documents were added.'
+[2024-11-25 13:25:00,044] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:25:00,057] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:30:00,000] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:30:00,011] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 13:30:00,023] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->7db96058-7ac4-4c78-b337-feec15280c56
+[2024-11-25 13:30:00,024] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[7db96058-7ac4-4c78-b337-feec15280c56] received
+[2024-11-25 13:30:00,033] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:30:00,038] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '7db96058-7ac4-4c78-b337-feec15280c56', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '7db96058-7ac4-4c78-b337-feec15280c56', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:39:00.021060+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '7db96058-7ac4-4c78-b337-feec15280c56', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '7db96058-7ac4-4c78-b337-feec15280c56', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '881be015-d8e4-4fb2-a188-4e7e804c97cd'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 13:30:00,088] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[7db96058-7ac4-4c78-b337-feec15280c56] succeeded in 0.039116700001613935s: 'No new documents were added.'
+[2024-11-25 13:35:00,043] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:35:00,077] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:40:00,001] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:40:00,013] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 13:40:00,030] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->d9d59412-b4b1-451b-a61b-cd72329b27a9
+[2024-11-25 13:40:00,032] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d9d59412-b4b1-451b-a61b-cd72329b27a9] received
+[2024-11-25 13:40:00,045] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:40:00,056] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'd9d59412-b4b1-451b-a61b-cd72329b27a9', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'd9d59412-b4b1-451b-a61b-cd72329b27a9', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:49:00.027428+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd9d59412-b4b1-451b-a61b-cd72329b27a9', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd9d59412-b4b1-451b-a61b-cd72329b27a9', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'f1ec67ec-fbaf-4039-a291-81cd06b61a19'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 13:40:00,142] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d9d59412-b4b1-451b-a61b-cd72329b27a9] succeeded in 0.07213119999869377s: 'No new documents were added.'
+[2024-11-25 13:45:00,062] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:45:00,089] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:49:59,999] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 13:50:00,035] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 13:50:00,063] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->d5753f49-ced2-47fe-a87d-d24919fe9113
+[2024-11-25 13:50:00,063] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[d5753f49-ced2-47fe-a87d-d24919fe9113] received
+[2024-11-25 13:50:00,072] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 13:50:00,076] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'd5753f49-ced2-47fe-a87d-d24919fe9113', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'd5753f49-ced2-47fe-a87d-d24919fe9113', 'shadow': None, 'eta': None, 'expires': '2024-11-25T13:59:00.058923+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'd5753f49-ced2-47fe-a87d-d24919fe9113', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'd5753f49-ced2-47fe-a87d-d24919fe9113', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '8410be74-6741-4cd6-890b-21c024b09ac4'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 13:50:00,130] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[d5753f49-ced2-47fe-a87d-d24919fe9113] succeeded in 0.04232400000182679s: 'No new documents were added.'
+[2024-11-25 15:54:16,047] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 15:54:16,056] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 15:54:16,064] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->c62e5505-8e99-4ecb-8698-b469370b9499
+[2024-11-25 15:54:16,065] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c62e5505-8e99-4ecb-8698-b469370b9499] received
+[2024-11-25 15:54:16,070] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 15:54:16,073] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'c62e5505-8e99-4ecb-8698-b469370b9499', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'c62e5505-8e99-4ecb-8698-b469370b9499', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:03:16.063188+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'c62e5505-8e99-4ecb-8698-b469370b9499', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'c62e5505-8e99-4ecb-8698-b469370b9499', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '6075d985-d51d-4d5f-b9b4-c9d7b3c35503'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 15:54:16,079] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->ec4b77fb-ef29-4b76-bc89-6f5b6521c24b
+[2024-11-25 15:54:16,083] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[ec4b77fb-ef29-4b76-bc89-6f5b6521c24b] received
+[2024-11-25 15:54:16,085] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 15:54:16,126] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c62e5505-8e99-4ecb-8698-b469370b9499] succeeded in 0.037457699996593874s: 'No new documents were added.'
+[2024-11-25 15:54:16,142] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', 'ec4b77fb-ef29-4b76-bc89-6f5b6521c24b', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': 'ec4b77fb-ef29-4b76-bc89-6f5b6521c24b', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:53:16.077377+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'ec4b77fb-ef29-4b76-bc89-6f5b6521c24b', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'ec4b77fb-ef29-4b76-bc89-6f5b6521c24b', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '999b1a4f-08d7-48d7-a130-7cfce380c553'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': 'ec4b77fb-ef29-4b76-bc89-6f5b6521c24b', 'hostname':... kwargs:{})
+[2024-11-25 15:54:16,405] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[ec4b77fb-ef29-4b76-bc89-6f5b6521c24b] succeeded in 0.041981599999417085s: None
+[2024-11-25 15:59:16,091] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 15:59:16,104] [DEBUG] [celery.beat] beat: Waking up in 43.89 seconds.
+[2024-11-25 16:00:00,000] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 16:00:00,011] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->e4b7d36a-4dce-4331-82ba-bf3c2c696449
+[2024-11-25 16:00:00,014] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[e4b7d36a-4dce-4331-82ba-bf3c2c696449] received
+[2024-11-25 16:00:00,021] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:00:00,026] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'e4b7d36a-4dce-4331-82ba-bf3c2c696449', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'e4b7d36a-4dce-4331-82ba-bf3c2c696449', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:09:00.005970+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'e4b7d36a-4dce-4331-82ba-bf3c2c696449', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'e4b7d36a-4dce-4331-82ba-bf3c2c696449', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '95584a30-f116-45d6-8edb-5f0452e0cf2a'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 16:00:00,073] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[e4b7d36a-4dce-4331-82ba-bf3c2c696449] succeeded in 0.03651239999817335s: 'No new documents were added.'
+[2024-11-25 16:05:00,000] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:05:00,012] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 16:05:00,026] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->abc92853-8059-45e4-9e16-53fea05681b4
+[2024-11-25 16:05:00,027] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[abc92853-8059-45e4-9e16-53fea05681b4] received
+[2024-11-25 16:05:00,034] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:05:00,038] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', 'abc92853-8059-45e4-9e16-53fea05681b4', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': 'abc92853-8059-45e4-9e16-53fea05681b4', 'shadow': None, 'eta': None, 'expires': '2024-11-25T17:04:00.024395+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'abc92853-8059-45e4-9e16-53fea05681b4', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'abc92853-8059-45e4-9e16-53fea05681b4', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '4c90815c-aeda-4511-bbcf-cd85d4d278fa'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': 'abc92853-8059-45e4-9e16-53fea05681b4', 'hostname':... kwargs:{})
+[2024-11-25 16:05:00,110] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[abc92853-8059-45e4-9e16-53fea05681b4] succeeded in 0.06383020000066608s: None
+[2024-11-25 16:09:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:10:00,013] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 16:10:00,033] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->74fc91ef-9f57-44ef-b8ec-2d31b106cf11
+[2024-11-25 16:10:00,035] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[74fc91ef-9f57-44ef-b8ec-2d31b106cf11] received
+[2024-11-25 16:10:00,053] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:10:00,061] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '74fc91ef-9f57-44ef-b8ec-2d31b106cf11', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '74fc91ef-9f57-44ef-b8ec-2d31b106cf11', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:19:00.025633+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '74fc91ef-9f57-44ef-b8ec-2d31b106cf11', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '74fc91ef-9f57-44ef-b8ec-2d31b106cf11', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '56705bd1-e59a-4900-aac2-33df7b47ff40'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 16:10:00,112] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[74fc91ef-9f57-44ef-b8ec-2d31b106cf11] succeeded in 0.03674189999946975s: 'No new documents were added.'
+[2024-11-25 16:15:00,066] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:15:00,078] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:19:59,998] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:20:00,078] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 16:20:00,103] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[f832568d-73ac-4467-9b65-680a27f0ead7] received
+[2024-11-25 16:20:00,102] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->f832568d-73ac-4467-9b65-680a27f0ead7
+[2024-11-25 16:20:00,113] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'f832568d-73ac-4467-9b65-680a27f0ead7', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'f832568d-73ac-4467-9b65-680a27f0ead7', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:29:00.099825+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f832568d-73ac-4467-9b65-680a27f0ead7', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'f832568d-73ac-4467-9b65-680a27f0ead7', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': 'cebb3509-e2ed-46aa-b046-7ce5b3063e35'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 16:20:00,120] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:20:00,229] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[f832568d-73ac-4467-9b65-680a27f0ead7] succeeded in 0.09916770000199904s: 'No new documents were added.'
+[2024-11-25 16:25:00,142] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:25:00,163] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:29:59,989] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:30:00,003] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 16:30:00,014] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[cec51753-e1d3-435a-b3ed-8db2322b9f77] received
+[2024-11-25 16:30:00,013] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->cec51753-e1d3-435a-b3ed-8db2322b9f77
+[2024-11-25 16:30:00,020] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'cec51753-e1d3-435a-b3ed-8db2322b9f77', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'cec51753-e1d3-435a-b3ed-8db2322b9f77', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:39:00.011436+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'cec51753-e1d3-435a-b3ed-8db2322b9f77', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'cec51753-e1d3-435a-b3ed-8db2322b9f77', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '515e7b83-60d7-4ae5-ae1d-2968d37ee02f'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 16:30:00,023] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:30:00,058] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[cec51753-e1d3-435a-b3ed-8db2322b9f77] succeeded in 0.030186400003003655s: 'No new documents were added.'
+[2024-11-25 16:35:00,030] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:35:00,045] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:40:00,003] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:40:00,021] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 16:40:00,030] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->c57294d0-808c-4c03-83e5-075c455b3182
+[2024-11-25 16:40:00,031] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[c57294d0-808c-4c03-83e5-075c455b3182] received
+[2024-11-25 16:40:00,036] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:40:00,039] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'c57294d0-808c-4c03-83e5-075c455b3182', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'c57294d0-808c-4c03-83e5-075c455b3182', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:49:00.029555+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'c57294d0-808c-4c03-83e5-075c455b3182', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'c57294d0-808c-4c03-83e5-075c455b3182', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '5bf1597f-73ef-44bc-ae97-24ca7eb80cac'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 16:40:00,077] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[c57294d0-808c-4c03-83e5-075c455b3182] succeeded in 0.03095049999683397s: 'No new documents were added.'
+[2024-11-25 16:45:00,041] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:45:00,055] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:50:00,010] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:50:00,032] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 16:50:00,065] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->f9d1cebe-84aa-416a-97ff-b24bf63c12a1
+[2024-11-25 16:50:00,066] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[f9d1cebe-84aa-416a-97ff-b24bf63c12a1] received
+[2024-11-25 16:50:00,075] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:50:00,081] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', 'f9d1cebe-84aa-416a-97ff-b24bf63c12a1', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': 'f9d1cebe-84aa-416a-97ff-b24bf63c12a1', 'shadow': None, 'eta': None, 'expires': '2024-11-25T16:59:00.062890+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'f9d1cebe-84aa-416a-97ff-b24bf63c12a1', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'f9d1cebe-84aa-416a-97ff-b24bf63c12a1', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '04de8c37-c769-4a9b-9d03-bc505e631663'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 16:50:00,137] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[f9d1cebe-84aa-416a-97ff-b24bf63c12a1] succeeded in 0.04642969999986235s: 'No new documents were added.'
+[2024-11-25 16:55:00,085] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 16:55:00,101] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 16:59:59,995] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 17:00:00,039] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 17:00:00,057] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->6c2747bf-efe0-43fc-a7c0-069500975f2d
+[2024-11-25 17:00:00,058] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[6c2747bf-efe0-43fc-a7c0-069500975f2d] received
+[2024-11-25 17:00:00,069] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 17:00:00,072] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '6c2747bf-efe0-43fc-a7c0-069500975f2d', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '6c2747bf-efe0-43fc-a7c0-069500975f2d', 'shadow': None, 'eta': None, 'expires': '2024-11-25T17:09:00.054555+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '6c2747bf-efe0-43fc-a7c0-069500975f2d', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '6c2747bf-efe0-43fc-a7c0-069500975f2d', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '30bcc7b3-4bad-475e-a9a1-6998cbe674ef'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 17:00:00,115] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[6c2747bf-efe0-43fc-a7c0-069500975f2d] succeeded in 0.03431589999672724s: 'No new documents were added.'
+[2024-11-25 17:04:59,996] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 17:05:00,018] [INFO] [celery.beat] Scheduler: Sending due task Train the classifier (documents.tasks.train_classifier)
+[2024-11-25 17:05:00,027] [DEBUG] [celery.beat] documents.tasks.train_classifier sent. id->b954b738-eb87-4f7e-9601-baa12234b8a3
+[2024-11-25 17:05:00,027] [INFO] [celery.worker.strategy] Task documents.tasks.train_classifier[b954b738-eb87-4f7e-9601-baa12234b8a3] received
+[2024-11-25 17:05:00,033] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 17:05:00,036] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('documents.tasks.train_classifier', 'b954b738-eb87-4f7e-9601-baa12234b8a3', {'lang': 'py', 'task': 'documents.tasks.train_classifier', 'id': 'b954b738-eb87-4f7e-9601-baa12234b8a3', 'shadow': None, 'eta': None, 'expires': '2024-11-25T18:04:00.025538+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': 'b954b738-eb87-4f7e-9601-baa12234b8a3', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': 'b954b738-eb87-4f7e-9601-baa12234b8a3', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '3540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '3d4b6a1a-fd25-4726-8901-a03d8a315f2d'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id': 'b954b738-eb87-4f7e-9601-baa12234b8a3', 'hostname':... kwargs:{})
+[2024-11-25 17:05:00,146] [INFO] [celery.app.trace] Task documents.tasks.train_classifier[b954b738-eb87-4f7e-9601-baa12234b8a3] succeeded in 0.09361429999989923s: None
+[2024-11-25 17:10:00,003] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 17:10:00,037] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 17:10:00,050] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->91b41d55-502e-400e-9a1c-5a852d6a8f08
+[2024-11-25 17:10:00,051] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[91b41d55-502e-400e-9a1c-5a852d6a8f08] received
+[2024-11-25 17:10:00,055] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 17:10:00,058] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '91b41d55-502e-400e-9a1c-5a852d6a8f08', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '91b41d55-502e-400e-9a1c-5a852d6a8f08', 'shadow': None, 'eta': None, 'expires': '2024-11-25T17:19:00.048942+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '91b41d55-502e-400e-9a1c-5a852d6a8f08', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '91b41d55-502e-400e-9a1c-5a852d6a8f08', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '09aeca4e-6395-402a-916d-d64be0b9a7c6'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 17:10:00,098] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[91b41d55-502e-400e-9a1c-5a852d6a8f08] succeeded in 0.03344340000330703s: 'No new documents were added.'
+[2024-11-25 17:15:00,060] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 17:15:00,071] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 17:19:59,994] [DEBUG] [celery.beat] beat: Synchronizing schedule...
+[2024-11-25 17:20:00,008] [INFO] [celery.beat] Scheduler: Sending due task Check all e-mail accounts (paperless_mail.tasks.process_mail_accounts)
+[2024-11-25 17:20:00,023] [INFO] [celery.worker.strategy] Task paperless_mail.tasks.process_mail_accounts[9e89825f-d185-4934-b063-501ecdcee9e3] received
+[2024-11-25 17:20:00,022] [DEBUG] [celery.beat] paperless_mail.tasks.process_mail_accounts sent. id->9e89825f-d185-4934-b063-501ecdcee9e3
+[2024-11-25 17:20:00,060] [DEBUG] [celery.pool] TaskPool: Apply <function fast_trace_task at 0x7f9ca0125080> (args:('paperless_mail.tasks.process_mail_accounts', '9e89825f-d185-4934-b063-501ecdcee9e3', {'lang': 'py', 'task': 'paperless_mail.tasks.process_mail_accounts', 'id': '9e89825f-d185-4934-b063-501ecdcee9e3', 'shadow': None, 'eta': None, 'expires': '2024-11-25T17:29:00.018695+00:00', 'group': None, 'group_index': None, 'retries': 0, 'timelimit': [None, None], 'root_id': '9e89825f-d185-4934-b063-501ecdcee9e3', 'parent_id': None, 'argsrepr': '()', 'kwargsrepr': '{}', 'origin': 'gen4142@5420a14c8465', 'ignore_result': False, 'replaced_task_nesting': 0, 'stamped_headers': None, 'stamps': {}, 'properties': {'correlation_id': '9e89825f-d185-4934-b063-501ecdcee9e3', 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'delivery_mode': 2, 'expiration': '540000', 'delivery_info': {'exchange': '', 'routing_key': 'celery'}, 'priority': 0, 'body_encoding': 'base64', 'delivery_tag': '8c7e2583-67e3-4ea6-971d-0bfac7adfaf6'}, 'reply_to': 'a9685a16-360c-3203-937b-31a737088ed3', 'correlation_id':... kwargs:{})
+[2024-11-25 17:20:00,069] [DEBUG] [celery.beat] beat: Waking up in 5.00 minutes.
+[2024-11-25 17:20:00,142] [INFO] [celery.app.trace] Task paperless_mail.tasks.process_mail_accounts[9e89825f-d185-4934-b063-501ecdcee9e3] succeeded in 0.06527279999863822s: 'No new documents were added.'

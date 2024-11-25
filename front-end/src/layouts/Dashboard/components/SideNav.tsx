@@ -27,7 +27,7 @@ const items: MenuProps['items'] = [
   getItem(<Link to='/companies'>Company</Link>, 'companies', <SolutionOutlined />),
   getItem(<Link to='/accounts'>Account</Link>, 'accounts', <UsergroupAddOutlined />),
   getItem(<Link to='/billers'>Biller</Link>, 'billers', <FileDoneOutlined />),
-  getItem(<Link to='/currencies'>Currency</Link>, 'currencies', <DollarOutlined />),
+  getItem(<Link to='/projects'>Project</Link>, 'projects', <DollarOutlined />),
   getItem(<Link to='/bookings'>Booking</Link>, 'bookings', <DownSquareOutlined />)
 ]
 

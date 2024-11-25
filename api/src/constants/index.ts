@@ -4,7 +4,8 @@ export const TABLES = {
   BILLER: 'billers',
   BOOKING: 'bookings',
   DOCUMENT: 'documents',
-  CURRENCY: 'currencies'
+  CURRENCY: 'currencies',
+  PROJECT: 'projects'
 }
 
 export const API_VERSION = {
