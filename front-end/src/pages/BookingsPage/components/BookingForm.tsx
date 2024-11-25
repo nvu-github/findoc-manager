@@ -82,7 +82,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
         <Select placeholder='Select a company'>
           {companies.map((company) => (
             <Select.Option key={company.companyId} value={company.companyId}>
-              {company.name}
+              {company.companyName}
             </Select.Option>
           ))}
         </Select>
@@ -91,7 +91,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
         <Select placeholder='Select an account'>
           {accounts.map((account) => (
             <Select.Option key={account.accountId} value={account.accountId}>
-              {account.name}
+              {account.accountName}
             </Select.Option>
           ))}
         </Select>
@@ -120,7 +120,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
           allowClear
         >
           {currencies.map((currency) => (
-            <Select.Option key={currency.currencyId} value={currency.currencyId}>
+            <Select.Option key={currency.currencyCode} value={currency.currencyCode}>
               {currency.currencyCode}
             </Select.Option>
           ))}

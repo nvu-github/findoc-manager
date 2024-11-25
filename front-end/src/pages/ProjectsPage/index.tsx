@@ -2,53 +2,54 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Drawer, Row } from 'antd'
 
 import { useAppDispatch } from '../../stores/hook'
-import { getAllCurrenciesAsync } from '../../stores/slices/currency.slice'
-import CurrencyForm from './components/CurrencyForm'
-import CurrencyList from './components/CurrencyList'
-import { Currency } from '../../types'
+import { getAllCompanyAsync, getAllProjectsAsync } from '../../stores/slices'
+import ProjectForm from './components/ProjectForm'
+import ProjectList from './components/ProjectList'
+import { Project } from '../../types'
 
-const CurrenciesPage: React.FC = () => {
+const ProjectsPage: React.FC = () => {
   const dispatch = useAppDispatch()
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
-  const [currencyEdit, setCurrencyEdit] = useState<Currency | undefined>()
+  const [projectEdit, setProjectEdit] = useState<Project | undefined>()
 
   const handleDrawerClose = (isOnSuccess?: boolean) => {
-    setCurrencyEdit(undefined)
+    setProjectEdit(undefined)
     setIsDrawerVisible(false)
-    if (isOnSuccess) dispatch(getAllCurrenciesAsync())
+    if (isOnSuccess) dispatch(getAllProjectsAsync({}))
   }
 
   useEffect(() => {
-    dispatch(getAllCurrenciesAsync())
+    dispatch(getAllProjectsAsync({}))
+    dispatch(getAllCompanyAsync({}))
   }, [dispatch])
 
   return (
     <div>
       <Row style={styles.fullWidth}>
         <Col span={24}>
-          <h1>Manage Currencies</h1>
+          <h1>Manage Projects</h1>
         </Col>
       </Row>
       <Row justify='end' style={styles.addButtonRow}>
         <Col>
           <Button type='primary' onClick={() => setIsDrawerVisible(true)}>
-            Add Currency
+            Add Project
           </Button>
         </Col>
       </Row>
       <Row>
         <Col md={24}>
-          <CurrencyList handleCurrencyEdit={setCurrencyEdit} handleDrawerVisible={setIsDrawerVisible} />
+          <ProjectList handleProjectEdit={setProjectEdit} handleDrawerVisible={setIsDrawerVisible} />
         </Col>
       </Row>
       <Drawer
-        title={currencyEdit ? 'Edit Currency' : 'Add Currency'}
+        title={projectEdit ? 'Edit Project' : 'Add Project'}
         onClose={() => handleDrawerClose()}
         open={isDrawerVisible}
       >
-        <CurrencyForm
+        <ProjectForm
           isDrawerVisible={isDrawerVisible}
-          currency={currencyEdit}
+          project={projectEdit}
           onSuccess={() => handleDrawerClose(true)}
         />
       </Drawer>
@@ -66,4 +67,4 @@ const styles: { [key: string]: React.CSSProperties } = {
   }
 }
 
-export default CurrenciesPage
+export default ProjectsPage

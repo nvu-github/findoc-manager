@@ -5,6 +5,7 @@ import accountSlice from './slices/account.slice'
 import billerSlice from './slices/biller.slice'
 import bookingSlice from './slices/booking.slice'
 import currencySlice from './slices/currency.slice'
+import projectSice from './slices/project.slice'
 
 export const store = configureStore({
   reducer: {
@@ -12,7 +13,8 @@ export const store = configureStore({
     account: accountSlice,
     biller: billerSlice,
     booking: bookingSlice,
-    currency: currencySlice
+    currency: currencySlice,
+    project: projectSice
   }
 })
 

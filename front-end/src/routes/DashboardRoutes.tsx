@@ -9,7 +9,7 @@ import BookingsPage from '../pages/BookingsPage'
 import BillersPage from '../pages/BillersPage'
 import CompaniesPage from '../pages/CompaniesPage'
 import AccountsPage from '../pages/Accounts'
-import CurrenciesPage from '../pages/CurrencyPages'
+import ProjectsPage from '../pages/ProjectsPage'
 
 const NotFoundPage: React.FC = () => (
   <div style={styles.notFoundPage}>
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       { path: 'billers', element: <BillersPage /> },
       { path: 'companies', element: <CompaniesPage /> },
       { path: 'accounts', element: <AccountsPage /> },
-      { path: 'currencies', element: <CurrenciesPage /> }
+      { path: 'projects', element: <ProjectsPage /> }
     ]
   },
   { path: '*', element: <NotFoundPage /> }
