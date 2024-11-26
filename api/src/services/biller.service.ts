@@ -48,7 +48,7 @@ class BillerService {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Biller ID, name, and biller type are required' })
     }
 
-    const [updatedBiller] = await db(TABLES.BILLER)
+    const updatedBiller = await db(TABLES.BILLER)
       .where({ biller_id })
       .update({ name, address, tax_id, default_currency, contact_info, biller_type })
       .returning('*')

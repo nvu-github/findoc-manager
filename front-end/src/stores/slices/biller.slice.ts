@@ -52,7 +52,6 @@ export const deleteBillerAsync = createAsyncThunk(
 
 export const getAllBillersAsync = createAsyncThunk('biller/getBillers', async (filter: any, { rejectWithValue }) => {
   try {
-    console.log(123)
     const response = await axios.get('/biller', { params: filter })
     return response.data
   } catch (error: any) {

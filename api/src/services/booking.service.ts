@@ -9,93 +9,86 @@ import accountService from './account.service'
 import billerService from './biller.service'
 import companyService from './company.service'
 import currencyService from './currency.service'
+// import taxRateService from './taxRate.service'
+import projectService from './project.service'
 
 class BookingService {
   async createBooking(req: Request, res: Response): Promise<Response<IBooking>> {
-    try {
-      const formattedBooking = await this.formatBooking(req.body)
-      if (!formattedBooking) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Required fields are missing' })
-      }
-
-      const isDuplicate = await this.isDuplicateBooking(formattedBooking)
-      if (isDuplicate) {
-        return res.status(StatusCodes.CONFLICT).json({ message: 'Booking already exists with the provided details' })
-      }
-
-      const [createdBooking] = await db(TABLES.BOOKING).insert(formattedBooking).returning('*')
-      return res.status(StatusCodes.CREATED).json(createdBooking)
-    } catch (error: any) {
-      console.error('Error creating booking:', error.message)
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to create booking' })
+    const formattedBooking = await this.formatBooking(req.body)
+    if (!formattedBooking) {
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Required fields are missing' })
     }
+
+    const isDuplicate = await this.isDuplicateBooking(formattedBooking)
+    if (isDuplicate) {
+      return res.status(StatusCodes.CONFLICT).json({ message: 'Booking already exists with the provided details' })
+    }
+
+    const [createdBooking] = await db(TABLES.BOOKING).insert(formattedBooking).returning('*')
+    return res.status(StatusCodes.CREATED).json(createdBooking)
   }
 
   async getAllBookings(req: Request, res: Response): Promise<Response<IBooking[]>> {
-    try {
-      const { page, page_size, ...filters } = req.query
+    const { page, page_size, ...filters } = req.query
 
-      let query = db(TABLES.BOOKING)
-        .innerJoin(TABLES.ACCOUNT, 'bookings.account_id', 'accounts.account_id')
-        .innerJoin(TABLES.COMPANY, 'bookings.company_id', 'companies.company_id')
-        .leftJoin(TABLES.BILLER, 'bookings.biller_id', 'billers.biller_id')
-        .leftJoin(TABLES.CURRENCY, 'bookings.currency_id', 'currencies.currency_id')
-        .select(
-          'bookings.*',
-          'bookings.booking_id as id',
-          'accounts.name as account_name',
-          'companies.name as company_name',
-          'billers.name as biller_name',
-          'currencies.currency_code as currency_code'
-        )
+    let query = db(TABLES.BOOKING)
+      .innerJoin(TABLES.ACCOUNT, 'bookings.account_id', 'accounts.account_id')
+      .innerJoin(TABLES.COMPANY, 'bookings.company_id', 'companies.company_id')
+      .leftJoin(TABLES.BILLER, 'bookings.invoice_issuer_id', 'billers.biller_id')
+      .leftJoin(TABLES.CURRENCY, 'bookings.currency', 'currencies.currency_code')
+      .leftJoin(TABLES.TAX_RATE, 'bookings.tax_rate_id', 'tax_rates.tax_rate_id')
+      .select(
+        'bookings.*',
+        'bookings.booking_id as id',
+        'accounts.account_name ',
+        'companies.company_name',
+        'billers.name as biller_name',
+        'currencies.currency_code as currency_code',
+        'tax_rates.rate as tax_rate'
+      )
 
-      query = this.applyFilters(query, filters)
+    query = this.applyFilters(query, filters)
 
-      const pageNumber = parseInt(page as string, 10) || 1
-      const pageSize = parseInt(page_size as string, 10) || 10
-      query = this.applyPagination(query, pageNumber, pageSize)
+    const pageNumber = parseInt(page as string, 10) || 1
+    const pageSize = parseInt(page_size as string, 10) || 10
+    query = this.applyPagination(query, pageNumber, pageSize)
 
-      const bookings = await query
-      const total = await this.getTotalCount(filters)
+    const bookings = await query
+    const total = await this.getTotalCount(filters)
 
-      return res.json({
-        data: bookings,
-        meta: {
-          page: pageNumber,
-          page_size: pageSize,
-          total
-        }
-      })
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to retrieve bookings' })
-    }
+    return res.json({
+      data: bookings,
+      meta: {
+        page: pageNumber,
+        page_size: pageSize,
+        total
+      }
+    })
   }
 
   async getBookingById(req: Request, res: Response): Promise<Response<IBooking>> {
-    try {
-      const { booking_id } = req.params
-      const booking = await db(TABLES.BOOKING)
-        .innerJoin(TABLES.ACCOUNT, 'accounts.account_id', 'bookings.account_id')
-        .leftJoin(TABLES.BILLER, 'bookings.biller_id', 'billers.biller_id')
-        .leftJoin(TABLES.CURRENCY, 'bookings.currency_id', 'currencies.currency_id')
-        .where('bookings.booking_id', booking_id)
-        .select(
-          'bookings.*',
-          'accounts.name as account_name',
-          'billers.name as biller_name',
-          'currencies.currency_code as currency_code'
-        )
-        .first()
+    const { booking_id } = req.params
+    const booking = await db(TABLES.BOOKING)
+      .innerJoin(TABLES.ACCOUNT, 'accounts.account_id', 'bookings.account_id')
+      .leftJoin(TABLES.BILLER, 'bookings.biller_id', 'billers.biller_id')
+      .leftJoin(TABLES.CURRENCY, 'bookings.currency_id', 'currencies.currency_id')
+      .leftJoin(TABLES.TAX_RATE, 'bookings.tax_rate_id', 'tax_rates.tax_rate_id')
+      .where('bookings.booking_id', booking_id)
+      .select(
+        'bookings.*',
+        'accounts.name as account_name',
+        'billers.name as biller_name',
+        'currencies.currency_code as currency_code',
+        'tax_rates.rate as tax_rate'
+      )
+      .first()
 
-      if (!booking) {
-        return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
-      }
-
-      const documents = await db(TABLES.DOCUMENT).where({ booking_id }).select()
-      return res.json({ ...booking, documents })
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to retrieve booking' })
+    if (!booking) {
+      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
     }
+
+    const documents = await db(TABLES.DOCUMENT).where({ booking_id }).select()
+    return res.json({ ...booking, documents })
   }
 
   async findBookingById(booking_id: number) {
@@ -103,81 +96,65 @@ class BookingService {
   }
 
   async updateBooking(req: Request, res: Response): Promise<Response<IBooking>> {
-    try {
-      const { booking_id } = req.params
-      const formattedBooking = await this.formatBooking(req.body)
+    const { booking_id } = req.params
+    const formattedBooking = await this.formatBooking(req.body)
 
-      if (!booking_id || !formattedBooking) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID and update data are required' })
-      }
-
-      const updatedBooking = await db(TABLES.BOOKING).where({ booking_id }).update(formattedBooking).returning('*')
-      if (updatedBooking.length === 0) {
-        return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
-      }
-
-      return res.json(updatedBooking[0])
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to update booking' })
+    if (!booking_id || !formattedBooking) {
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID and update data are required' })
     }
+
+    const updatedBooking = await db(TABLES.BOOKING).where({ booking_id }).update(formattedBooking).returning('*')
+    if (updatedBooking.length === 0) {
+      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
+    }
+
+    return res.json(updatedBooking[0])
   }
 
   async deleteBooking(req: Request, res: Response): Promise<Response> {
-    try {
-      const { booking_id } = req.params
+    const { booking_id } = req.params
 
-      if (!booking_id) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID is required' })
-      }
-
-      const deletedBooking = await db(TABLES.BOOKING).where({ booking_id }).del()
-      if (deletedBooking === 0) {
-        return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
-      }
-
-      return res.status(StatusCodes.NO_CONTENT).send()
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to delete booking' })
+    if (!booking_id) {
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID is required' })
     }
+
+    const deletedBooking = await db(TABLES.BOOKING).where({ booking_id }).del()
+    if (deletedBooking === 0) {
+      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
+    }
+
+    return res.status(StatusCodes.NO_CONTENT).send()
   }
 
   async addDocumentToBooking(req: Request, res: Response): Promise<Response> {
-    try {
-      const { booking_id } = req.params
-      const { file_url, metadata } = req.body
+    const { booking_id } = req.params
+    const { file_url, metadata } = req.body
 
-      if (!booking_id || !file_url) {
-        return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID and file URL are required' })
-      }
-
-      const [document] = await db(TABLES.DOCUMENT)
-        .insert({
-          booking_id,
-          file_url,
-          metadata: JSON.stringify(metadata),
-          uploaded_at: new Date()
-        })
-        .returning('*')
-
-      return res.status(StatusCodes.CREATED).json(document)
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to add document' })
+    if (!booking_id || !file_url) {
+      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID and file URL are required' })
     }
+
+    const [document] = await db(TABLES.DOCUMENT)
+      .insert({
+        booking_id,
+        file_url,
+        metadata: JSON.stringify(metadata),
+        uploaded_at: new Date()
+      })
+      .returning('*')
+
+    return res.status(StatusCodes.CREATED).json(document)
   }
 
   async getDocumentsByBookingId(req: Request, res: Response): Promise<Response> {
-    try {
-      const { booking_id } = req.params
-      const documents = await db(TABLES.DOCUMENT).where({ booking_id }).select()
+    const { booking_id } = req.params
+    const documents = await db(TABLES.DOCUMENT).where({ booking_id }).select()
 
-      if (documents.length === 0) {
-        return res.status(StatusCodes.NOT_FOUND).json({ message: 'Documents not found' })
-      }
-
-      return res.json(documents)
-    } catch (error) {
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to retrieve documents' })
+    if (documents.length === 0) {
+      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Documents not found' })
     }
+
+    return res.json(documents)
   }
 
   private async isDuplicateBooking(booking: IBooking) {
@@ -185,19 +162,52 @@ class BookingService {
       .where({
         company_id: booking.company_id,
         account_id: booking.account_id,
-        biller_id: booking.biller_id,
-        date: booking.date,
-        amount: booking.amount
+        invoice_issuer_id: booking.invoice_issuer_id,
+        total_amount: booking.total_amount
       })
       .first()
     return existingBooking !== undefined
   }
 
   private async formatBooking(data: any) {
-    const { company_id, account_id, biller_id, currency_id, date, amount, tax, tax_rate, description, tags } = data
+    const {
+      company_id,
+      account_id,
+      biller_id,
+      tax_rate_id,
+      entry_date,
+      invoice_date,
+      invoice_received_date,
+      total_amount,
+      tax_amount,
+      tax_rate,
+      expense_category,
+      tags,
+      currency,
+      due_date,
+      payment_status,
+      reference_number,
+      project_cost_center,
+      notes
+    } = data
 
-    if (!company_id || !account_id || !biller_id || !currency_id || !date || !amount) {
-      throw new Error('Missing required fields: company_id, account_id, biller_id, currency_id, date, amount')
+    if (
+      !company_id ||
+      !account_id ||
+      !biller_id ||
+      !tax_rate_id ||
+      !entry_date ||
+      !invoice_date ||
+      !total_amount ||
+      !tax_amount ||
+      !tax_rate ||
+      !expense_category ||
+      !currency ||
+      !due_date ||
+      !payment_status ||
+      !reference_number
+    ) {
+      throw new Error('Missing required fields')
     }
 
     const companyFound = await companyService.findCompanyById(company_id)
@@ -215,22 +225,35 @@ class BookingService {
       throw new Error(`Biller with id ${biller_id} not found`)
     }
 
-    const currencyFound = await currencyService.findCurrencyById(currency_id)
-    if (!currencyFound) {
-      throw new Error(`Currency with id ${currency_id} not found`)
-    }
+    // const taxRateFound = await taxRateService.findTaxRateById(tax_rate_id)
+    // if (!taxRateFound) {
+    //   throw new Error(`Tax rate with id ${tax_rate_id} not found`)
+    // }
+
+    // const currencyFound = await currencyService.findCurrencyById(currency)
+    // if (!currencyFound) {
+    //   throw new Error(`Currency with id ${currency} not found`)
+    // }
 
     return {
       company_id,
       account_id,
       biller_id,
-      currency_id,
-      date: moment(date).format('YYYY-MM-DD'),
-      amount,
-      tax,
+      tax_rate_id,
+      entry_date: moment(entry_date).format('YYYY-MM-DD'),
+      invoice_date: moment(invoice_date).format('YYYY-MM-DD'),
+      invoice_received_date: invoice_received_date ? moment(invoice_received_date).format('YYYY-MM-DD') : null,
+      total_amount,
+      tax_amount,
       tax_rate,
-      description,
-      tags
+      expense_category,
+      tags,
+      currency,
+      due_date: moment(due_date).format('YYYY-MM-DD'),
+      payment_status,
+      reference_number,
+      project_cost_center,
+      notes
     }
   }
 
@@ -250,11 +273,11 @@ class BookingService {
     }
 
     if (start_date) {
-      query.where('bookings.date', '>=', start_date)
+      query.where('bookings.entry_date', '>=', start_date)
     }
 
     if (end_date) {
-      query.where('bookings.date', '<=', end_date)
+      query.where('bookings.entry_date', '<=', end_date)
     }
 
     return query

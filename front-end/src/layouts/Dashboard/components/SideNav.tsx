@@ -6,7 +6,8 @@ import {
   FileDoneOutlined,
   SolutionOutlined,
   UsergroupAddOutlined,
-  DollarOutlined
+  AppstoreAddOutlined,
+  PercentageOutlined
 } from '@ant-design/icons'
 import { Link, useLocation } from 'react-router-dom'
 
@@ -27,7 +28,8 @@ const items: MenuProps['items'] = [
   getItem(<Link to='/companies'>Company</Link>, 'companies', <SolutionOutlined />),
   getItem(<Link to='/accounts'>Account</Link>, 'accounts', <UsergroupAddOutlined />),
   getItem(<Link to='/billers'>Biller</Link>, 'billers', <FileDoneOutlined />),
-  getItem(<Link to='/projects'>Project</Link>, 'projects', <DollarOutlined />),
+  getItem(<Link to='/projects'>Project</Link>, 'projects', <AppstoreAddOutlined />),
+  getItem(<Link to='/tax-rates'>Tax Rate</Link>, 'tax-rates', <PercentageOutlined />),
   getItem(<Link to='/bookings'>Booking</Link>, 'bookings', <DownSquareOutlined />)
 ]
 

@@ -8,7 +8,7 @@ class CompanyService {
   async createCompany(req: Request, res: Response): Promise<Response<ICompany>> {
     const { company_name, address, tax_id, default_currency } = req.body
 
-    if (!company_name || !address || !tax_id || !default_currency) {
+    if (!company_name || !tax_id || !default_currency) {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'All fields are required' })
     }
 
@@ -43,11 +43,11 @@ class CompanyService {
     const { company_id } = req.params
     const { company_name, address, tax_id, default_currency } = req.body
 
-    if (!company_id || !company_name || !address || !tax_id || !default_currency) {
+    if (!company_id || !company_name || !tax_id || !default_currency) {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Company ID and all fields are required' })
     }
 
-    const [updatedCompany] = await db(TABLES.COMPANY)
+    const updatedCompany = await db(TABLES.COMPANY)
       .where({ company_id })
       .update({ company_name, address, tax_id, default_currency })
       .returning('*')

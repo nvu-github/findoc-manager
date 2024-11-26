@@ -12,18 +12,16 @@ class AccountService {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Invalid or missing account data' })
     }
 
+    console.log(account)
     const [createdAccount] = await db(TABLES.ACCOUNT).insert(account).returning('*')
     return res.status(StatusCodes.CREATED).json(createdAccount)
   }
 
   async getAllAccounts(req: Request, res: Response): Promise<Response<IAccount[]>> {
     const accounts = await db(TABLES.ACCOUNT)
-      .join(TABLES.COMPANY, `${TABLES.ACCOUNT}.company_id`, `${TABLES.COMPANY}.company_id`)
-      .select(
-        `${TABLES.ACCOUNT}.*`,
-        `${TABLES.ACCOUNT}.account_id as id`,
-        `${TABLES.COMPANY}.company_name as companyName`
-      )
+      .join(TABLES.COMPANY, `accounts.company_id`, `companies.company_id`)
+      .select(`accounts.*`, `accounts.account_id as id`, `companies.company_name as companyName`)
+      .orderBy('accounts.account_id', 'asc')
 
     return res.status(StatusCodes.OK).json(accounts)
   }

@@ -35,12 +35,44 @@ const BookingList: React.FC<BookingListProps> = ({ handleBookingEdit, handleDraw
   const columns = [
     { title: 'Company', dataIndex: 'companyName', key: 'companyName' },
     { title: 'Account', dataIndex: 'accountName', key: 'accountName' },
-    { title: 'Biller', dataIndex: 'billerName', key: 'billerName' },
-    { title: 'Currency code', dataIndex: 'currencyCode', key: 'currencyCode' },
-    { title: 'Date', dataIndex: 'date', key: 'date', render: (date: string) => new Date(date).toLocaleDateString() },
-    { title: 'Amount', dataIndex: 'amount', key: 'amount' },
-    { title: 'Description', dataIndex: 'description', key: 'description' },
-    { title: 'Tag', dataIndex: 'tags', key: 'tags' }
+    { title: 'Invoice Issuer', dataIndex: 'billerName', key: 'invoiceIssuerName' },
+    { title: 'Invoice Recipient', dataIndex: 'companyName', key: 'invoiceRecipientName' },
+    { title: 'Currency', dataIndex: 'currency', key: 'currency' },
+    {
+      title: 'Invoice Date',
+      dataIndex: 'invoiceDate',
+      key: 'invoiceDate',
+      render: (date: string) => new Date(date).toLocaleDateString()
+    },
+    {
+      title: 'Total Amount',
+      dataIndex: 'totalAmount',
+      key: 'totalAmount'
+      // render: (amount: number) => amount.toFixed(2)
+    },
+    {
+      title: 'Tax Amount',
+      dataIndex: 'taxAmount',
+      key: 'taxAmount'
+      // render: (tax: number) => tax?.toFixed(2) || '0.00'
+    },
+    {
+      title: 'Tax Rate',
+      dataIndex: 'taxRate',
+      key: 'taxRate'
+      // render: (taxRate: number) => taxRate?.toFixed(5) || '0.00000'
+    },
+    { title: 'Expense Category', dataIndex: 'expenseCategory', key: 'expenseCategory' },
+    { title: 'Payment Status', dataIndex: 'paymentStatus', key: 'paymentStatus' },
+    { title: 'Reference Number', dataIndex: 'referenceNumber', key: 'referenceNumber' },
+    { title: 'Tags', dataIndex: 'tags', key: 'tags' },
+    {
+      title: 'Due Date',
+      dataIndex: 'dueDate',
+      key: 'dueDate',
+      render: (date: string) => new Date(date).toLocaleDateString()
+    },
+    { title: 'Notes', dataIndex: 'notes', key: 'notes' }
   ]
 
   return (

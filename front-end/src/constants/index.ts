@@ -18,3 +18,18 @@ export const BILLER_TYPES = [
     value: 'recipient'
   }
 ]
+
+export const PAYMENT_STATUSES = [
+  {
+    label: 'Unpaid',
+    value: 'unpaid'
+  },
+  {
+    label: 'Partially Paid',
+    value: 'partially_paid'
+  },
+  {
+    label: 'Fully Paid',
+    value: 'fully_paid'
+  }
+]

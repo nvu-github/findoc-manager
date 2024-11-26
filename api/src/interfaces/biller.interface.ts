@@ -5,7 +5,7 @@ export interface IBiller {
   tax_id: string
   default_currency: string
   contact_info: string
-  biller_type: string
+  biller_type: 'biller' | 'payer' | 'recipient'
   created_at?: Date
   updated_at?: Date
 }

@@ -6,20 +6,25 @@ import dayjs from 'dayjs'
 import { useAppDispatch, useAppSelector } from '../../../stores/hook'
 import { addBookingAsync, updateBookingAsync, addBookingDocuments } from '../../../stores/slices'
 import { Booking } from '../../../types'
+import { PAYMENT_STATUSES } from '../../../constants'
 
 interface BookingFormProps {
   isDrawerVisible: boolean
-  booking?: Booking | undefined
+  booking?: Booking
   onSuccess: () => void
 }
 
 const rules = {
   companyId: [{ required: true, message: 'Please select a company' }],
   accountId: [{ required: true, message: 'Please select an account' }],
-  billerId: [{ required: true, message: 'Please select a biller' }],
-  date: [{ required: true, message: 'Please select a date' }],
-  amount: [{ required: true, message: 'Please enter an amount' }],
-  currencyId: [{ required: true, message: 'Please select a currency' }]
+  invoiceIssuerId: [{ required: true, message: 'Please select an invoice issuer' }],
+  invoiceRecipientId: [{ required: true, message: 'Please select an invoice recipient' }],
+  entryDate: [{ required: true, message: 'Please select an entry date' }],
+  invoiceDate: [{ required: true, message: 'Please select an invoice date' }],
+  totalAmount: [{ required: true, message: 'Please enter the total amount' }],
+  currency: [{ required: true, message: 'Please select a currency' }],
+  paymentStatus: [{ required: true, message: 'Please select a payment status' }],
+  referenceNumber: [{ required: true, message: 'Please enter a reference number' }]
 }
 
 const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onSuccess }) => {
@@ -30,6 +35,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
   const accounts = useAppSelector((state) => state.account.accounts)
   const billers = useAppSelector((state) => state.biller.billers)
   const currencies = useAppSelector((state) => state.currency.currencies)
+  const taxRates = useAppSelector((state) => state.taxRate.taxRates)
 
   const handleSubmit = async (values: any) => {
     try {
@@ -65,7 +71,10 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
     if (booking) {
       form.setFieldsValue({
         ...booking,
-        date: dayjs(booking.date),
+        entryDate: dayjs(booking.entryDate),
+        invoiceDate: dayjs(booking.invoiceDate),
+        invoiceReceivedDate: dayjs(booking.invoiceReceivedDate),
+        dueDate: dayjs(booking.dueDate),
         attachment: []
       })
     }
@@ -96,8 +105,8 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
           ))}
         </Select>
       </Form.Item>
-      <Form.Item name='billerId' label='Biller' rules={rules.billerId}>
-        <Select placeholder='Select a biller'>
+      <Form.Item name='invoiceIssuerId' label='Invoice Issuer' rules={rules.invoiceIssuerId}>
+        <Select placeholder='Select an invoice issuer'>
           {billers.map((biller) => (
             <Select.Option key={biller.billerId} value={biller.billerId}>
               {biller.name}
@@ -105,19 +114,63 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
           ))}
         </Select>
       </Form.Item>
-      <Form.Item name='date' label='Date' rules={rules.date}>
+      <Form.Item name='invoiceRecipientId' label='Invoice Recipient' rules={rules.invoiceRecipientId}>
+        <Select placeholder='Select an invoice recipient'>
+          {companies.map((company) => (
+            <Select.Option key={company.companyId} value={company.companyId}>
+              {company.companyName}
+            </Select.Option>
+          ))}
+        </Select>
+      </Form.Item>
+      <Form.Item name='entryDate' label='Entry Date' rules={rules.entryDate}>
         <DatePicker style={styles.fullWidth} />
       </Form.Item>
-      <Form.Item name='amount' label='Amount' rules={rules.amount}>
+      <Form.Item name='invoiceDate' label='Invoice Date' rules={rules.invoiceDate}>
+        <DatePicker style={styles.fullWidth} />
+      </Form.Item>
+      <Form.Item name='invoiceReceivedDate' label='Invoice Received Date'>
+        <DatePicker style={styles.fullWidth} />
+      </Form.Item>
+      <Form.Item name='totalAmount' label='Total Amount' rules={rules.totalAmount}>
         <InputNumber style={styles.fullWidth} min={0} step={0.01} />
       </Form.Item>
-      <Form.Item name='currencyId' label='Currency' rules={rules.currencyId}>
+      <Form.Item name='taxAmount' label='Tax Amount'>
+        <InputNumber style={styles.fullWidth} min={0} step={0.01} />
+      </Form.Item>
+      <Form.Item name='taxRate' label='Tax Rate'>
+        <Select placeholder='Select Tax Rate'>
+          {taxRates.map((taxRate) => (
+            <Select.Option key={taxRate.taxRateId} value={taxRate.taxRateId}>
+              {taxRate.rate}%
+            </Select.Option>
+          ))}
+        </Select>
+      </Form.Item>
+      <Form.Item name='expenseCategory' label='Expense Category'>
+        <Input placeholder='e.g., Office Supplies' />
+      </Form.Item>
+      <Form.Item name='paymentStatus' label='Payment Status' rules={rules.paymentStatus}>
+        <Select placeholder='Select Payment Status'>
+          {PAYMENT_STATUSES.map((status) => (
+            <Select.Option key={status.value} value={status.value}>
+              {status.label}
+            </Select.Option>
+          ))}
+        </Select>
+      </Form.Item>
+      <Form.Item name='referenceNumber' label='Reference Number' rules={rules.referenceNumber}>
+        <Input />
+      </Form.Item>
+      <Form.Item name='tags' label='Tags'>
+        <Input placeholder='e.g., Utilities, Office' />
+      </Form.Item>
+      <Form.Item name='currency' label='Currency' rules={rules.currency}>
         <Select
           showSearch
           placeholder='Select a currency'
           optionFilterProp='children'
           filterOption={(input, option: any) => option?.children.toLowerCase().includes(input.toLowerCase())}
-          allowClear
         >
           {currencies.map((currency) => (
             <Select.Option key={currency.currencyCode} value={currency.currencyCode}>
@@ -126,17 +179,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ isDrawerVisible, booking, onS
           ))}
         </Select>
       </Form.Item>
-      <Form.Item name='description' label='Description'>
+      <Form.Item name='dueDate' label='Due Date'>
+        <DatePicker style={styles.fullWidth} />
+      </Form.Item>
+      <Form.Item name='notes' label='Notes'>
         <Input.TextArea />
-      </Form.Item>
-      <Form.Item name='tax' label='Tax'>
-        <InputNumber style={styles.fullWidth} min={0} step={0.01} />
-      </Form.Item>
-      <Form.Item name='taxRate' label='Tax Rate'>
-        <InputNumber style={styles.fullWidth} min={0} step={0.01} />
-      </Form.Item>
-      <Form.Item name='tags' label='Tags'>
-        <Input placeholder='e.g., Utilities, Office' />
       </Form.Item>
       <Form.Item
         label='Attachment'
