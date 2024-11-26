@@ -4,14 +4,26 @@ export const toCamelCase = (obj: any): any => {
   } else if (obj !== null && typeof obj === 'object' && !(obj instanceof Date)) {
     return Object.keys(obj).reduce((result: any, key: string) => {
       const camelKey = key.replace(/_([a-z])/g, (_, char) => char.toUpperCase())
-      result[camelKey] = toCamelCase(obj[key])
+      const value = obj[key]
+
+      if (typeof value === 'string' && isValidDate(value)) {
+        result[camelKey] = value
+      } else {
+        result[camelKey] = toCamelCase(value)
+      }
+
       return result
     }, {})
-  } else if (typeof obj === 'string' && !isNaN(Date.parse(obj))) {
+  } else if (typeof obj === 'string' && isValidDate(obj)) {
     return new Date(obj)
   }
 
   return obj
+}
+
+const isValidDate = (dateString: string): boolean => {
+  const regex = /^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(\.\d+)?Z$/
+  return regex.test(dateString)
 }
 
 export const toSnakeCase = (obj: any): any => {

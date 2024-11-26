@@ -48,7 +48,7 @@ class ProjectService {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Project ID, name, and company ID are required' })
     }
 
-    const [updatedProject] = await db(TABLES.PROJECT)
+    const updatedProject = await db(TABLES.PROJECT)
       .where({ project_id })
       .update({ project_name, company_id, description })
       .returning('*')

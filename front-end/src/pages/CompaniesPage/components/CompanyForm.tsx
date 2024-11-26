@@ -50,16 +50,16 @@ const CompanyForm: React.FC<CompanyFormProps> = ({ isDrawerVisible, company, onS
 
   return (
     <Form form={form} layout='vertical' onFinish={handleSubmit}>
-      <Form.Item name='company_name' label='Company Name' rules={rules.company_name}>
+      <Form.Item name='companyName' label='Company Name' rules={rules.company_name}>
         <Input />
       </Form.Item>
       <Form.Item name='address' label='Address'>
         <Input />
       </Form.Item>
-      <Form.Item name='tax_id' label='Tax ID' rules={rules.tax_id}>
+      <Form.Item name='taxId' label='Tax ID' rules={rules.tax_id}>
         <Input />
       </Form.Item>
-      <Form.Item name='default_currency' label='Default Currency' rules={rules.default_currency}>
+      <Form.Item name='defaultCurrency' label='Default Currency' rules={rules.default_currency}>
         <Select placeholder='Select a currency'>
           <Select.Option value='USD'>USD</Select.Option>
           <Select.Option value='EUR'>EUR</Select.Option>

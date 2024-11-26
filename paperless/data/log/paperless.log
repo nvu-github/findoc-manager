@@ -344,3 +344,6 @@ documents.consumer.ConsumerError: 1732447038419-simple-business-invoice-modern-s
 [2024-11-26 08:22:00,725] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
 [2024-11-26 08:22:13,582] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
 [2024-11-26 08:22:14,651] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-26 15:37:20,177] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 16:05:00,138] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-26 17:05:00,082] [INFO] [paperless.tasks] No automatic matching items, not training

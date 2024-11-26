@@ -1,4 +1,5 @@
 import * as Knex from 'knex'
+import { PAYMENT_STATUS, BILLER_TYPE } from '~/constants'
 
 export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable('companies', (table) => {
@@ -28,7 +29,7 @@ export async function up(knex: Knex): Promise<void> {
     table.string('tax_id').unique()
     table.string('default_currency')
     table.text('contact_info')
-    table.enum('biller_type', ['biller', 'payer', 'recipient']).notNullable()
+    table.enum('biller_type', [BILLER_TYPE.BILLER, BILLER_TYPE.PAYER, BILLER_TYPE.RECIPIENT]).notNullable()
     table.timestamp('created_at').defaultTo(knex.fn.now())
     table.timestamp('updated_at').defaultTo(knex.fn.now())
   })
@@ -86,7 +87,9 @@ export async function up(knex: Knex): Promise<void> {
     table.text('tags')
     table.string('currency').notNullable()
     table.date('due_date').notNullable()
-    table.enum('payment_status', ['unpaid', 'partially_paid', 'fully_paid']).notNullable()
+    table
+      .enum('payment_status', [PAYMENT_STATUS.UNPAID, PAYMENT_STATUS.PARTIALLY_PAID, PAYMENT_STATUS.FULLY_PAID])
+      .notNullable()
     table.string('reference_number').notNullable()
     table
       .integer('project_cost_center')
