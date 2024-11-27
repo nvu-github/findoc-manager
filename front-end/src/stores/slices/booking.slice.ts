@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit'
-
 import axios from '../../services/api'
-import { Booking } from '../../types'
+import { Booking, Document } from '../../types'
 import { formatParamsForAxios } from '../../utils'
 
 interface BookingState {
   bookings: Booking[]
+  documents: Document[]
   meta: any
   loading: boolean
   error: string | null
@@ -13,6 +13,7 @@ interface BookingState {
 
 const initialState: BookingState = {
   bookings: [],
+  documents: [],
   meta: null,
   loading: false,
   error: null
@@ -55,7 +56,7 @@ export const deleteBookingAsync = createAsyncThunk(
 )
 
 export const addBookingDocuments = createAsyncThunk(
-  'booking/addBooking',
+  'booking/addBookingDocuments',
   async ({ bookingId, formData }: { bookingId: number; formData: FormData }, { rejectWithValue }) => {
     try {
       const response = await axios.post(`/booking/${bookingId}/documents`, formData, {
@@ -63,10 +64,33 @@ export const addBookingDocuments = createAsyncThunk(
           'Content-Type': 'multipart/form-data'
         }
       })
-
       return response.data
     } catch (error: any) {
-      return rejectWithValue(error.response?.data?.message || 'Failed to add booking')
+      return rejectWithValue(error.response?.data?.message || 'Failed to upload documents')
+    }
+  }
+)
+
+export const getDocumentsByBookingId = createAsyncThunk(
+  'booking/getDocumentsByBookingId',
+  async (bookingId: number, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(`/booking/${bookingId}/documents`)
+      return response.data
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || 'Failed to fetch documents')
+    }
+  }
+)
+
+export const deleteDocumentBooking = createAsyncThunk(
+  'booking/deleteDocumentBooking',
+  async ({ bookingId, documentId }: { bookingId: number; documentId: number }, { rejectWithValue }) => {
+    try {
+      await axios.delete(`/booking/${bookingId}/document`, { data: { documentId } })
+      return documentId
+    } catch (error: any) {
+      return rejectWithValue(error.response?.data?.message || 'Failed to delete document')
     }
   }
 )
@@ -129,11 +153,50 @@ const bookingSlice = createSlice({
         state.error = action.payload as string
       })
 
+      .addCase(addBookingDocuments.pending, (state) => {
+        state.loading = true
+        state.error = null
+      })
+      .addCase(addBookingDocuments.fulfilled, (state, action: PayloadAction<Document[]>) => {
+        state.loading = false
+        state.documents = action.payload
+      })
+      .addCase(addBookingDocuments.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.payload as string
+      })
+
+      .addCase(getDocumentsByBookingId.pending, (state) => {
+        state.loading = true
+        state.error = null
+      })
+      .addCase(getDocumentsByBookingId.fulfilled, (state, action: PayloadAction<Document[]>) => {
+        state.loading = false
+        state.documents = action.payload
+      })
+      .addCase(getDocumentsByBookingId.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.payload as string
+      })
+
+      .addCase(deleteDocumentBooking.pending, (state) => {
+        state.loading = true
+        state.error = null
+      })
+      .addCase(deleteDocumentBooking.fulfilled, (state, action: PayloadAction<number>) => {
+        state.loading = false
+        state.documents = state.documents.filter((doc: Document) => Number(doc.documentId) !== action.payload)
+      })
+      .addCase(deleteDocumentBooking.rejected, (state, action) => {
+        state.loading = false
+        state.error = action.payload as string
+      })
+
       .addCase(getAllBookingsAsync.pending, (state) => {
         state.loading = true
         state.error = null
       })
-      .addCase(getAllBookingsAsync.fulfilled, (state, action: PayloadAction<Booking[] | any>) => {
+      .addCase(getAllBookingsAsync.fulfilled, (state, action: PayloadAction<any>) => {
         state.loading = false
         state.bookings = action.payload.data
         state.meta = action.payload.meta

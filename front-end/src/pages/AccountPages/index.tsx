@@ -6,13 +6,13 @@ import { getAllAccountsAsync } from '../../stores/slices/account.slice'
 import { getAllCompanyAsync } from '../../stores/slices/company.slice'
 import AccountForm from './components/AccountForm'
 import AccountList from './components/AccountList'
-import { Account, Company } from '../../types'
+import { Account } from '../../types'
+import { getAllCurrenciesAsync } from '../../stores/slices/currency.slice'
 
 const AccountsPage: React.FC = () => {
   const dispatch = useAppDispatch()
   const [isDrawerVisible, setIsDrawerVisible] = useState(false)
   const [accountEdit, setAccountEdit] = useState<Account | undefined>()
-  const [companies, setCompanies] = useState<Company[]>([])
 
   const handleDrawerClose = (isOnSuccess?: boolean) => {
     setAccountEdit(undefined)
@@ -22,9 +22,8 @@ const AccountsPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(getAllAccountsAsync({}))
-    dispatch(getAllCompanyAsync({})).then((response: any) => {
-      setCompanies(response.payload || [])
-    })
+    dispatch(getAllCompanyAsync({}))
+    dispatch(getAllCurrenciesAsync())
   }, [dispatch])
 
   return (
@@ -54,7 +53,6 @@ const AccountsPage: React.FC = () => {
         <AccountForm
           isDrawerVisible={isDrawerVisible}
           account={accountEdit}
-          companies={companies}
           onSuccess={() => handleDrawerClose(true)}
         />
       </Drawer>

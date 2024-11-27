@@ -3,12 +3,11 @@ import { Form, Input, Button, message, Select } from 'antd'
 
 import { useAppDispatch, useAppSelector } from '../../../stores/hook'
 import { addAccountAsync, updateAccountAsync, getAllCompanyAsync } from '../../../stores/slices'
-import { Account, Company } from '../../../types'
+import { Account, Company, Currency } from '../../../types'
 
 interface AccountFormProps {
   isDrawerVisible: boolean
   account?: Account | undefined
-  companies: Company[]
   onSuccess: () => void
 }
 
@@ -23,6 +22,7 @@ const AccountForm: React.FC<AccountFormProps> = ({ isDrawerVisible, account, onS
   const [form] = Form.useForm()
   const dispatch = useAppDispatch()
   const companies = useAppSelector((state) => state.company.companies)
+  const currencies = useAppSelector((state) => state.currency.currencies)
 
   const handleSubmit = async (values: Account) => {
     try {
@@ -74,9 +74,10 @@ const AccountForm: React.FC<AccountFormProps> = ({ isDrawerVisible, account, onS
       </Form.Item>
       <Form.Item name='currency' label='Currency' rules={rules.currency}>
         <Select placeholder='Select a currency'>
-          <Select.Option value='USD'>USD</Select.Option>
-          <Select.Option value='EUR'>EUR</Select.Option>
-          <Select.Option value='JPY'>JPY</Select.Option>
+          {currencies.length > 0 &&
+            currencies.map((currency: Currency) => (
+              <Select.Option value={currency.currencyCode}>{currency.currencyCode}</Select.Option>
+            ))}
         </Select>
       </Form.Item>
       <Button type='primary' htmlType='submit'>

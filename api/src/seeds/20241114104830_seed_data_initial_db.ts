@@ -131,7 +131,6 @@ export async function seed(knex: Knex): Promise<void> {
   await knex('bookings').insert([
     {
       booking_id: 1,
-      company_id: 1,
       account_id: 1,
       tax_rate_id: 1,
       invoice_issuer_id: 1,
@@ -155,7 +154,6 @@ export async function seed(knex: Knex): Promise<void> {
     },
     {
       booking_id: 2,
-      company_id: 2,
       account_id: 2,
       tax_rate_id: 2,
       invoice_issuer_id: 2,

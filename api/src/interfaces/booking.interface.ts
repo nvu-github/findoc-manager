@@ -1,9 +1,8 @@
 export interface IBooking {
   booking_id?: number
-  company_id: number
   account_id: number
-  invoice_issuer_id?: number | null
-  invoice_recipient_id?: number | null
+  invoice_issuer_id: number
+  invoice_recipient_id: number
   tax_rate_id?: number | null
   entry_date: string
   invoice_date: string

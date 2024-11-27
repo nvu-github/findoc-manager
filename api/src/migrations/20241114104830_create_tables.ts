@@ -1,5 +1,5 @@
 import * as Knex from 'knex'
-import { PAYMENT_STATUS, BILLER_TYPE } from '~/constants'
+import { PAYMENT_STATUS, BILLER_TYPE } from '../constants'
 
 export async function up(knex: Knex): Promise<void> {
   await knex.schema.createTable('companies', (table) => {
@@ -54,22 +54,9 @@ export async function up(knex: Knex): Promise<void> {
 
   await knex.schema.createTable('bookings', (table) => {
     table.increments('booking_id').notNullable().primary()
-    table.integer('company_id').unsigned().references('company_id').inTable('companies').onDelete('CASCADE')
     table.integer('account_id').unsigned().references('account_id').inTable('accounts').onDelete('CASCADE')
-    table
-      .integer('invoice_issuer_id')
-      .unsigned()
-      .nullable()
-      .references('biller_id')
-      .inTable('billers')
-      .onDelete('SET NULL')
-    table
-      .integer('invoice_recipient_id')
-      .unsigned()
-      .nullable()
-      .references('company_id')
-      .inTable('companies')
-      .onDelete('SET NULL')
+    table.integer('invoice_issuer_id').unsigned().references('biller_id').inTable('billers').onDelete('CASCADE')
+    table.integer('invoice_recipient_id').unsigned().references('company_id').inTable('companies').onDelete('CASCADE')
     table
       .integer('tax_rate_id')
       .unsigned()

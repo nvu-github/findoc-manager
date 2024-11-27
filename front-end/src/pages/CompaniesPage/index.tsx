@@ -6,6 +6,7 @@ import { getAllCompanyAsync } from '../../stores/slices/company.slice'
 import CompanyForm from './components/CompanyForm'
 import CompanyList from './components/CompanyList'
 import { Company } from '../../types'
+import { getAllCurrenciesAsync } from '../../stores/slices/currency.slice'
 
 const CompaniesPage: React.FC = () => {
   const dispatch = useAppDispatch()
@@ -20,6 +21,7 @@ const CompaniesPage: React.FC = () => {
 
   useEffect(() => {
     dispatch(getAllCompanyAsync({}))
+    dispatch(getAllCurrenciesAsync())
   }, [dispatch])
 
   return (

@@ -1,109 +1,162 @@
-import fs from 'fs/promises'
-import { createWriteStream, createReadStream } from 'fs'
-import FormData from 'form-data'
-import axios from 'axios'
-import os from 'os'
-import path from 'path'
-import moment from 'moment'
+import fs from 'fs'
 import { Request, Response } from 'express'
-import { S3Client, GetObjectCommand } from '@aws-sdk/client-s3'
-import { StatusCodes } from 'http-status-codes'
+import axios from 'axios'
+import FormData from 'form-data'
+import path from 'path'
+import os from 'os'
+import moment from 'moment'
 
+import { IBooking, IDocument } from '~/interfaces'
 import db from '~/config/database'
 import { TABLES } from '~/constants'
-import { IDocument } from '~/interfaces'
 import bookingService from './booking.service'
-
-const AWS_REGION = process.env.AWS_REGION
-const s3 = new S3Client({ region: AWS_REGION })
+import S3Service from './s3.service'
 
 const PAPERLESS_API_URL = process.env.PAPERLESS_API_URL
 const PAPERLESS_API_KEY = process.env.PAPERLESS_API_KEY
+
+const headers = {
+  Authorization: `Token ${PAPERLESS_API_KEY}`
+}
 
 class DocumentService {
   async createDocuments(req: Request, res: Response): Promise<Response<IDocument[]>> {
     const { booking_id } = req.params
     if (!booking_id) {
-      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking id is required.' })
+      return res.status(400).json({ message: 'Booking id is required.' })
     }
 
     const bookingFound = await bookingService.findBookingById(Number(booking_id))
     if (!bookingFound) {
-      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking is not found.' })
+      return res.status(400).json({ message: 'Booking not found.' })
     }
 
     if (!req.files || !(req.files instanceof Array)) {
-      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'No files uploaded.' })
+      return res.status(400).json({ message: 'No files uploaded.' })
     }
 
-    await this.uploadDocumentFromS3ToPaperless(req.files[0])
-
-    const documents = req.files.map((file: any) => ({
-      booking_id,
-      file_url: file.location,
-      uploaded_at: moment().format('YYYY-MM-DD')
-    }))
-
-    const createdDocuments = await db(TABLES.DOCUMENT).insert(documents).returning('*')
-    return res.status(StatusCodes.CREATED).json(createdDocuments)
+    try {
+      const documents = await this.formattedDocuments(req.files, bookingFound)
+      const createdDocuments = await db(TABLES.DOCUMENT).insert(documents).returning('*')
+      return res.status(201).json(createdDocuments)
+    } catch (error: any) {
+      console.error('Error in document creation:', error)
+      return res.status(500).json({ message: error.message })
+    }
   }
 
-  private async uploadDocumentFromS3ToPaperless(s3Object: any) {
+  async getDocumentsByBookingId(req: Request, res: Response): Promise<Response> {
+    const { booking_id } = req.params
+    const documents = await db(TABLES.DOCUMENT).where({ booking_id }).select()
+
+    if (!documents.length) {
+      return res.send([])
+    }
+
+    return res.json(documents)
+  }
+
+  async deleteDocument(req: Request, res: Response) {
+    const { document_id } = req.body
+
+    const documentFound = await db(TABLES.DOCUMENT).where({ document_id }).first()
+    if (!documentFound) {
+      return res.status(400).json({ message: 'Document not found.' })
+    }
+
+    try {
+      await S3Service.deleteFile(documentFound.file_url)
+      await db(TABLES.DOCUMENT).where({ document_id }).del()
+      return res.status(204).send()
+    } catch (error) {
+      return res.status(500).json({ message: 'Error deleting document from S3.' })
+    }
+  }
+
+  private async formattedDocuments(files: any, booking: IBooking) {
+    const documents = []
+    for (const file of files) {
+      try {
+        await this.uploadDocumentFromS3ToPaperless(file, booking)
+        const title = `${booking?.booking_id}-${booking.reference_number}`
+        const document = await this.getDocumentByTitle(title)
+        const metadata = await this.getMetadataDocumentFromPaperLess(document.id)
+
+        documents.push({
+          booking_id: booking.booking_id,
+          file_url: file.location,
+          uploaded_at: moment().format('YYYY-MM-DD'),
+          metadata: JSON.stringify(metadata)
+        })
+      } catch (error: any) {
+        console.error('Error processing file:', file.originalname, error)
+        throw new Error(`Failed to process file: ${file.originalname}`)
+      }
+    }
+
+    return documents
+  }
+
+  private async uploadDocumentFromS3ToPaperless(s3Object: any, booking: IBooking) {
     const { bucket, key } = s3Object
     const tempFilePath = path.join(os.tmpdir(), key.split('/').pop() || 'tempfile')
 
     try {
-      await this.downloadFileFromS3(bucket, key, tempFilePath)
+      await S3Service.downloadFile(bucket, key, tempFilePath)
 
-      const formData = new FormData()
-      formData.append('document', createReadStream(tempFilePath))
-
-      const headers = {
-        ...formData.getHeaders(),
-        Authorization: `Token ${PAPERLESS_API_KEY}`
+      if (!fs.existsSync(tempFilePath)) {
+        throw new Error(`Temporary file not found at ${tempFilePath}`)
       }
 
-      const response = await axios.post(`${PAPERLESS_API_URL}/api/documents/post_document/`, formData, {
-        headers
-      })
+      const formData = new FormData()
+      formData.append('document', fs.createReadStream(tempFilePath))
+      formData.append('title', `${booking?.booking_id}-${booking.reference_number}`)
 
-      console.log('Document uploaded to Paperless-ngx successfully:', response.data)
-      return response.data
+      await axios.post(`${PAPERLESS_API_URL}/api/documents/post_document/`, formData, {
+        headers: {
+          ...headers,
+          ...formData.getHeaders()
+        }
+      })
     } catch (error: any) {
       console.error('Error uploading document to Paperless-ngx:', error.message)
       throw new Error('Failed to upload document to Paperless-ngx')
     } finally {
-      await this.deleteTempFile(tempFilePath)
+      await S3Service.deleteTempFile(tempFilePath)
     }
   }
 
-  private async downloadFileFromS3(bucket: string, key: string, tempFilePath: string) {
-    try {
-      const getObjectCommand = new GetObjectCommand({ Bucket: bucket, Key: key })
-      const s3Response = await s3.send(getObjectCommand)
-
-      if (!s3Response.Body) {
-        throw new Error('No data returned from S3')
+  private async getDocumentByTitle(title: string, retries = 3) {
+    for (let attempt = 0; attempt < retries; attempt++) {
+      try {
+        const response = await axios.get(`${PAPERLESS_API_URL}/api/search/?query=${title}`, { headers })
+        const documents = response.data.documents
+        if (documents.length > 0) {
+          return documents[0]
+        } else {
+          console.log('Document not found, retrying...')
+          if (attempt < retries - 1) await this.delay(5000)
+        }
+      } catch (error: any) {
+        console.error('Error fetching document from Paperless-ngx:', error.message)
+        throw new Error('Failed to get document by file name')
       }
+    }
+    throw new Error('Document not found after multiple attempts')
+  }
 
-      const fileStream = createWriteStream(tempFilePath)
-      await new Promise<void>((resolve, reject) => {
-        ;(s3Response.Body as any).pipe(fileStream).on('finish', resolve).on('error', reject)
-      })
-    } catch (error) {
-      console.error('Error downloading file from S3:', error)
-      throw new Error('Failed to download file from S3')
+  private async getMetadataDocumentFromPaperLess(documentId: number) {
+    try {
+      const response = await axios.get(`${PAPERLESS_API_URL}/api/documents/${documentId}/metadata/`, { headers })
+      return response.data
+    } catch (error: any) {
+      console.error('Error fetching document metadata from Paperless-ngx:', error.message)
+      throw new Error('Failed to get metadata from Paperless-ngx')
     }
   }
 
-  private async deleteTempFile(filePath: string) {
-    try {
-      await fs.unlink(filePath)
-      console.log('Temporary file deleted successfully:', filePath)
-    } catch (error) {
-      console.error('Error deleting temporary file:', filePath, error)
-      throw error
-    }
+  private delay(ms: number) {
+    return new Promise((resolve) => setTimeout(resolve, ms))
   }
 }
 
