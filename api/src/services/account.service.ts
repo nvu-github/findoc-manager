@@ -12,7 +12,6 @@ class AccountService {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Invalid or missing account data' })
     }
 
-    console.log(account)
     const [createdAccount] = await db(TABLES.ACCOUNT).insert(account).returning('*')
     return res.status(StatusCodes.CREATED).json(createdAccount)
   }

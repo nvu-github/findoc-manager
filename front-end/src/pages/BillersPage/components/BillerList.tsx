@@ -5,6 +5,8 @@ import { useAppDispatch, useAppSelector } from '../../../stores/hook'
 import { deleteBillerAsync, getAllBillersAsync } from '../../../stores/slices'
 import TableData from '../../../components/TableData'
 import { Biller } from '../../../types'
+import { BILLER_TYPES } from '../../../constants'
+import { getLableConstant } from '../../../utils'
 
 interface BillerListProps {
   handleBillerEdit: (biller: Biller) => void
@@ -32,10 +34,16 @@ const BillerList: React.FC<BillerListProps> = ({ handleBillerEdit, handleDrawerV
     }
   }
 
+
   const columns = [
     { title: 'Biller Name', dataIndex: 'name', key: 'name' },
     { title: 'Address', dataIndex: 'address', key: 'address' },
-    { title: 'Biller Type', dataIndex: 'billerType', key: 'billerType' },
+    {
+      title: 'Biller Type',
+      dataIndex: 'billerType',
+      key: 'billerType',
+      render: (billerType: string) => getLableConstant(BILLER_TYPES, billerType)
+    },
     { title: 'Tax ID', dataIndex: 'taxId', key: 'taxId' },
     { title: 'Default Currency', dataIndex: 'defaultCurrency', key: 'defaultCurrency' },
     { title: 'Contact Info', dataIndex: 'contactInfo', key: 'contactInfo' }

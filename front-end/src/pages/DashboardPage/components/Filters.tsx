@@ -12,10 +12,10 @@ interface FiltersProps {
   billers: Biller[]
   selectedCompany: string | null
   setSelectedCompany: (value: string | null) => void
-  selectedAccount: string[]
-  setSelectedAccount: (value: string[]) => void
-  selectedBiller: string[]
-  setSelectedBiller: (value: string[]) => void
+  selectedAccount: string | null
+  setSelectedAccount: (value: string | null) => void
+  selectedBiller: string | null
+  setSelectedBiller: (value: string | null) => void
   selectedDates: [dayjs.Dayjs, dayjs.Dayjs] | null
   setSelectedDates: (value: [dayjs.Dayjs, dayjs.Dayjs] | null) => void
   startDate: dayjs.Dayjs | null
@@ -53,7 +53,7 @@ const Filters: React.FC<FiltersProps> = ({
         >
           {companies.map((company: Company) => (
             <Option key={company.companyId} value={company.companyId}>
-              {company.name}
+              {company.companyName}
             </Option>
           ))}
         </Select>
@@ -69,7 +69,7 @@ const Filters: React.FC<FiltersProps> = ({
         >
           {accounts.map((account: Account) => (
             <Option key={account.accountId} value={account.accountId}>
-              {account.name}
+              {account.accountName}
             </Option>
           ))}
         </Select>

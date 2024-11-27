@@ -347,3 +347,889 @@ documents.consumer.ConsumerError: 1732447038419-simple-business-invoice-modern-s
 [2024-11-26 15:37:20,177] [INFO] [paperless.tasks] No automatic matching items, not training
 [2024-11-26 16:05:00,138] [INFO] [paperless.tasks] No automatic matching items, not training
 [2024-11-26 17:05:00,082] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 04:55:11,170] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 05:05:00,081] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 06:05:00,067] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 07:05:00,091] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 07:57:46,670] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 07:57:46,675] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 07:57:46,679] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 07:57:46,692] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 07:57:46,698] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 07:57:46,723] [INFO] [paperless.consumer] Consuming 1732694265400-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 07:57:46,730] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 07:57:46,743] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 07:57:46,749] [DEBUG] [paperless.consumer] Parsing 1732694265400-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 07:57:46,786] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 07:57:46,943] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxy8ye_0z5/1732694265400-Professional Invoice Template - Jotform PDF Editor.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-sj11h9zt/archive.pdf'), 'use_threads': True, 'jobs': 16, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-sj11h9zt/sidecar.txt')}
+[2024-11-27 07:57:47,163] [WARNING] [ocrmypdf._pipeline] This PDF is marked as a Tagged PDF. This often indicates that the PDF was generated from an office document and does not need OCR. PDF pages processed by OCRmyPDF may not be tagged correctly.
+[2024-11-27 07:57:47,173] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 07:57:47,200] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 07:57:47,363] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.0%
+[2024-11-27 07:57:47,368] [INFO] [ocrmypdf._pipeline] Total file size ratio: 1.67 savings: 40.1%
+[2024-11-27 07:57:47,373] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-27 07:57:47,391] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 07:57:47,411] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 07:57:47,419] [DEBUG] [paperless.consumer] Generating thumbnail for 1732694265400-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 07:57:47,425] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-sj11h9zt/archive.pdf[0] /tmp/paperless/paperless-sj11h9zt/convert.webp
+[2024-11-27 07:57:48,198] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 07:57:48,440] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 07:57:48,447] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 07:57:48,454] [DEBUG] [paperless.consumer] Creation date from parse_date: 2015-05-19 00:00:00+00:00
+[2024-11-27 07:57:48,775] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxy8ye_0z5/1732694265400-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 07:57:48,780] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-sj11h9zt
+[2024-11-27 07:57:48,785] [INFO] [paperless.consumer] Document 2015-05-19 1732694265400-Professional Invoice Template - Jotform PDF Editor consumption finished
+[2024-11-27 07:57:48,792] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 1 created
+[2024-11-27 08:05:00,087] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 08:24:24,388] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 08:24:24,393] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 08:24:24,397] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 08:24:24,409] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 08:24:24,412] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 08:24:24,445] [ERROR] [paperless.consumer] Not consuming 1732695863308-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 08:24:24,449] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732695863308-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732695863308-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732695863308-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732695863308-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 08:31:48,533] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 08:31:48,538] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 08:31:48,542] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 08:31:48,552] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 08:31:48,556] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 08:31:48,583] [ERROR] [paperless.consumer] Not consuming 1732696307611-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 08:31:48,588] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732696307611-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732696307611-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732696307611-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732696307611-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 08:33:01,137] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 08:33:01,141] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 08:33:01,144] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 08:33:01,154] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 08:33:01,157] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 08:33:01,181] [ERROR] [paperless.consumer] Not consuming 1732696380057-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 08:33:01,185] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732696380057-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732696380057-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732696380057-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732696380057-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 08:33:46,872] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 08:34:35,679] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 08:35:01,148] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 08:35:02,305] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 09:05:00,070] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 09:07:37,367] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 09:07:56,617] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 09:10:57,829] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 09:24:42,705] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:24:42,710] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:24:42,715] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:24:42,724] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:24:42,730] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:24:42,755] [ERROR] [paperless.consumer] Not consuming 1732699481699-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:24:42,760] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732699481699-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732699481699-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732699481699-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732699481699-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:25:16,214] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:25:16,219] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:25:16,223] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:25:16,236] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:25:16,242] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:25:16,280] [ERROR] [paperless.consumer] Not consuming 1732699515003-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:25:16,287] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732699515003-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732699515003-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732699515003-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732699515003-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:27:39,223] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:27:39,228] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:27:39,233] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:27:39,245] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:27:39,250] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:27:39,288] [ERROR] [paperless.consumer] Not consuming 1732699658247-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:27:39,296] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732699658247-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732699658247-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732699658247-Professional Invoice Template - Jotform PDF Editor1.pdf: Not consuming 1732699658247-Professional Invoice Template - Jotform PDF Editor1.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:30:26,273] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:30:26,278] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:30:26,283] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:30:26,295] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:30:26,299] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:30:26,323] [ERROR] [paperless.consumer] Not consuming 1732699825269-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:30:26,327] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732699825269-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732699825269-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732699825269-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732699825269-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:30:52,871] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:30:52,875] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:30:52,880] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:30:52,891] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:30:52,898] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:30:52,923] [ERROR] [paperless.consumer] Not consuming 1732699851869-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:30:52,929] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732699851869-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732699851869-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732699851869-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732699851869-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1).
+[2024-11-27 09:37:57,897] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:37:57,901] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:37:57,905] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:37:57,918] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:37:57,922] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:37:57,950] [ERROR] [paperless.consumer] Not consuming 1732700276751-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1). Note: existing document is in the trash.
+[2024-11-27 09:37:57,953] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732700276751-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732700276751-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1). Note: existing document is in the trash.
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732700276751-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732700276751-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1732694265400-Professional Invoice Template - Jotform PDF Editor (#1). Note: existing document is in the trash.
+[2024-11-27 09:40:57,503] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000001.pdf.
+[2024-11-27 09:40:57,510] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000001_01.pdf.
+[2024-11-27 09:40:57,518] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000001.webp.
+[2024-11-27 09:41:25,655] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:41:25,659] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:41:25,664] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:41:25,673] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:41:25,678] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:41:25,694] [INFO] [paperless.consumer] Consuming 1732700484419-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 09:41:25,701] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 09:41:25,713] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 09:41:25,720] [DEBUG] [paperless.consumer] Parsing 1732700484419-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 09:41:25,752] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 09:41:25,883] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxnnfpvzwo/1732700484419-Professional Invoice Template - Jotform PDF Editor.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-_qffixru/archive.pdf'), 'use_threads': True, 'jobs': 16, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-_qffixru/sidecar.txt')}
+[2024-11-27 09:41:26,059] [WARNING] [ocrmypdf._pipeline] This PDF is marked as a Tagged PDF. This often indicates that the PDF was generated from an office document and does not need OCR. PDF pages processed by OCRmyPDF may not be tagged correctly.
+[2024-11-27 09:41:26,063] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 09:41:26,086] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 09:41:26,204] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.0%
+[2024-11-27 09:41:26,207] [INFO] [ocrmypdf._pipeline] Total file size ratio: 1.67 savings: 40.1%
+[2024-11-27 09:41:26,228] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-27 09:41:26,245] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 09:41:26,265] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 09:41:26,268] [DEBUG] [paperless.consumer] Generating thumbnail for 1732700484419-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 09:41:26,273] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-_qffixru/archive.pdf[0] /tmp/paperless/paperless-_qffixru/convert.webp
+[2024-11-27 09:41:27,014] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 09:41:27,243] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 09:41:27,249] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 09:41:27,259] [DEBUG] [paperless.consumer] Creation date from post_documents parameter: 2024-09-01 10:30:00+00:00
+[2024-11-27 09:41:27,548] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxnnfpvzwo/1732700484419-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 09:41:27,552] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-_qffixru
+[2024-11-27 09:41:27,555] [INFO] [paperless.consumer] Document 2024-09-01 1732700484419-Professional Invoice Template - Jotform PDF Editor consumption finished
+[2024-11-27 09:41:27,564] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 2 created
+[2024-11-27 09:46:18,310] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000002.pdf.
+[2024-11-27 09:46:18,316] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000002_01.pdf.
+[2024-11-27 09:46:18,321] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000002.webp.
+[2024-11-27 09:50:33,380] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 09:50:33,385] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 09:50:33,391] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 09:50:33,402] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 09:50:33,405] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 09:50:33,424] [INFO] [paperless.consumer] Consuming 1732701032338-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 09:50:33,432] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 09:50:33,443] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 09:50:33,452] [DEBUG] [paperless.consumer] Parsing 1732701032338-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 09:50:33,470] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 09:50:33,578] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxnjm3byk9/1732701032338-Professional Invoice Template - Jotform PDF Editor.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-wo4dfse9/archive.pdf'), 'use_threads': True, 'jobs': 16, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-wo4dfse9/sidecar.txt')}
+[2024-11-27 09:50:33,711] [WARNING] [ocrmypdf._pipeline] This PDF is marked as a Tagged PDF. This often indicates that the PDF was generated from an office document and does not need OCR. PDF pages processed by OCRmyPDF may not be tagged correctly.
+[2024-11-27 09:50:33,715] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 09:50:33,749] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 09:50:33,899] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.0%
+[2024-11-27 09:50:33,908] [INFO] [ocrmypdf._pipeline] Total file size ratio: 1.67 savings: 40.1%
+[2024-11-27 09:50:33,915] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-27 09:50:33,936] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 09:50:33,955] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 09:50:33,958] [DEBUG] [paperless.consumer] Generating thumbnail for 1732701032338-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 09:50:33,966] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-wo4dfse9/archive.pdf[0] /tmp/paperless/paperless-wo4dfse9/convert.webp
+[2024-11-27 09:50:34,689] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 09:50:34,915] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 09:50:34,920] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 09:50:34,932] [DEBUG] [paperless.consumer] Creation date from parse_date: 2015-05-19 00:00:00+00:00
+[2024-11-27 09:50:35,226] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxnjm3byk9/1732701032338-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 09:50:35,234] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-wo4dfse9
+[2024-11-27 09:50:35,238] [INFO] [paperless.consumer] Document 2015-05-19 1732701032338-Professional Invoice Template - Jotform PDF Editor consumption finished
+[2024-11-27 09:50:35,249] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 3 created
+[2024-11-27 10:00:37,922] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000003.pdf.
+[2024-11-27 10:00:37,928] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000003.pdf.
+[2024-11-27 10:00:37,934] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000003.webp.
+[2024-11-27 10:05:00,073] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 10:08:27,164] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:08:27,168] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:08:27,172] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:08:27,184] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:08:27,188] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:08:27,206] [INFO] [paperless.consumer] Consuming 1732702105761-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 10:08:27,213] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 10:08:27,224] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 10:08:27,233] [DEBUG] [paperless.consumer] Parsing 1732702105761-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 10:08:27,248] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 10:08:27,358] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxgyl7s2cc/1732702105761-Professional Invoice Template - Jotform PDF Editor.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-agynx4ca/archive.pdf'), 'use_threads': True, 'jobs': 16, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-agynx4ca/sidecar.txt')}
+[2024-11-27 10:08:27,474] [WARNING] [ocrmypdf._pipeline] This PDF is marked as a Tagged PDF. This often indicates that the PDF was generated from an office document and does not need OCR. PDF pages processed by OCRmyPDF may not be tagged correctly.
+[2024-11-27 10:08:27,478] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 10:08:27,489] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 10:08:27,590] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.0%
+[2024-11-27 10:08:27,594] [INFO] [ocrmypdf._pipeline] Total file size ratio: 1.67 savings: 40.1%
+[2024-11-27 10:08:27,598] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-27 10:08:27,627] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 10:08:27,645] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 10:08:27,648] [DEBUG] [paperless.consumer] Generating thumbnail for 1732702105761-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 10:08:27,653] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-agynx4ca/archive.pdf[0] /tmp/paperless/paperless-agynx4ca/convert.webp
+[2024-11-27 10:08:28,377] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 10:08:28,609] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 10:08:28,617] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 10:08:28,620] [DEBUG] [paperless.consumer] Creation date from parse_date: 2015-05-19 00:00:00+00:00
+[2024-11-27 10:08:28,883] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxgyl7s2cc/1732702105761-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 10:08:28,888] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-agynx4ca
+[2024-11-27 10:08:28,891] [INFO] [paperless.consumer] Document 2015-05-19 1 consumption finished
+[2024-11-27 10:08:28,898] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 4 created
+[2024-11-27 10:11:02,220] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000004.pdf.
+[2024-11-27 10:11:02,225] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000004.pdf.
+[2024-11-27 10:11:02,232] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000004.webp.
+[2024-11-27 10:11:09,281] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:11:09,286] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:11:09,289] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:11:09,300] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:11:09,304] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:11:09,322] [INFO] [paperless.consumer] Consuming 1732702268282-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 10:11:09,329] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 10:11:09,340] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 10:11:09,348] [DEBUG] [paperless.consumer] Parsing 1732702268282-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 10:11:09,361] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 10:11:09,456] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngx5luvbeio/1732702268282-Professional Invoice Template - Jotform PDF Editor.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-enbsijcn/archive.pdf'), 'use_threads': True, 'jobs': 16, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-enbsijcn/sidecar.txt')}
+[2024-11-27 10:11:09,564] [WARNING] [ocrmypdf._pipeline] This PDF is marked as a Tagged PDF. This often indicates that the PDF was generated from an office document and does not need OCR. PDF pages processed by OCRmyPDF may not be tagged correctly.
+[2024-11-27 10:11:09,569] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 10:11:09,590] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 10:11:09,689] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.0%
+[2024-11-27 10:11:09,711] [INFO] [ocrmypdf._pipeline] Total file size ratio: 1.67 savings: 40.1%
+[2024-11-27 10:11:09,727] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-27 10:11:09,749] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 10:11:09,768] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 10:11:09,774] [DEBUG] [paperless.consumer] Generating thumbnail for 1732702268282-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 10:11:09,786] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-enbsijcn/archive.pdf[0] /tmp/paperless/paperless-enbsijcn/convert.webp
+[2024-11-27 10:11:10,523] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 10:11:10,751] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 10:11:10,756] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 10:11:10,762] [DEBUG] [paperless.consumer] Creation date from parse_date: 2015-05-19 00:00:00+00:00
+[2024-11-27 10:11:11,051] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngx5luvbeio/1732702268282-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 10:11:11,055] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-enbsijcn
+[2024-11-27 10:11:11,058] [INFO] [paperless.consumer] Document 2015-05-19 1-SUPPLY001 consumption finished
+[2024-11-27 10:11:11,066] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 5 created
+[2024-11-27 10:14:19,558] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000005.pdf.
+[2024-11-27 10:14:19,564] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000005.pdf.
+[2024-11-27 10:14:19,570] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000005.webp.
+[2024-11-27 10:14:25,517] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:14:25,521] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:14:25,525] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:14:25,536] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:14:25,539] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:14:25,557] [INFO] [paperless.consumer] Consuming 1732702464533-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 10:14:25,567] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 10:14:25,579] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 10:14:25,587] [DEBUG] [paperless.consumer] Parsing 1732702464533-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 10:14:25,602] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 10:14:25,702] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxgv7o52az/1732702464533-Professional Invoice Template - Jotform PDF Editor.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-h4aodfl5/archive.pdf'), 'use_threads': True, 'jobs': 16, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-h4aodfl5/sidecar.txt')}
+[2024-11-27 10:14:25,805] [WARNING] [ocrmypdf._pipeline] This PDF is marked as a Tagged PDF. This often indicates that the PDF was generated from an office document and does not need OCR. PDF pages processed by OCRmyPDF may not be tagged correctly.
+[2024-11-27 10:14:25,808] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 10:14:25,837] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 10:14:25,936] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.0%
+[2024-11-27 10:14:25,939] [INFO] [ocrmypdf._pipeline] Total file size ratio: 1.67 savings: 40.1%
+[2024-11-27 10:14:25,963] [INFO] [ocrmypdf._pipelines._common] Output file is a PDF/A-2B (as expected)
+[2024-11-27 10:14:25,979] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 10:14:25,997] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 10:14:26,001] [DEBUG] [paperless.consumer] Generating thumbnail for 1732702464533-Professional Invoice Template - Jotform PDF Editor.pdf...
+[2024-11-27 10:14:26,017] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-h4aodfl5/archive.pdf[0] /tmp/paperless/paperless-h4aodfl5/convert.webp
+[2024-11-27 10:14:26,707] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 10:14:26,927] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 10:14:26,934] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 10:14:26,938] [DEBUG] [paperless.consumer] Creation date from parse_date: 2015-05-19 00:00:00+00:00
+[2024-11-27 10:14:27,228] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxgv7o52az/1732702464533-Professional Invoice Template - Jotform PDF Editor.pdf
+[2024-11-27 10:14:27,232] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-h4aodfl5
+[2024-11-27 10:14:27,236] [INFO] [paperless.consumer] Document 2015-05-19 1-INV001 consumption finished
+[2024-11-27 10:14:27,245] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 6 created
+[2024-11-27 10:15:15,287] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:15:15,291] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:15:15,296] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:15:15,305] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:15:15,310] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:15:15,338] [ERROR] [paperless.consumer] Not consuming 1732702514160-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:15:15,344] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732702514160-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702514160-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732702514160-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702514160-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:16:09,421] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:16:09,425] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:16:09,432] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:16:09,440] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:16:09,446] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:16:09,469] [ERROR] [paperless.consumer] Not consuming 1732702568525-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:16:09,473] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732702568525-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702568525-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732702568525-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702568525-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:18:31,879] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:18:31,883] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:18:31,888] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:18:31,897] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:18:31,901] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:18:31,927] [ERROR] [paperless.consumer] Not consuming 1732702710401-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:18:31,934] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732702710401-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702710401-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732702710401-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702710401-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:19:02,867] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:19:02,870] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:19:02,880] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:19:02,897] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:19:02,901] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:19:02,925] [ERROR] [paperless.consumer] Not consuming 1732702741763-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:19:02,931] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732702741763-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702741763-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732702741763-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702741763-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:19:41,257] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:19:41,262] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:19:41,268] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:19:41,276] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:19:41,282] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:19:41,308] [ERROR] [paperless.consumer] Not consuming 1732702780174-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:19:41,314] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732702780174-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702780174-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732702780174-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702780174-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:20:16,919] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:20:16,928] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:20:16,932] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:20:16,940] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:20:16,944] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:20:16,969] [ERROR] [paperless.consumer] Not consuming 1732702815688-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:20:16,973] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732702815688-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702815688-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732702815688-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732702815688-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:26:15,618] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 10:26:15,622] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 10:26:15,626] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 10:26:15,635] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 10:26:15,638] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 10:26:15,665] [ERROR] [paperless.consumer] Not consuming 1732703174409-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 10:26:15,669] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732703174409-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732703174409-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732703174409-Professional Invoice Template - Jotform PDF Editor.pdf: Not consuming 1732703174409-Professional Invoice Template - Jotform PDF Editor.pdf: It is a duplicate of 1-INV001 (#6).
+[2024-11-27 15:40:26,490] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 16:05:00,149] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 16:11:53,146] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:11:53,162] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:11:53,177] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:11:53,211] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:11:53,219] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:11:53,290] [INFO] [paperless.consumer] Consuming 1732723907022-Sample Invoice.pdf
+[2024-11-27 16:11:53,297] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 16:11:53,316] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 16:11:53,324] [DEBUG] [paperless.consumer] Parsing 1732723907022-Sample Invoice.pdf...
+[2024-11-27 16:11:53,374] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:11:53,998] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxzxck5fsp/1732723907022-Sample Invoice.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-mk39vso4/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-mk39vso4/sidecar.txt')}
+[2024-11-27 16:11:54,830] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 16:11:54,852] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 16:11:55,623] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.1%
+[2024-11-27 16:11:55,631] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.42 savings: 70.8%
+[2024-11-27 16:11:55,638] [WARNING] [ocrmypdf._pipelines._common] Output file is a valid PDF, but conversion to PDF/A did not succeed (issue: No PDF/A metadata in XMP)
+[2024-11-27 16:11:55,644] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 16:11:55,677] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:11:55,685] [DEBUG] [paperless.consumer] Generating thumbnail for 1732723907022-Sample Invoice.pdf...
+[2024-11-27 16:11:55,693] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-mk39vso4/archive.pdf[0] /tmp/paperless/paperless-mk39vso4/convert.webp
+[2024-11-27 16:11:56,790] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 16:12:00,842] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:12:00,854] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 16:12:00,859] [DEBUG] [paperless.consumer] Creation date from parse_date: 2024-02-29 00:00:00+00:00
+[2024-11-27 16:12:01,283] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxzxck5fsp/1732723907022-Sample Invoice.pdf
+[2024-11-27 16:12:01,290] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-mk39vso4
+[2024-11-27 16:12:01,295] [INFO] [paperless.consumer] Document 2024-02-29 3-PY11001 consumption finished
+[2024-11-27 16:12:01,304] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 3 created
+[2024-11-27 16:13:47,967] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:13:47,977] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:13:47,984] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:13:47,995] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:13:48,001] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:13:48,034] [ERROR] [paperless.consumer] Not consuming 1732724024306-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:13:48,040] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724024306-Sample Invoice.pdf: Not consuming 1732724024306-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724024306-Sample Invoice.pdf: Not consuming 1732724024306-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:20:18,615] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:20:18,622] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:20:18,628] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:20:18,643] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:20:18,651] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:20:18,692] [ERROR] [paperless.consumer] Not consuming 1732724414374-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:20:18,698] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724414374-invoice demo.pdf: Not consuming 1732724414374-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724414374-invoice demo.pdf: Not consuming 1732724414374-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:20:19,642] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:20:19,744] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:20:19,880] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:20:19,951] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:20:20,288] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:20:20,491] [ERROR] [paperless.consumer] Not consuming 1732724414388-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:20:20,505] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724414388-Sample Invoice.pdf: Not consuming 1732724414388-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724414388-Sample Invoice.pdf: Not consuming 1732724414388-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:22:40,792] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:22:40,802] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:22:40,824] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:22:40,862] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:22:40,870] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:22:40,903] [ERROR] [paperless.consumer] Not consuming 1732724557981-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:22:40,907] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724557981-Sample Invoice.pdf: Not consuming 1732724557981-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724557981-Sample Invoice.pdf: Not consuming 1732724557981-Sample Invoice.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:22:41,370] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:22:41,377] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:22:41,385] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:22:41,418] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:22:41,425] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:22:41,511] [ERROR] [paperless.consumer] Not consuming 1732724557976-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:22:41,517] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724557976-invoice demo.pdf: Not consuming 1732724557976-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724557976-invoice demo.pdf: Not consuming 1732724557976-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:25:30,401] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:25:30,408] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:25:30,415] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:25:30,429] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:25:30,437] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:25:30,490] [ERROR] [paperless.consumer] Not consuming 1732724725997-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:25:30,495] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724725997-invoice demo.pdf: Not consuming 1732724725997-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724725997-invoice demo.pdf: Not consuming 1732724725997-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3).
+[2024-11-27 16:26:44,086] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:26:44,093] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:26:44,102] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:26:44,119] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:26:44,123] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:26:44,160] [ERROR] [paperless.consumer] Not consuming 1732724801725-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3). Note: existing document is in the trash.
+[2024-11-27 16:26:44,174] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732724801725-invoice demo.pdf: Not consuming 1732724801725-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3). Note: existing document is in the trash.
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732724801725-invoice demo.pdf: Not consuming 1732724801725-invoice demo.pdf: It is a duplicate of 3-PY11001 (#3). Note: existing document is in the trash.
+[2024-11-27 16:26:56,849] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000003.pdf.
+[2024-11-27 16:26:56,857] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000003.pdf.
+[2024-11-27 16:26:56,865] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000003.webp.
+[2024-11-27 16:26:56,904] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000002.webp.
+[2024-11-27 16:26:56,912] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000002.pdf.
+[2024-11-27 16:26:56,918] [WARNING] [paperless.handlers] Expected /usr/src/paperless/media/documents/thumbnails/0000002.webp tp exist, but it did not
+[2024-11-27 16:26:56,956] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000001.png.
+[2024-11-27 16:26:56,962] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000001.pdf.
+[2024-11-27 16:26:56,969] [WARNING] [paperless.handlers] Expected /usr/src/paperless/media/documents/thumbnails/0000001.webp tp exist, but it did not
+[2024-11-27 16:27:13,578] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:27:13,585] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:27:13,590] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:27:13,607] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:27:13,613] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:27:13,642] [INFO] [paperless.consumer] Consuming 1732724824243-invoice demo.pdf
+[2024-11-27 16:27:13,658] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 16:27:13,695] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 16:27:13,714] [DEBUG] [paperless.consumer] Parsing 1732724824243-invoice demo.pdf...
+[2024-11-27 16:27:13,757] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:27:14,090] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxb6xgnr37/1732724824243-invoice demo.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-p1u4wgbc/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-p1u4wgbc/sidecar.txt')}
+[2024-11-27 16:27:14,345] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 16:27:14,356] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 16:27:14,658] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.1%
+[2024-11-27 16:27:14,665] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.42 savings: 70.8%
+[2024-11-27 16:27:14,694] [WARNING] [ocrmypdf._pipelines._common] Output file is a valid PDF, but conversion to PDF/A did not succeed (issue: No PDF/A metadata in XMP)
+[2024-11-27 16:27:14,722] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 16:27:14,805] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:27:14,811] [DEBUG] [paperless.consumer] Generating thumbnail for 1732724824243-invoice demo.pdf...
+[2024-11-27 16:27:14,841] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-p1u4wgbc/archive.pdf[0] /tmp/paperless/paperless-p1u4wgbc/convert.webp
+[2024-11-27 16:27:16,335] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 16:27:19,887] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:27:19,897] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 16:27:19,903] [DEBUG] [paperless.consumer] Creation date from parse_date: 2024-02-29 00:00:00+00:00
+[2024-11-27 16:27:20,358] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxb6xgnr37/1732724824243-invoice demo.pdf
+[2024-11-27 16:27:20,370] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-p1u4wgbc
+[2024-11-27 16:27:20,377] [INFO] [paperless.consumer] Document 2024-02-29 4-PY11002 consumption finished
+[2024-11-27 16:27:20,394] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 4 created
+[2024-11-27 16:31:37,490] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000004.pdf.
+[2024-11-27 16:31:37,499] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000004.pdf.
+[2024-11-27 16:31:37,509] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000004.webp.
+[2024-11-27 16:31:41,009] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:31:42,109] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:32:23,442] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:32:23,462] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:32:23,474] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:32:23,488] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:32:23,495] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:32:23,530] [INFO] [paperless.consumer] Consuming 1732725141315-Sample Invoice.pdf
+[2024-11-27 16:32:23,540] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 16:32:23,556] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 16:32:23,568] [DEBUG] [paperless.consumer] Parsing 1732725141315-Sample Invoice.pdf...
+[2024-11-27 16:32:23,584] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:32:23,733] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngx4t71_9fu/1732725141315-Sample Invoice.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-bl7u7knh/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-bl7u7knh/sidecar.txt')}
+[2024-11-27 16:32:23,882] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 16:32:23,894] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 16:32:24,149] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.1%
+[2024-11-27 16:32:24,157] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.42 savings: 70.8%
+[2024-11-27 16:32:24,166] [WARNING] [ocrmypdf._pipelines._common] Output file is a valid PDF, but conversion to PDF/A did not succeed (issue: No PDF/A metadata in XMP)
+[2024-11-27 16:32:24,175] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 16:32:24,212] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:32:24,221] [DEBUG] [paperless.consumer] Generating thumbnail for 1732725141315-Sample Invoice.pdf...
+[2024-11-27 16:32:24,230] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-bl7u7knh/archive.pdf[0] /tmp/paperless/paperless-bl7u7knh/convert.webp
+[2024-11-27 16:32:25,231] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 16:32:29,112] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:32:29,126] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 16:32:29,132] [DEBUG] [paperless.consumer] Creation date from parse_date: 2024-02-29 00:00:00+00:00
+[2024-11-27 16:32:29,958] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngx4t71_9fu/1732725141315-Sample Invoice.pdf
+[2024-11-27 16:32:29,966] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-bl7u7knh
+[2024-11-27 16:32:29,975] [INFO] [paperless.consumer] Document 2024-02-29 4-PY11002 consumption finished
+[2024-11-27 16:32:29,993] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 5 created
+[2024-11-27 16:32:49,159] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:32:49,168] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:32:49,174] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:32:49,188] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:32:49,201] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:32:49,252] [ERROR] [paperless.consumer] Not consuming 1732725166374-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#5).
+[2024-11-27 16:32:49,260] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732725166374-Sample Invoice.pdf: Not consuming 1732725166374-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#5).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732725166374-Sample Invoice.pdf: Not consuming 1732725166374-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#5).
+[2024-11-27 16:36:07,069] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000005.pdf.
+[2024-11-27 16:36:07,077] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000005.pdf.
+[2024-11-27 16:36:07,087] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000005.webp.
+[2024-11-27 16:36:26,899] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:36:26,909] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:36:26,916] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:36:26,928] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:36:26,935] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:36:26,967] [INFO] [paperless.consumer] Consuming 1732725382917-Sample Invoice.pdf
+[2024-11-27 16:36:26,978] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 16:36:26,998] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 16:36:27,009] [DEBUG] [paperless.consumer] Parsing 1732725382917-Sample Invoice.pdf...
+[2024-11-27 16:36:27,025] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:36:27,159] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxk591ki0v/1732725382917-Sample Invoice.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-zr2u44eo/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-zr2u44eo/sidecar.txt')}
+[2024-11-27 16:36:27,308] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 16:36:27,320] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 16:36:27,538] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.1%
+[2024-11-27 16:36:27,546] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.42 savings: 70.8%
+[2024-11-27 16:36:27,556] [WARNING] [ocrmypdf._pipelines._common] Output file is a valid PDF, but conversion to PDF/A did not succeed (issue: No PDF/A metadata in XMP)
+[2024-11-27 16:36:27,561] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 16:36:27,601] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:36:27,610] [DEBUG] [paperless.consumer] Generating thumbnail for 1732725382917-Sample Invoice.pdf...
+[2024-11-27 16:36:27,621] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-zr2u44eo/archive.pdf[0] /tmp/paperless/paperless-zr2u44eo/convert.webp
+[2024-11-27 16:36:28,593] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 16:36:32,353] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:36:32,367] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 16:36:32,374] [DEBUG] [paperless.consumer] Creation date from parse_date: 2024-02-29 00:00:00+00:00
+[2024-11-27 16:36:32,806] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxk591ki0v/1732725382917-Sample Invoice.pdf
+[2024-11-27 16:36:32,813] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-zr2u44eo
+[2024-11-27 16:36:32,819] [INFO] [paperless.consumer] Document 2024-02-29 4-PY11002 consumption finished
+[2024-11-27 16:36:32,828] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 6 created
+[2024-11-27 16:37:22,238] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000006.pdf.
+[2024-11-27 16:37:22,246] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000006.pdf.
+[2024-11-27 16:37:22,252] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000006.webp.
+[2024-11-27 16:37:35,040] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 16:37:35,051] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 16:37:35,058] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 16:37:35,070] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 16:37:35,075] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 16:37:35,108] [INFO] [paperless.consumer] Consuming 1732725451818-Sample Invoice.pdf
+[2024-11-27 16:37:35,126] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 16:37:35,148] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 16:37:35,157] [DEBUG] [paperless.consumer] Parsing 1732725451818-Sample Invoice.pdf...
+[2024-11-27 16:37:35,174] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:37:35,339] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxghgdcayu/1732725451818-Sample Invoice.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-3ng0cyjv/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-3ng0cyjv/sidecar.txt')}
+[2024-11-27 16:37:35,495] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 16:37:35,508] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 16:37:35,734] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.1%
+[2024-11-27 16:37:35,745] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.42 savings: 70.8%
+[2024-11-27 16:37:35,757] [WARNING] [ocrmypdf._pipelines._common] Output file is a valid PDF, but conversion to PDF/A did not succeed (issue: No PDF/A metadata in XMP)
+[2024-11-27 16:37:35,768] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 16:37:35,826] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 16:37:35,835] [DEBUG] [paperless.consumer] Generating thumbnail for 1732725451818-Sample Invoice.pdf...
+[2024-11-27 16:37:35,850] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-3ng0cyjv/archive.pdf[0] /tmp/paperless/paperless-3ng0cyjv/convert.webp
+[2024-11-27 16:37:37,011] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 16:37:41,613] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:37:41,625] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 16:37:41,635] [DEBUG] [paperless.consumer] Creation date from parse_date: 2024-02-29 00:00:00+00:00
+[2024-11-27 16:37:42,261] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxghgdcayu/1732725451818-Sample Invoice.pdf
+[2024-11-27 16:37:42,269] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-3ng0cyjv
+[2024-11-27 16:37:42,274] [INFO] [paperless.consumer] Document 2024-02-29 4-PY11002 consumption finished
+[2024-11-27 16:37:42,284] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 7 created
+[2024-11-27 16:42:12,369] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 16:42:13,489] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 17:05:00,105] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-27 17:26:17,520] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 17:26:17,528] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 17:26:17,536] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 17:26:17,558] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 17:26:17,565] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 17:26:17,617] [ERROR] [paperless.consumer] Not consuming 1732728374943-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+[2024-11-27 17:26:17,625] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732728374943-Sample Invoice.pdf: Not consuming 1732728374943-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732728374943-Sample Invoice.pdf: Not consuming 1732728374943-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+[2024-11-27 17:29:30,304] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 17:29:30,311] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 17:29:30,320] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 17:29:30,337] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 17:29:30,346] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 17:29:30,395] [ERROR] [paperless.consumer] Not consuming 1732728566988-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+[2024-11-27 17:29:30,401] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732728566988-Sample Invoice.pdf: Not consuming 1732728566988-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732728566988-Sample Invoice.pdf: Not consuming 1732728566988-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+[2024-11-27 17:46:05,216] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 17:46:05,226] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 17:46:05,236] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 17:46:05,255] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 17:46:05,263] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 17:46:05,308] [ERROR] [paperless.consumer] Not consuming 1732729550634-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+[2024-11-27 17:46:05,314] [ERROR] [paperless.tasks] ConsumeTaskPlugin failed: 1732729550634-Sample Invoice.pdf: Not consuming 1732729550634-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+Traceback (most recent call last):
+  File "/usr/src/paperless/src/documents/tasks.py", line 148, in consume_file
+    msg = plugin.run()
+          ^^^^^^^^^^^^
+  File "/usr/src/paperless/src/documents/consumer.py", line 370, in run
+    self.pre_check_duplicate()
+  File "/usr/src/paperless/src/documents/consumer.py", line 182, in pre_check_duplicate
+    self._fail(
+  File "/usr/src/paperless/src/documents/consumer.py", line 151, in _fail
+    raise ConsumerError(f"{self.filename}: {log_message or message}") from exception
+documents.consumer.ConsumerError: 1732729550634-Sample Invoice.pdf: Not consuming 1732729550634-Sample Invoice.pdf: It is a duplicate of 4-PY11002 (#7).
+[2024-11-27 17:47:38,969] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/originals/0000007.pdf.
+[2024-11-27 17:47:38,979] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/archive/0000007.pdf.
+[2024-11-27 17:47:38,990] [DEBUG] [paperless.handlers] Deleted file /usr/src/paperless/media/documents/thumbnails/0000007.webp.
+[2024-11-27 17:48:22,652] [DEBUG] [paperless.tasks] Skipping plugin CollatePlugin
+[2024-11-27 17:48:22,660] [DEBUG] [paperless.tasks] Skipping plugin BarcodePlugin
+[2024-11-27 17:48:22,667] [DEBUG] [paperless.tasks] Executing plugin WorkflowTriggerPlugin
+[2024-11-27 17:48:22,686] [INFO] [paperless.tasks] WorkflowTriggerPlugin completed with: 
+[2024-11-27 17:48:22,693] [DEBUG] [paperless.tasks] Executing plugin ConsumeTaskPlugin
+[2024-11-27 17:48:22,732] [INFO] [paperless.consumer] Consuming 1732729695496-Sample Invoice.pdf
+[2024-11-27 17:48:22,742] [DEBUG] [paperless.consumer] Detected mime type: application/pdf
+[2024-11-27 17:48:22,763] [DEBUG] [paperless.consumer] Parser: RasterisedDocumentParser
+[2024-11-27 17:48:22,778] [DEBUG] [paperless.consumer] Parsing 1732729695496-Sample Invoice.pdf...
+[2024-11-27 17:48:22,805] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 17:48:23,009] [DEBUG] [paperless.parsing.tesseract] Calling OCRmyPDF with args: {'input_file': PosixPath('/tmp/paperless/paperless-ngxqy8rh2rq/1732729695496-Sample Invoice.pdf'), 'output_file': PosixPath('/tmp/paperless/paperless-axgvnh70/archive.pdf'), 'use_threads': True, 'jobs': 8, 'language': 'eng', 'output_type': 'pdfa', 'progress_bar': False, 'color_conversion_strategy': 'RGB', 'skip_text': True, 'clean': True, 'deskew': True, 'rotate_pages': True, 'rotate_pages_threshold': 12.0, 'sidecar': PosixPath('/tmp/paperless/paperless-axgvnh70/sidecar.txt')}
+[2024-11-27 17:48:23,249] [INFO] [ocrmypdf._pipeline] skipping all processing on this page
+[2024-11-27 17:48:23,262] [INFO] [ocrmypdf._pipelines.ocr] Postprocessing...
+[2024-11-27 17:48:23,616] [INFO] [ocrmypdf._pipeline] Image optimization ratio: 1.00 savings: 0.1%
+[2024-11-27 17:48:23,623] [INFO] [ocrmypdf._pipeline] Total file size ratio: 3.42 savings: 70.8%
+[2024-11-27 17:48:23,634] [WARNING] [ocrmypdf._pipelines._common] Output file is a valid PDF, but conversion to PDF/A did not succeed (issue: No PDF/A metadata in XMP)
+[2024-11-27 17:48:23,642] [DEBUG] [paperless.parsing.tesseract] Incomplete sidecar file: discarding.
+[2024-11-27 17:48:23,700] [INFO] [paperless.parsing.tesseract] pdftotext exited 0
+[2024-11-27 17:48:23,707] [DEBUG] [paperless.consumer] Generating thumbnail for 1732729695496-Sample Invoice.pdf...
+[2024-11-27 17:48:23,720] [DEBUG] [paperless.parsing] Execute: convert -density 300 -scale 500x5000> -alpha remove -strip -auto-orient -define pdf:use-cropbox=true /tmp/paperless/paperless-axgvnh70/archive.pdf[0] /tmp/paperless/paperless-axgvnh70/convert.webp
+[2024-11-27 17:48:25,677] [INFO] [paperless.parsing] convert exited 0
+[2024-11-27 17:48:31,927] [DEBUG] [paperless.classifier] Document classification model does not exist (yet), not performing automatic matching.
+[2024-11-27 17:48:31,938] [DEBUG] [paperless.consumer] Saving record to database
+[2024-11-27 17:48:31,945] [DEBUG] [paperless.consumer] Creation date from parse_date: 2024-02-29 00:00:00+00:00
+[2024-11-27 17:48:32,532] [DEBUG] [paperless.consumer] Deleting file /tmp/paperless/paperless-ngxqy8rh2rq/1732729695496-Sample Invoice.pdf
+[2024-11-27 17:48:32,541] [DEBUG] [paperless.parsing.tesseract] Deleting directory /tmp/paperless/paperless-axgvnh70
+[2024-11-27 17:48:32,547] [INFO] [paperless.consumer] Document 2024-02-29 5-PY11001 consumption finished
+[2024-11-27 17:48:32,561] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 8 created
+[2024-11-27 18:05:00,096] [INFO] [paperless.tasks] No automatic matching items, not training

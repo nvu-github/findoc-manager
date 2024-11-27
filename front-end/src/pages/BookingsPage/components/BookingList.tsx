@@ -36,8 +36,6 @@ const BookingList: React.FC<BookingListProps> = ({ handleBookingEdit, handleDraw
     { title: 'Company', dataIndex: 'companyName', key: 'companyName' },
     { title: 'Account', dataIndex: 'accountName', key: 'accountName' },
     { title: 'Invoice Issuer', dataIndex: 'billerName', key: 'invoiceIssuerName' },
-    { title: 'Invoice Recipient', dataIndex: 'companyName', key: 'invoiceRecipientName' },
-    { title: 'Currency', dataIndex: 'currency', key: 'currency' },
     {
       title: 'Invoice Date',
       dataIndex: 'invoiceDate',
@@ -47,32 +45,15 @@ const BookingList: React.FC<BookingListProps> = ({ handleBookingEdit, handleDraw
     {
       title: 'Total Amount',
       dataIndex: 'totalAmount',
-      key: 'totalAmount'
-      // render: (amount: number) => amount.toFixed(2)
+      key: 'totalAmount',
+      render: (amount: number) => Number(amount)?.toFixed(2) || 0.0
     },
-    {
-      title: 'Tax Amount',
-      dataIndex: 'taxAmount',
-      key: 'taxAmount'
-      // render: (tax: number) => tax?.toFixed(2) || '0.00'
-    },
-    {
-      title: 'Tax Rate',
-      dataIndex: 'taxRate',
-      key: 'taxRate'
-      // render: (taxRate: number) => taxRate?.toFixed(5) || '0.00000'
-    },
-    { title: 'Expense Category', dataIndex: 'expenseCategory', key: 'expenseCategory' },
-    { title: 'Payment Status', dataIndex: 'paymentStatus', key: 'paymentStatus' },
-    { title: 'Reference Number', dataIndex: 'referenceNumber', key: 'referenceNumber' },
-    { title: 'Tags', dataIndex: 'tags', key: 'tags' },
     {
       title: 'Due Date',
       dataIndex: 'dueDate',
       key: 'dueDate',
       render: (date: string) => new Date(date).toLocaleDateString()
-    },
-    { title: 'Notes', dataIndex: 'notes', key: 'notes' }
+    }
   ]
 
   return (

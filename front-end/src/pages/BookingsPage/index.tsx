@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Col, Drawer, Row } from 'antd'
 
 import { useAppDispatch } from '../../stores/hook'
-import { getAllAccountsAsync, getAllBillersAsync, getAllBookingsAsync, getAllCompanyAsync } from '../../stores/slices'
+import { getAllAccountsAsync, getAllBillersAsync, getAllBookingsAsync, getAllCompanyAsync, getAllTaxRatesAsync } from '../../stores/slices'
 import BookingForm from './components/BookingForm'
 import BookingList from './components/BookingList'
 import { Booking } from '../../types'
@@ -27,6 +27,7 @@ const BookingsPage: React.FC = () => {
     dispatch(getAllCompanyAsync({}))
     dispatch(getAllBillersAsync({}))
     dispatch(getAllCurrenciesAsync())
+    dispatch(getAllTaxRatesAsync({}))
   }, [dispatch])
 
   return (

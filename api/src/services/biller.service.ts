@@ -20,7 +20,7 @@ class BillerService {
   }
 
   async getAllBillers(req: Request, res: Response): Promise<Response<IBiller[]>> {
-    const billers = await db(TABLES.BILLER).select('*', 'billers.biller_id as id')
+    const billers = await db(TABLES.BILLER).select('*', 'billers.biller_id as id').orderBy('billers.biller_id', 'asc')
     return res.status(StatusCodes.OK).json(billers)
   }
 

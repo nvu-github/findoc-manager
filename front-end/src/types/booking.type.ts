@@ -2,7 +2,6 @@ import { Dayjs } from 'dayjs'
 
 export type Booking = {
   bookingId?: number | string
-  companyId?: number | string
   accountId?: number | string
   invoiceIssuerId?: number | null
   invoiceRecipientId?: number | null

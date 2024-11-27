@@ -58,21 +58,21 @@ class BookingController {
     }
   }
 
-  async addDocumentToBooking(req: Request, res: Response): Promise<Response> {
-    try {
-      return await bookingService.addDocumentToBooking(req, res)
-    } catch (error) {
-      console.error('Error adding document to booking:', error)
-      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to add document' })
-    }
-  }
-
   async getDocumentsByBookingId(req: Request, res: Response): Promise<Response> {
     try {
-      return await bookingService.getDocumentsByBookingId(req, res)
+      return await documentService.getDocumentsByBookingId(req, res)
     } catch (error) {
       console.error('Error fetching documents:', error)
       return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to fetch documents' })
+    }
+  }
+
+  async deleteDocumentBooking(req: Request, res: Response): Promise<Response> {
+    try {
+      return await documentService.deleteDocument(req, res)
+    } catch (error) {
+      console.error('Error deleting booking:', error)
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Failed to delete booking' })
     }
   }
 }

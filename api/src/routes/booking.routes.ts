@@ -6,9 +6,11 @@ const router = express.Router()
 
 router.get('/', bookingController.getAllBookings)
 router.get('/:booking_id', bookingController.getBookingById)
+router.get('/:booking_id/documents', bookingController.getDocumentsByBookingId)
 router.post('/', bookingController.createBooking)
 router.post('/:booking_id/documents', uploadDocumentsMiddleware, bookingController.createDocuments)
 router.put('/:booking_id', bookingController.updateBooking)
 router.delete('/:booking_id', bookingController.deleteBooking)
+router.delete('/:booking_id/document', bookingController.deleteDocumentBooking)
 
 export default router

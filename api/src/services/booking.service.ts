@@ -9,8 +9,7 @@ import accountService from './account.service'
 import billerService from './biller.service'
 import companyService from './company.service'
 import currencyService from './currency.service'
-// import taxRateService from './taxRate.service'
-import projectService from './project.service'
+import S3Service from './s3.service'
 
 class BookingService {
   async createBooking(req: Request, res: Response): Promise<Response<IBooking>> {
@@ -29,39 +28,37 @@ class BookingService {
   }
 
   async getAllBookings(req: Request, res: Response): Promise<Response<IBooking[]>> {
-    const { page, page_size, ...filters } = req.query
+    const { page = 1, page_size = 10, ...filters } = req.query
 
     let query = db(TABLES.BOOKING)
       .innerJoin(TABLES.ACCOUNT, 'bookings.account_id', 'accounts.account_id')
-      .innerJoin(TABLES.COMPANY, 'bookings.company_id', 'companies.company_id')
+      .innerJoin(TABLES.COMPANY, 'bookings.invoice_recipient_id', 'companies.company_id')
       .leftJoin(TABLES.BILLER, 'bookings.invoice_issuer_id', 'billers.biller_id')
       .leftJoin(TABLES.CURRENCY, 'bookings.currency', 'currencies.currency_code')
       .leftJoin(TABLES.TAX_RATE, 'bookings.tax_rate_id', 'tax_rates.tax_rate_id')
       .select(
-        'bookings.*',
         'bookings.booking_id as id',
-        'accounts.account_name ',
+        'accounts.account_name',
         'companies.company_name',
         'billers.name as biller_name',
         'currencies.currency_code as currency_code',
-        'tax_rates.rate as tax_rate'
+        'tax_rates.rate as tax_rate',
+        'bookings.*'
       )
+      .orderBy('bookings.booking_id', 'asc')
 
     query = this.applyFilters(query, filters)
+    query = this.applyPagination(query, parseInt(page as string, 10), parseInt(page_size as string, 10))
 
-    const pageNumber = parseInt(page as string, 10) || 1
-    const pageSize = parseInt(page_size as string, 10) || 10
-    query = this.applyPagination(query, pageNumber, pageSize)
-
-    const bookings = await query
-    const total = await this.getTotalCount(filters)
+    const [bookings, countResult] = await Promise.all([query, db(TABLES.BOOKING).count('* as count').first()])
+    const count = countResult?.count || 0
 
     return res.json({
       data: bookings,
       meta: {
-        page: pageNumber,
-        page_size: pageSize,
-        total
+        page: parseInt(page as string, 10),
+        page_size: parseInt(page_size as string, 10),
+        total: count
       }
     })
   }
@@ -70,8 +67,8 @@ class BookingService {
     const { booking_id } = req.params
     const booking = await db(TABLES.BOOKING)
       .innerJoin(TABLES.ACCOUNT, 'accounts.account_id', 'bookings.account_id')
-      .leftJoin(TABLES.BILLER, 'bookings.biller_id', 'billers.biller_id')
-      .leftJoin(TABLES.CURRENCY, 'bookings.currency_id', 'currencies.currency_id')
+      .leftJoin(TABLES.BILLER, 'bookings.invoice_issuer_id', 'billers.biller_id')
+      .leftJoin(TABLES.CURRENCY, 'bookings.currency', 'currencies.currency_code')
       .leftJoin(TABLES.TAX_RATE, 'bookings.tax_rate_id', 'tax_rates.tax_rate_id')
       .where('bookings.booking_id', booking_id)
       .select(
@@ -91,8 +88,8 @@ class BookingService {
     return res.json({ ...booking, documents })
   }
 
-  async findBookingById(booking_id: number) {
-    return await db(TABLES.BOOKING).where('bookings.booking_id', booking_id).first()
+  async findBookingById(booking_id: number): Promise<IBooking> {
+    return await db(TABLES.BOOKING).where({ booking_id }).first()
   }
 
   async updateBooking(req: Request, res: Response): Promise<Response<IBooking>> {
@@ -104,11 +101,11 @@ class BookingService {
     }
 
     const updatedBooking = await db(TABLES.BOOKING).where({ booking_id }).update(formattedBooking).returning('*')
-    if (updatedBooking.length === 0) {
+    if (!updatedBooking) {
       return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
     }
 
-    return res.json(updatedBooking[0])
+    return res.json(updatedBooking)
   }
 
   async deleteBooking(req: Request, res: Response): Promise<Response> {
@@ -118,62 +115,52 @@ class BookingService {
       return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID is required' })
     }
 
-    const deletedBooking = await db(TABLES.BOOKING).where({ booking_id }).del()
-    if (deletedBooking === 0) {
-      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
+    const trx = await db.transaction()
+
+    try {
+      const documents = await trx(TABLES.DOCUMENT).where({ booking_id })
+
+      if (documents.length > 0) {
+        for (const document of documents) {
+          const folderPrefix = `documents/${booking_id}/${document.file_url}`
+          await S3Service.deleteFolder(folderPrefix)
+        }
+        await trx(TABLES.DOCUMENT).where({ booking_id }).del()
+      }
+
+      const deletedBooking = await trx(TABLES.BOOKING).where({ booking_id }).del()
+
+      if (!deletedBooking) {
+        await trx.commit()
+        return res.status(StatusCodes.NOT_FOUND).json({ message: 'Booking not found' })
+      }
+
+      await trx.commit()
+
+      return res.status(StatusCodes.NO_CONTENT).send()
+    } catch (error) {
+      await trx.rollback()
+      return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: 'Internal server error' })
     }
-
-    return res.status(StatusCodes.NO_CONTENT).send()
-  }
-
-  async addDocumentToBooking(req: Request, res: Response): Promise<Response> {
-    const { booking_id } = req.params
-    const { file_url, metadata } = req.body
-
-    if (!booking_id || !file_url) {
-      return res.status(StatusCodes.BAD_REQUEST).json({ message: 'Booking ID and file URL are required' })
-    }
-
-    const [document] = await db(TABLES.DOCUMENT)
-      .insert({
-        booking_id,
-        file_url,
-        metadata: JSON.stringify(metadata),
-        uploaded_at: new Date()
-      })
-      .returning('*')
-
-    return res.status(StatusCodes.CREATED).json(document)
-  }
-
-  async getDocumentsByBookingId(req: Request, res: Response): Promise<Response> {
-    const { booking_id } = req.params
-    const documents = await db(TABLES.DOCUMENT).where({ booking_id }).select()
-
-    if (documents.length === 0) {
-      return res.status(StatusCodes.NOT_FOUND).json({ message: 'Documents not found' })
-    }
-
-    return res.json(documents)
   }
 
   private async isDuplicateBooking(booking: IBooking) {
     const existingBooking = await db(TABLES.BOOKING)
       .where({
-        company_id: booking.company_id,
         account_id: booking.account_id,
         invoice_issuer_id: booking.invoice_issuer_id,
+        invoice_recipient_id: booking.invoice_recipient_id,
         total_amount: booking.total_amount
       })
       .first()
-    return existingBooking !== undefined
+    return !!existingBooking
   }
 
   private async formatBooking(data: any) {
     const {
-      company_id,
       account_id,
-      biller_id,
+      invoice_recipient_id,
+      invoice_issuer_id,
       tax_rate_id,
       entry_date,
       invoice_date,
@@ -192,53 +179,36 @@ class BookingService {
     } = data
 
     if (
-      !company_id ||
       !account_id ||
-      !biller_id ||
-      !tax_rate_id ||
+      !invoice_issuer_id ||
+      !invoice_recipient_id ||
       !entry_date ||
       !invoice_date ||
       !total_amount ||
-      !tax_amount ||
       !tax_rate ||
-      !expense_category ||
       !currency ||
-      !due_date ||
       !payment_status ||
-      !reference_number
+      !reference_number ||
+      !expense_category
     ) {
       throw new Error('Missing required fields')
     }
 
-    const companyFound = await companyService.findCompanyById(company_id)
-    if (!companyFound) {
-      throw new Error(`Company with id ${company_id} not found`)
+    const [companyFound, accountFound, billerFound, currencyFound] = await Promise.all([
+      companyService.findCompanyById(invoice_recipient_id),
+      accountService.findAccountById(account_id),
+      billerService.findBillerById(invoice_issuer_id),
+      currencyService.findCurrencyByCode(currency)
+    ])
+
+    if (!companyFound || !accountFound || !billerFound || !currencyFound) {
+      throw new Error('One or more required entities not found')
     }
-
-    const accountFound = await accountService.findAccountById(account_id)
-    if (!accountFound) {
-      throw new Error(`Account with id ${account_id} not found`)
-    }
-
-    const billerFound = await billerService.findBillerById(biller_id)
-    if (!billerFound) {
-      throw new Error(`Biller with id ${biller_id} not found`)
-    }
-
-    // const taxRateFound = await taxRateService.findTaxRateById(tax_rate_id)
-    // if (!taxRateFound) {
-    //   throw new Error(`Tax rate with id ${tax_rate_id} not found`)
-    // }
-
-    // const currencyFound = await currencyService.findCurrencyById(currency)
-    // if (!currencyFound) {
-    //   throw new Error(`Currency with id ${currency} not found`)
-    // }
 
     return {
-      company_id,
       account_id,
-      biller_id,
+      invoice_issuer_id,
+      invoice_recipient_id,
       tax_rate_id,
       entry_date: moment(entry_date).format('YYYY-MM-DD'),
       invoice_date: moment(invoice_date).format('YYYY-MM-DD'),
@@ -258,41 +228,19 @@ class BookingService {
   }
 
   private applyFilters(query: any, filters: any) {
-    const { company_id, biller_id, account_id, start_date, end_date } = filters
+    const { invoice_recipient_id, invoice_issuer_id, account_id, start_date, end_date } = filters
 
-    if (company_id) {
-      query.where('bookings.company_id', company_id)
-    }
-
-    if (biller_id) {
-      query.where('bookings.biller_id', biller_id)
-    }
-
-    if (account_id) {
-      query.where('bookings.account_id', account_id)
-    }
-
-    if (start_date) {
-      query.where('bookings.entry_date', '>=', start_date)
-    }
-
-    if (end_date) {
-      query.where('bookings.entry_date', '<=', end_date)
-    }
+    if (invoice_recipient_id) query.where('bookings.invoice_recipient_id', invoice_recipient_id)
+    if (invoice_issuer_id) query.where('bookings.invoice_issuer_id', invoice_issuer_id)
+    if (account_id) query.where('bookings.account_id', account_id)
+    if (start_date) query.where('bookings.entry_date', '>=', start_date)
+    if (end_date) query.where('bookings.entry_date', '<=', end_date)
 
     return query
   }
 
   private applyPagination(query: any, page: number, pageSize: number) {
-    const offset = (page - 1) * pageSize
-    return query.limit(pageSize).offset(offset)
-  }
-
-  private async getTotalCount(filters: any) {
-    let query = db(TABLES.BOOKING)
-    query = this.applyFilters(query, filters)
-    const result = await query.count('* as count').first()
-    return result?.count || 0
+    return query.limit(pageSize).offset((page - 1) * pageSize)
   }
 }
 

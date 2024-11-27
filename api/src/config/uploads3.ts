@@ -7,6 +7,8 @@ import dotenv from 'dotenv'
 
 dotenv.config()
 
+const LIMIT_MAX_SIZE = 5 * 1024 * 1024 //5mb
+
 const s3 = new S3Client({
   credentials: {
     accessKeyId: process.env.AWS_ACCESS_KEY_ID!,
@@ -25,8 +27,9 @@ const uploads3 = multer({
     key: (req: Request, file, cb) => {
       const { booking_id } = req.params
       cb(null, `documents/${booking_id}/${Date.now().toString()}-${file.originalname}`)
-    }
-  })
+    },
+  }),
+  limits: { fileSize: LIMIT_MAX_SIZE }
 })
 
 export default uploads3

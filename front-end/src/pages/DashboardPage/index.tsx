@@ -19,8 +19,8 @@ const DashboardPage: React.FC = () => {
 
   const [filteredBookings, setFilteredBookings] = useState<Booking[]>([])
   const [selectedCompany, setSelectedCompany] = useState<string | null>(null)
-  const [selectedAccount, setSelectedAccount] = useState<string[]>([])
-  const [selectedBiller, setSelectedBiller] = useState<string[]>([])
+  const [selectedAccount, setSelectedAccount] = useState<string | null>(null)
+  const [selectedBiller, setSelectedBiller] = useState<string | null>(null)
   const [selectedDates, setSelectedDates] = useState<[dayjs.Dayjs, dayjs.Dayjs] | null>(null)
   const [startDate, setStartDate] = useState<dayjs.Dayjs | null>(null)
 
@@ -32,15 +32,15 @@ const DashboardPage: React.FC = () => {
     { title: 'Account', dataIndex: 'accountName', key: 'accountName' },
     { title: 'Biller', dataIndex: 'billerName', key: 'billerName' },
     { title: 'Currency code', dataIndex: 'currencyCode', key: 'currencyCode' },
-    { title: 'Amount', dataIndex: 'amount', key: 'amount', render: (amount: number) => `$${amount}` },
+    { title: 'Total amount', dataIndex: 'totalAmount', key: 'totalAmount', render: (amount: number) => `$${amount}` },
     { title: 'Date', dataIndex: 'date', key: 'date', render: (date: string) => dayjs(date).format('MM/DD/YYYY') }
   ]
 
   const handleFilter = _.debounce((overridePagination = pagination) => {
     const filters: any = {}
-    if (selectedCompany) filters.companyId = selectedCompany
-    if (selectedAccount.length) filters.accountId = selectedAccount
-    if (selectedBiller.length) filters.billerId = selectedBiller
+    if (selectedCompany) filters.invoice_recipient_id = selectedCompany
+    if (selectedAccount) filters.accountId = selectedAccount
+    if (selectedBiller) filters.invoice_issuer_id = selectedBiller
     if (selectedDates) {
       filters.startDate = selectedDates[0].format('YYYY-MM-DD')
       filters.endDate = selectedDates[1].format('YYYY-MM-DD')
@@ -76,8 +76,8 @@ const DashboardPage: React.FC = () => {
 
   const handleResetFilters = () => {
     setSelectedCompany(null)
-    setSelectedAccount([])
-    setSelectedBiller([])
+    setSelectedAccount(null)
+    setSelectedBiller(null)
     setSelectedDates(null)
     setStartDate(null)
     handleFilter(initialPagination)
@@ -98,11 +98,13 @@ const DashboardPage: React.FC = () => {
 
   const revenueData = companies.map((company) => {
     const totalRevenue = filteredBookings
-      .filter((booking) => booking.companyId === company.companyId)
-      .reduce((acc, curr) => acc + Number(curr.amount), 0)
+      .filter((booking) => booking.invoiceRecipientId === company.companyId)
+      .reduce((acc, curr) => {
+        return acc + Number(curr.totalAmount)
+      }, 0)
 
     return {
-      name: company.name,
+      name: company.companyName,
       revenue: totalRevenue
     }
   })
