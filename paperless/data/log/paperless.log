@@ -1233,3 +1233,10 @@ documents.consumer.ConsumerError: 1732729550634-Sample Invoice.pdf: Not consumin
 [2024-11-27 17:48:32,547] [INFO] [paperless.consumer] Document 2024-02-29 5-PY11001 consumption finished
 [2024-11-27 17:48:32,561] [INFO] [paperless.tasks] ConsumeTaskPlugin completed with: Success. New document id 8 created
 [2024-11-27 18:05:00,096] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 03:05:00,090] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 04:05:00,075] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 04:15:10,069] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 05:05:00,066] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 06:05:00,067] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 07:05:00,080] [INFO] [paperless.tasks] No automatic matching items, not training
+[2024-11-28 08:10:48,503] [INFO] [paperless.tasks] No automatic matching items, not training
