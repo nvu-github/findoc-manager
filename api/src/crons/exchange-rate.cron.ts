@@ -23,7 +23,7 @@ const fetchAndSaveExchangeRates = async () => {
 
     for (const [currencyCode, rate] of Object.entries(rates)) {
       const currency = {
-        date: moment(date).format('YYYY-MM-DD'),
+        last_updated: moment(date).format('YYYY-MM-DD'),
         currency_code: currencyCode,
         exchange_rate: rate
       }
